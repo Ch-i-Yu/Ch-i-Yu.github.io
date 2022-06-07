@@ -1,300 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Advanced Module</title>
-    <url>/2022/03/02/Advanced-Module/</url>
-    <content><![CDATA[<p>Get a glimpse of the advanced modules I’ve taken, with notes, coursework, projects and etc attached. </p>
-<span id="more"></span>
-
-<h3 id="Deep-Learning-Specialization"><a href="#Deep-Learning-Specialization" class="headerlink" title="Deep Learning Specialization"></a>Deep Learning Specialization</h3><blockquote>
-<p>Become a Machine Learning expert.<br>Master the fundamentals of deep learning and break into AI.<br>Recently updated with cutting-edge techniques!</p>
-</blockquote>
-<p><strong>Source</strong>: <a class="link"   href="https://www.coursera.org/specializations/deep-learning" >Coursera<i class="fas fa-external-link-alt"></i></a></p>
-<ul>
-<li><p><input disabled="" type="checkbox"> 
-<strong>Neural Networks and Deep Learning</strong></p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-<strong>Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization</strong></p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-<strong>Structuring Machine Learning Projects</strong></p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-<strong>Convolutional Neural Networks</strong></p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-<strong>Sequence Models</strong></p>
-</li>
-</ul>
-<hr>
-<h3 id="From-Nand-to-Tetris"><a href="#From-Nand-to-Tetris" class="headerlink" title="From Nand to Tetris"></a>From Nand to Tetris</h3><blockquote>
-<p>Building a Modern Computer From First Principles.</p>
-</blockquote>
-<p><strong>Source:</strong> <a class="link"   href="https://www.nand2tetris.org/" >Nand2Tetris’s Official Website<i class="fas fa-external-link-alt"></i></a></p>
-<ul>
-<li><input disabled="" type="checkbox"> <strong>From Nand to Tetris: Part I</strong></li>
-<li><input disabled="" type="checkbox"> <strong>From Nand to Tetris: Part II</strong></li>
-</ul>
-<hr>
-<p>More articles about code tips, learning experiences and coursework&#x2F;projects are on the way! &#x3D; &#x3D;+</p>
-]]></content>
-      <categories>
-        <category>Advanced Module</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Algorithm-I, Day 1</title>
-    <url>/2022/03/06/Algorithm-I-Day-1/</url>
-    <content><![CDATA[<p>Topic: Binary Search</p>
-<span id="more"></span>
-
-<blockquote>
-<p>Q704 Binary Search</p>
-<p>Q278 First Bad Version</p>
-<p>Q35 Search Insert Position</p>
-</blockquote>
-<p>A searching algorithm which finds an element’s position in a <strong>sequential(sorted)</strong> and <strong>comparable</strong> array.</p>
-<p>In this method, the element is always searched in the <strong>middle</strong> of a portion of an array sliced in halves.</p>
-<p>This method do follow the <strong>divide-and-conquer</strong> approach.</p>
-<hr>
-<h5 id="Iteration-Method"><a href="#Iteration-Method" class="headerlink" title="Iteration Method"></a>Iteration Method</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Do until the pointers L(Low/Left) and R(High/Right) meet each other,</span></span><br><span class="line"><span class="comment">## or do until the target element is found.</span></span><br><span class="line">	Mid = (L + R) / <span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> Target == Grid[Mid]</span><br><span class="line">        <span class="keyword">return</span> Mid</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> Target &gt; Grid[Mid]</span><br><span class="line">        L = Mid + <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span> <span class="comment">## Target &lt; Grid[Mid]</span></span><br><span class="line">    	R = Mid - <span class="number">1</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">continue</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="Recursion-Method"><a href="#Recursion-Method" class="headerlink" title="Recursion Method"></a>Recursion Method</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Define a function and calle itself within definition.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## Do until the pointers L(Low/Left) and R(High/Right) meet each other,</span></span><br><span class="line"><span class="comment">## or do until the target element is found.</span></span><br><span class="line">RM(Grid, Target, L, R)</span><br><span class="line">	<span class="keyword">if</span> L &gt; R</span><br><span class="line">    	<span class="keyword">return</span> Not Found</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    	Mid = (L + R) / <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> Target == Grid[Mid]</span><br><span class="line">        	<span class="keyword">return</span> Mid</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> Target &gt; Grid[Mid]</span><br><span class="line">        	returnRM(Grid, Target, Mid + <span class="number">1</span>, R)</span><br><span class="line">        <span class="keyword">else</span> <span class="comment">## Target &lt; Grid[Mid]</span></span><br><span class="line">        	returnRM(Grid, Target, L, Mid - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
-<h5 id="Time-Complexities"><a href="#Time-Complexities" class="headerlink" title="Time Complexities"></a>Time Complexities</h5><ul>
-<li>Best Case Complexity: O(1)</li>
-<li>Worst Case Complexity: O(log n)</li>
-<li><strong>Average Case Complexity: O(log n)</strong></li>
-</ul>
-<h5 id="Space-Complexities"><a href="#Space-Complexities" class="headerlink" title="Space Complexities"></a>Space Complexities</h5><ul>
-<li>O(1)</li>
-</ul>
-<hr>
-<h5 id="Footnotes"><a href="#Footnotes" class="headerlink" title="Footnotes"></a>Footnotes</h5><p>In <strong>Q278 First Bad Version</strong>:</p>
-<p>Pointer <code>L</code>  represents the location of the first bad version.</p>
-<p>In <strong>Q35 Search Insert Position</strong>:</p>
-<p>Pointer <code>L</code>  represents the location of the target insert position.</p>
-]]></content>
-      <categories>
-        <category>LeetCode Plan</category>
-        <category>Algorithm-I</category>
-      </categories>
-      <tags>
-        <tag>Binary Search</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Algorithm-I, Day 2-6</title>
-    <url>/2022/03/08/Algorithm-I-Day-2-6/</url>
-    <content><![CDATA[<p>Topic: Two Pointers with Sliding Window </p>
-<span id="more"></span>
-
-<blockquote>
-<p>Q977 Squares of a Sorted Array</p>
-<p>Q189 Rotate Array</p>
-<p>Q283 Move Zeroes</p>
-<p>Q167 Two Sum</p>
-<p>Q344 Reverse String</p>
-<p>Q557 Reverse Words in a String III</p>
-<p>Q876 Middle of the Linked List</p>
-<p>Q19 Remove Nth Node From End of List</p>
-<p>Q3 Longest Substring Without Repeating Characters</p>
-<p>Q567 Permutation in String</p>
-</blockquote>
-<p>A searching algorithm which finds a pair of element’s position in a <strong>sequential(sorted)</strong> array.</p>
-<p>e.g. Given a enumerable array <code>Grid</code> (maybe sorted in some order), having finite integers, Two-Pointers method can find if there exists any <strong>pair of elements</strong> (<code>Grid[i]</code>, <code>Grid[j]</code>) such that suits some given target.</p>
-<blockquote>
-<p><strong>Note:</strong><br>This pair of elements can also represents a sequence of items of an array, which starts at item No. i and stops at item No. j.</p>
-</blockquote>
-<hr>
-<h5 id="Pre-amp-Post-x2F-Sliding-Window-Method"><a href="#Pre-amp-Post-x2F-Sliding-Window-Method" class="headerlink" title="Pre&amp;Post &#x2F; Sliding Window Method"></a>Pre&amp;Post &#x2F; Sliding Window Method</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Ensure that pointer H(High) is kinda ahead of the pointer L(Low).</span></span><br><span class="line"><span class="comment">## Hence, the pointers L &amp; H spans a window.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> H &lt; Border: </span><br><span class="line">    Window.push(H)		<span class="comment">## Expand the Window</span></span><br><span class="line">    H++;</span><br><span class="line">    <span class="keyword">while</span> valid Window:</span><br><span class="line">		update Window <span class="keyword">if</span> necessary</span><br><span class="line">        Window.pop(L)	 <span class="comment">## Shrink the Window</span></span><br><span class="line">        L++</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> Window</span><br></pre></td></tr></table></figure>
-
-<h5 id="Left-amp-Right-Method"><a href="#Left-amp-Right-Method" class="headerlink" title="Left&amp;Right Method"></a>Left&amp;Right Method</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Do until the pointers L(Left) and R(Right) meet each other,</span></span><br><span class="line"><span class="comment">## Or do until the target pair is found.</span></span><br><span class="line">    <span class="keyword">if</span> Target == Grid[L] + Grid[R]</span><br><span class="line">        <span class="keyword">return</span> L, R</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> Target &gt; Grid[L] + Grid[R]</span><br><span class="line">        R -= <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span> <span class="comment">## Target &lt; Grid[L] + Grid[R]</span></span><br><span class="line">    	L += <span class="number">1</span></span><br><span class="line">	</span><br><span class="line">    <span class="keyword">continue</span></span><br><span class="line"><span class="comment">## Note: </span></span><br><span class="line"><span class="comment">## The explanation above implicitly assume that</span></span><br><span class="line"><span class="comment">## the array Grid is sorted ascendingly.</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="Time-Complexities"><a href="#Time-Complexities" class="headerlink" title="Time Complexities"></a>Time Complexities</h5><ul>
-<li>Best Case Complexity: O(1)</li>
-<li>Worst Case Complexity: O(n)</li>
-<li><strong>Average Case Complexity: O(n)</strong></li>
-</ul>
-<h5 id="Space-Complexities"><a href="#Space-Complexities" class="headerlink" title="Space Complexities"></a>Space Complexities</h5><ul>
-<li>O(1)</li>
-</ul>
-<hr>
-<h5 id="Footnote"><a href="#Footnote" class="headerlink" title="Footnote"></a>Footnote</h5><p>In <strong>Q977 Squares of a Sorted Array</strong>:</p>
-<p>Left&amp;Right Method is applied. Take The absolute value for comparison.</p>
-<p>In <strong>Q189 Rotate Array</strong>:</p>
-<p>See also in: &lt; Article Not Published Yet &gt;</p>
-<p>In <strong>Q283 Move Zeroes</strong>:</p>
-<p>Left&amp;Right Method is applied. One Pointer stands for the current working position, and another stands for the staing point of pushing in &#x2F; filling with zeros.</p>
-<p>In <strong>Q167 Two Sum</strong>:</p>
-<p>Left&amp;Right Method is applied.</p>
-<p>Note: The given input array is sorted.</p>
-<p>In <strong>Q344 Reverse String</strong>:</p>
-<p>Left&amp;Right Method is applied. </p>
-<p>In <strong>Q557 Reverse Words in a String III</strong>:</p>
-<p>Left&amp;Right Method is applied. Just make wise usage of slicers.</p>
-<p>In <strong>Q876 Middle of the Linked List</strong>:</p>
-<p>Pre&amp;Post &#x2F; Sliding Window Method is recommended.</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">Pre += <span class="number">1</span></span><br><span class="line">Post += <span class="number">2</span></span><br></pre></td></tr></table></figure>
-
-<p>In <strong>Q19 Remove Nth Node From End of List</strong>:</p>
-<p>Left&amp;Right Method is applied. </p>
-<p>Repeat the “process” for N times, then remove the node.</p>
-<p>In <strong>Q3 Longest Substring Without Repeating Characters</strong>:</p>
-<p>Pre&amp;Post &#x2F; Sliding Window Method is applied.</p>
-<p>In <strong>Q567 Permutation in String</strong>:</p>
-<p>Note: It’s much faster to create 2 <strong>dictionarys</strong> and compare them instead.</p>
-]]></content>
-      <categories>
-        <category>LeetCode Plan</category>
-        <category>Algorithm-I</category>
-      </categories>
-      <tags>
-        <tag>Two Pointers</tag>
-        <tag>Sliding Window</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>FURP-Driven Literature Review I</title>
-    <url>/2022/06/07/FURP-Driven-Literature-Review-I/</url>
-    <content><![CDATA[<blockquote>
-<p>C. Huang, Y. Li and R. Nevatia, “Multiple Target Tracking by Learning-Based Hierarchical Association of Detection Responses,” in IEEE Transactions on Pattern Analysis and Machine Intelligence, vol. 35, no. 4, pp. 898-910, April 2013, doi: 10.1109&#x2F;TPAMI.2012.159.</p>
-</blockquote>
-<p>Driven by FURP(FoSE Undergraduate Research Placement) Programme.</p>
-<span id="more"></span>
-
-<h3 id="Multiple-Target-Tracking-by-Learning-Based-Hierarchical-Association-of-Detection-Responses"><a href="#Multiple-Target-Tracking-by-Learning-Based-Hierarchical-Association-of-Detection-Responses" class="headerlink" title="Multiple Target Tracking by Learning-Based Hierarchical Association of Detection Responses"></a>Multiple Target Tracking by Learning-Based Hierarchical Association of Detection Responses</h3><p><strong>Publisher:</strong> </p>
-<p>IEEE</p>
-<p><strong>Authors:</strong> </p>
-<p>Chang Huang; Yuan Li; Ramakant Nevatia</p>
-<p><strong>Index Terms</strong></p>
-<ul>
-<li>Multiple Target Tracking</li>
-<li>Hierarchical Association</li>
-<li>Bag Ranking</li>
-<li>AdaBoost</li>
-</ul>
-<p><strong>DOI:</strong> <a class="link"   href="https://doi.org/10.1109/TPAMI.2012.159" >10.1109&#x2F;TPAMI.2012.159<i class="fas fa-external-link-alt"></i></a></p>
-<p><strong>Background(Key Point):</strong></p>
-<p><strong>The Maximum A Posteriori (MAP) problem of Data Association-based Tracking(DAT)</strong></p>
-<p>There are two main components of a <strong>DAT</strong> approach:</p>
-<p>One is a <code>tracklet affinity model</code> that measures the likelihood of two tracklets belonging to the same target, providing fundamental evidences for DAT;</p>
-<p>The other one is the <code>association optimization framework</code> that determines which of the tracklets should be linked considering affinity measurements correspondingly.</p>
-<p>The MAP Problem considers initialization, termination and transitions of tracklets, together with the false alarm possibilities of the tracklets, which can be effectively evaluated by the Hungarian algorithm.</p>
-<p>The tracklet affinity model, which measures the likelihood of two tracklets belonging to the same target, is a linear combination of automatically learned weak nonparametric models upon various features. which is distinct from most of previous work that relies on heuristic selection of parametric models and manual tuning of their parameters.</p>
-<p><strong>Methodology:</strong></p>
-<p>Propose a DAT approach based on the hierachical association framework and a novel bag-ranking approach for learning tracklet affinity models which is derived from.</p>
-<p><strong>Key Findings:</strong></p>
-<p>The systematic experiments on the standard CAVIAR dataset and the highly challenging <code>TRECVID08</code> dataset show that this approach achieves significant improvement in tracking accuracy over previous state-of-the-art work.</p>
-<p>The main difficulty in applying this tracking framework to a real-time tracking system is that it has to postpone “unsafe” associations until enough evidence is collected to resolve the ambiguity, resulting in inevitable tracking lag for some difficult targets.</p>
-]]></content>
-      <categories>
-        <category>FURP</category>
-        <category>Literature Review</category>
-      </categories>
-      <tags>
-        <tag>Multi-Target Tracking</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>FURP-Driven Literature Review II</title>
-    <url>/2022/06/07/FURP-Driven-Literature-Review-II/</url>
-    <content><![CDATA[<blockquote>
-<p>Rodríguez-Pérez, R., Bajorath, J. Interpretation of machine learning models using shapley values: application to compound potency and multi-target activity predictions. J Comput Aided Mol Des 34, 1013–1026 (2020). <a class="link"   href="https://doi.org/10.1007/s10822-020-00314-0" >https://doi.org/10.1007/s10822-020-00314-0<i class="fas fa-external-link-alt"></i></a></p>
-</blockquote>
-<p>Driven by FURP(FoSE Undergraduate Research Placement) Programme.</p>
-<span id="more"></span>
-
-<h2 id="Interpretation-of-machine-learning-models-using-shapley-values-application-to-compound-potency-and-multi-target-activity-predictions"><a href="#Interpretation-of-machine-learning-models-using-shapley-values-application-to-compound-potency-and-multi-target-activity-predictions" class="headerlink" title="Interpretation of machine learning models using shapley values: application to compound potency and multi-target activity predictions"></a>Interpretation of machine learning models using shapley values: application to compound potency and multi-target activity predictions</h2><p><strong>Publisher:</strong> </p>
-<p>Springer Nature, Journal of Computer-Aided Molecular Design</p>
-<p><strong>Authors:</strong> </p>
-<p>Raquel Rodríguez-Pérez, Jürgen Bajorath</p>
-<p><strong>Index Terms</strong></p>
-<ul>
-<li>Machine learning</li>
-<li>Black box character</li>
-<li>Structure–activity relationships</li>
-<li>Compound activity</li>
-<li>Compound potency prediction</li>
-<li>Multi-target modeling</li>
-<li>Model interpretation</li>
-<li>Feature importance</li>
-<li>Shapley values</li>
-</ul>
-<p><strong>DOI:</strong> <a class="link"   href="https://doi.org/10.1007/s10822-020-00314-0" >10.1007&#x2F;s10822-020-00314-0<i class="fas fa-external-link-alt"></i></a></p>
-<p><strong>Background(Key Point):</strong></p>
-<p>Difficulties in interpreting machine learning(ML) models and their predictions limit the practical applicability of and confidence in ML in pharmaceutical research.</p>
-<p>A short coming of many ML approaches is the difficulty to rationalize predictions.</p>
-<p>Lack of interpretability might result from intrinsic black box character of ML methods such as neural network(NN) or support vector machine(SVM) algorithms. Futhermore, it might also result from using principally interpretable models such as decison trees(DTs) as large ensembles classifiers such as random forest(RF).</p>
-<p><strong>Methodology:</strong></p>
-<p><code>Shapley Additive exPlanations method(SHAP)</code>, A new methodology applicable of any complexity for ML model interpretation in chemoinformatics and medicinal chemistry is introduced. It is based upon the Shapley value concept from game theory and can be rationalized as an extension of the local interpretable model-agnostic explanations.</p>
-<p><strong>Key Findings:</strong><br>The <code>SHAP</code> methodologu enables the interpretation of ML models and their predictions, yielding feature importance for any ML model and therefore sheds light on the black box nature of many ML approaches.</p>
-<p><code>SHAP</code> analysis yielded meaningful explanations of compounded potency and multi-target predictions, revealing different model characteristics responsible for individual model.</p>
-]]></content>
-      <categories>
-        <category>FURP</category>
-        <category>Literature Review</category>
-      </categories>
-      <tags>
-        <tag>Multi-Target Tracking</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>FURP-Driven Literature Review III</title>
-    <url>/2022/06/07/FURP-Driven-Literature-Review-III/</url>
-    <content><![CDATA[<blockquote>
-<p>Waegeman, W., Dembczyński, K. &amp; Hüllermeier, E. Multi-target prediction: a unifying view on problems and methods. Data Min Knowl Disc 33, 293–324 (2019). <a class="link"   href="https://doi.org/10.1007/s10618-018-0595-5" >https://doi.org/10.1007/s10618-018-0595-5<i class="fas fa-external-link-alt"></i></a></p>
-</blockquote>
-<p>Driven by FURP(FoSE Undergraduate Research Placement) Programme.</p>
-<span id="more"></span>
-
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2><p><strong>Publisher:</strong> Springer Nature</p>
-<p>Expert Systems with Applications</p>
-<p><strong>Authors:</strong> </p>
-<p>Willem Waegeman, Krzysztof Dembczyński, Eyke Hüllermeier </p>
-<p><strong>Index Terms</strong></p>
-<ul>
-<li>Extreme Learning Machine</li>
-<li>Regularization</li>
-<li>Multi-target regression</li>
-<li>Robust to outliers</li>
-<li>Alternating direction method of multipliers</li>
-</ul>
-<p><strong>DOI:</strong> <a class="link"   href="https://doi.org/10.1007/s10618-018-0595-5" >10.1007&#x2F;s10618-018-0595-5<i class="fas fa-external-link-alt"></i></a></p>
-<p><strong>Background(Key Point):</strong></p>
-<p>Many problem settings in machine learning are concerned with the simultaneous prediction of multiple target variables of diverse type. Amongst others, such problem settings arise in multivariate regression, multi-label classification, multi-task learning, dyadic prediction, zero-shot learning, network inference, and matrix completion. These subfields of machine learning are typically studied in isolation, without highlighting or exploring important relationships. </p>
-<p><strong>Methodology:</strong></p>
-<p>Present a unifying view on what we call multi-target prediction (MTP) problems and methods.</p>
-<p>Introduce a general framework that covers the above subfields as special cases, is accomplished by identifying a number of key properties, which distinguish such methods and determine their suitability for different types of problems.</p>
-<p><strong>Key Findings:</strong></p>
-<p><em>Note: This paper is not a typical review paper</em></p>
-<p>Intend to focus on some general principles that might be helpful in identifying the right approach for a given problem;</p>
-]]></content>
-      <categories>
-        <category>FURP</category>
-        <category>Literature Review</category>
-      </categories>
-      <tags>
-        <tag>Multi-Target Tracking</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode Study Plan</title>
-    <url>/2022/03/02/LeetCode-Study-Plan/</url>
-    <content><![CDATA[<p>A brief, simplified mind map considering the <strong>LeetCode Study Plan</strong>.</p>
-<span id="more"></span>
-
-<p>Take a look at the features and implementations of different types of <strong>data structures</strong> and <strong>algorithms</strong> in the posts below.</p>
-<p>See also in my LeetCode Account if you wish to have a look at my solutions. &#x3D; &#x3D;+</p>
-<p>p.s. In most cases the code blocks are rendered in Python syntax, but the contents of which are simply pseudo-codes. Attempts of plagiarism, such as copy-paste-execute in your terminal would cause you nothing but a mess. <strong>IT’s NONE ACTUAL CODE.</strong></p>
-<hr>
-<h5 id="Algorithm-I-WIP"><a href="#Algorithm-I-WIP" class="headerlink" title="Algorithm-I (WIP)"></a>Algorithm-I (WIP)</h5><h5 id="Algorithm-II-WIP"><a href="#Algorithm-II-WIP" class="headerlink" title="Algorithm-II (WIP)"></a>Algorithm-II (WIP)</h5><h5 id="Algorithm-III-WIP"><a href="#Algorithm-III-WIP" class="headerlink" title="Algorithm-III (WIP)"></a>Algorithm-III (WIP)</h5>]]></content>
-      <categories>
-        <category>LeetCode Plan</category>
-      </categories>
-  </entry>
-  <entry>
     <title>A Haskell Walkthrough</title>
     <url>/2022/03/12/A-Haskell-Walkthrough/</url>
     <content><![CDATA[<p>Brief solutions of most chapters in <strong>Programming in Haskell</strong>.</p>
@@ -524,6 +230,285 @@
       </tags>
   </entry>
   <entry>
+    <title>Algorithm-I, Day 1</title>
+    <url>/2022/03/06/Algorithm-I-Day-1/</url>
+    <content><![CDATA[<p>Topic: Binary Search</p>
+<span id="more"></span>
+
+<blockquote>
+<p>Q704 Binary Search</p>
+<p>Q278 First Bad Version</p>
+<p>Q35 Search Insert Position</p>
+</blockquote>
+<p>A searching algorithm which finds an element’s position in a <strong>sequential(sorted)</strong> and <strong>comparable</strong> array.</p>
+<p>In this method, the element is always searched in the <strong>middle</strong> of a portion of an array sliced in halves.</p>
+<p>This method do follow the <strong>divide-and-conquer</strong> approach.</p>
+<hr>
+<h5 id="Iteration-Method"><a href="#Iteration-Method" class="headerlink" title="Iteration Method"></a>Iteration Method</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Do until the pointers L(Low/Left) and R(High/Right) meet each other,</span></span><br><span class="line"><span class="comment">## or do until the target element is found.</span></span><br><span class="line">	Mid = (L + R) / <span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> Target == Grid[Mid]</span><br><span class="line">        <span class="keyword">return</span> Mid</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> Target &gt; Grid[Mid]</span><br><span class="line">        L = Mid + <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span> <span class="comment">## Target &lt; Grid[Mid]</span></span><br><span class="line">    	R = Mid - <span class="number">1</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">continue</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="Recursion-Method"><a href="#Recursion-Method" class="headerlink" title="Recursion Method"></a>Recursion Method</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Define a function and calle itself within definition.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## Do until the pointers L(Low/Left) and R(High/Right) meet each other,</span></span><br><span class="line"><span class="comment">## or do until the target element is found.</span></span><br><span class="line">RM(Grid, Target, L, R)</span><br><span class="line">	<span class="keyword">if</span> L &gt; R</span><br><span class="line">    	<span class="keyword">return</span> Not Found</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    	Mid = (L + R) / <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> Target == Grid[Mid]</span><br><span class="line">        	<span class="keyword">return</span> Mid</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> Target &gt; Grid[Mid]</span><br><span class="line">        	returnRM(Grid, Target, Mid + <span class="number">1</span>, R)</span><br><span class="line">        <span class="keyword">else</span> <span class="comment">## Target &lt; Grid[Mid]</span></span><br><span class="line">        	returnRM(Grid, Target, L, Mid - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<h5 id="Time-Complexities"><a href="#Time-Complexities" class="headerlink" title="Time Complexities"></a>Time Complexities</h5><ul>
+<li>Best Case Complexity: O(1)</li>
+<li>Worst Case Complexity: O(log n)</li>
+<li><strong>Average Case Complexity: O(log n)</strong></li>
+</ul>
+<h5 id="Space-Complexities"><a href="#Space-Complexities" class="headerlink" title="Space Complexities"></a>Space Complexities</h5><ul>
+<li>O(1)</li>
+</ul>
+<hr>
+<h5 id="Footnotes"><a href="#Footnotes" class="headerlink" title="Footnotes"></a>Footnotes</h5><p>In <strong>Q278 First Bad Version</strong>:</p>
+<p>Pointer <code>L</code>  represents the location of the first bad version.</p>
+<p>In <strong>Q35 Search Insert Position</strong>:</p>
+<p>Pointer <code>L</code>  represents the location of the target insert position.</p>
+]]></content>
+      <categories>
+        <category>LeetCode Plan</category>
+        <category>Algorithm-I</category>
+      </categories>
+      <tags>
+        <tag>Binary Search</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Advanced Module</title>
+    <url>/2022/03/02/Advanced-Module/</url>
+    <content><![CDATA[<p>Get a glimpse of the advanced modules I’ve taken, with notes, coursework, projects and etc attached. </p>
+<span id="more"></span>
+
+<h3 id="Deep-Learning-Specialization"><a href="#Deep-Learning-Specialization" class="headerlink" title="Deep Learning Specialization"></a>Deep Learning Specialization</h3><blockquote>
+<p>Become a Machine Learning expert.<br>Master the fundamentals of deep learning and break into AI.<br>Recently updated with cutting-edge techniques!</p>
+</blockquote>
+<p><strong>Source</strong>: <a class="link"   href="https://www.coursera.org/specializations/deep-learning" >Coursera<i class="fas fa-external-link-alt"></i></a></p>
+<ul>
+<li><p><input disabled="" type="checkbox"> 
+<strong>Neural Networks and Deep Learning</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>Structuring Machine Learning Projects</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>Convolutional Neural Networks</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>Sequence Models</strong></p>
+</li>
+</ul>
+<hr>
+<h3 id="From-Nand-to-Tetris"><a href="#From-Nand-to-Tetris" class="headerlink" title="From Nand to Tetris"></a>From Nand to Tetris</h3><blockquote>
+<p>Building a Modern Computer From First Principles.</p>
+</blockquote>
+<p><strong>Source:</strong> <a class="link"   href="https://www.nand2tetris.org/" >Nand2Tetris’s Official Website<i class="fas fa-external-link-alt"></i></a></p>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>From Nand to Tetris: Part I</strong></li>
+<li><input disabled="" type="checkbox"> <strong>From Nand to Tetris: Part II</strong></li>
+</ul>
+<hr>
+<p>More articles about code tips, learning experiences and coursework&#x2F;projects are on the way! &#x3D; &#x3D;+</p>
+]]></content>
+      <categories>
+        <category>Advanced Module</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Algorithm-I, Day 2-6</title>
+    <url>/2022/03/08/Algorithm-I-Day-2-6/</url>
+    <content><![CDATA[<p>Topic: Two Pointers with Sliding Window </p>
+<span id="more"></span>
+
+<blockquote>
+<p>Q977 Squares of a Sorted Array</p>
+<p>Q189 Rotate Array</p>
+<p>Q283 Move Zeroes</p>
+<p>Q167 Two Sum</p>
+<p>Q344 Reverse String</p>
+<p>Q557 Reverse Words in a String III</p>
+<p>Q876 Middle of the Linked List</p>
+<p>Q19 Remove Nth Node From End of List</p>
+<p>Q3 Longest Substring Without Repeating Characters</p>
+<p>Q567 Permutation in String</p>
+</blockquote>
+<p>A searching algorithm which finds a pair of element’s position in a <strong>sequential(sorted)</strong> array.</p>
+<p>e.g. Given a enumerable array <code>Grid</code> (maybe sorted in some order), having finite integers, Two-Pointers method can find if there exists any <strong>pair of elements</strong> (<code>Grid[i]</code>, <code>Grid[j]</code>) such that suits some given target.</p>
+<blockquote>
+<p><strong>Note:</strong><br>This pair of elements can also represents a sequence of items of an array, which starts at item No. i and stops at item No. j.</p>
+</blockquote>
+<hr>
+<h5 id="Pre-amp-Post-x2F-Sliding-Window-Method"><a href="#Pre-amp-Post-x2F-Sliding-Window-Method" class="headerlink" title="Pre&amp;Post &#x2F; Sliding Window Method"></a>Pre&amp;Post &#x2F; Sliding Window Method</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Ensure that pointer H(High) is kinda ahead of the pointer L(Low).</span></span><br><span class="line"><span class="comment">## Hence, the pointers L &amp; H spans a window.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> H &lt; Border: </span><br><span class="line">    Window.push(H)		<span class="comment">## Expand the Window</span></span><br><span class="line">    H++;</span><br><span class="line">    <span class="keyword">while</span> valid Window:</span><br><span class="line">		update Window <span class="keyword">if</span> necessary</span><br><span class="line">        Window.pop(L)	 <span class="comment">## Shrink the Window</span></span><br><span class="line">        L++</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> Window</span><br></pre></td></tr></table></figure>
+
+<h5 id="Left-amp-Right-Method"><a href="#Left-amp-Right-Method" class="headerlink" title="Left&amp;Right Method"></a>Left&amp;Right Method</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Do until the pointers L(Left) and R(Right) meet each other,</span></span><br><span class="line"><span class="comment">## Or do until the target pair is found.</span></span><br><span class="line">    <span class="keyword">if</span> Target == Grid[L] + Grid[R]</span><br><span class="line">        <span class="keyword">return</span> L, R</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> Target &gt; Grid[L] + Grid[R]</span><br><span class="line">        R -= <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span> <span class="comment">## Target &lt; Grid[L] + Grid[R]</span></span><br><span class="line">    	L += <span class="number">1</span></span><br><span class="line">	</span><br><span class="line">    <span class="keyword">continue</span></span><br><span class="line"><span class="comment">## Note: </span></span><br><span class="line"><span class="comment">## The explanation above implicitly assume that</span></span><br><span class="line"><span class="comment">## the array Grid is sorted ascendingly.</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="Time-Complexities"><a href="#Time-Complexities" class="headerlink" title="Time Complexities"></a>Time Complexities</h5><ul>
+<li>Best Case Complexity: O(1)</li>
+<li>Worst Case Complexity: O(n)</li>
+<li><strong>Average Case Complexity: O(n)</strong></li>
+</ul>
+<h5 id="Space-Complexities"><a href="#Space-Complexities" class="headerlink" title="Space Complexities"></a>Space Complexities</h5><ul>
+<li>O(1)</li>
+</ul>
+<hr>
+<h5 id="Footnote"><a href="#Footnote" class="headerlink" title="Footnote"></a>Footnote</h5><p>In <strong>Q977 Squares of a Sorted Array</strong>:</p>
+<p>Left&amp;Right Method is applied. Take The absolute value for comparison.</p>
+<p>In <strong>Q189 Rotate Array</strong>:</p>
+<p>See also in: &lt; Article Not Published Yet &gt;</p>
+<p>In <strong>Q283 Move Zeroes</strong>:</p>
+<p>Left&amp;Right Method is applied. One Pointer stands for the current working position, and another stands for the staing point of pushing in &#x2F; filling with zeros.</p>
+<p>In <strong>Q167 Two Sum</strong>:</p>
+<p>Left&amp;Right Method is applied.</p>
+<p>Note: The given input array is sorted.</p>
+<p>In <strong>Q344 Reverse String</strong>:</p>
+<p>Left&amp;Right Method is applied. </p>
+<p>In <strong>Q557 Reverse Words in a String III</strong>:</p>
+<p>Left&amp;Right Method is applied. Just make wise usage of slicers.</p>
+<p>In <strong>Q876 Middle of the Linked List</strong>:</p>
+<p>Pre&amp;Post &#x2F; Sliding Window Method is recommended.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">Pre += <span class="number">1</span></span><br><span class="line">Post += <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p>In <strong>Q19 Remove Nth Node From End of List</strong>:</p>
+<p>Left&amp;Right Method is applied. </p>
+<p>Repeat the “process” for N times, then remove the node.</p>
+<p>In <strong>Q3 Longest Substring Without Repeating Characters</strong>:</p>
+<p>Pre&amp;Post &#x2F; Sliding Window Method is applied.</p>
+<p>In <strong>Q567 Permutation in String</strong>:</p>
+<p>Note: It’s much faster to create 2 <strong>dictionarys</strong> and compare them instead.</p>
+]]></content>
+      <categories>
+        <category>LeetCode Plan</category>
+        <category>Algorithm-I</category>
+      </categories>
+      <tags>
+        <tag>Two Pointers</tag>
+        <tag>Sliding Window</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>FURP-Driven Literature Review II</title>
+    <url>/2022/06/07/FURP-Driven-Literature-Review-II/</url>
+    <content><![CDATA[<blockquote>
+<p>Rodríguez-Pérez, R., Bajorath, J. Interpretation of machine learning models using shapley values: application to compound potency and multi-target activity predictions. J Comput Aided Mol Des 34, 1013–1026 (2020). <a class="link"   href="https://doi.org/10.1007/s10822-020-00314-0" >https://doi.org/10.1007/s10822-020-00314-0<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<p>Driven by FURP(FoSE Undergraduate Research Placement) Programme.</p>
+<span id="more"></span>
+
+<h2 id="Interpretation-of-machine-learning-models-using-shapley-values-application-to-compound-potency-and-multi-target-activity-predictions"><a href="#Interpretation-of-machine-learning-models-using-shapley-values-application-to-compound-potency-and-multi-target-activity-predictions" class="headerlink" title="Interpretation of machine learning models using shapley values: application to compound potency and multi-target activity predictions"></a>Interpretation of machine learning models using shapley values: application to compound potency and multi-target activity predictions</h2><p><strong>Publisher:</strong> </p>
+<p>Springer Nature, Journal of Computer-Aided Molecular Design</p>
+<p><strong>Authors:</strong> </p>
+<p>Raquel Rodríguez-Pérez, Jürgen Bajorath</p>
+<p><strong>Index Terms</strong></p>
+<ul>
+<li>Machine learning</li>
+<li>Black box character</li>
+<li>Structure–activity relationships</li>
+<li>Compound activity</li>
+<li>Compound potency prediction</li>
+<li>Multi-target modeling</li>
+<li>Model interpretation</li>
+<li>Feature importance</li>
+<li>Shapley values</li>
+</ul>
+<p><strong>DOI:</strong> <a class="link"   href="https://doi.org/10.1007/s10822-020-00314-0" >10.1007&#x2F;s10822-020-00314-0<i class="fas fa-external-link-alt"></i></a></p>
+<p><strong>Background(Key Point):</strong></p>
+<p>Difficulties in interpreting machine learning(ML) models and their predictions limit the practical applicability of and confidence in ML in pharmaceutical research.</p>
+<p>A short coming of many ML approaches is the difficulty to rationalize predictions.</p>
+<p>Lack of interpretability might result from intrinsic black box character of ML methods such as neural network(NN) or support vector machine(SVM) algorithms. Futhermore, it might also result from using principally interpretable models such as decison trees(DTs) as large ensembles classifiers such as random forest(RF).</p>
+<p><strong>Methodology:</strong></p>
+<p><code>Shapley Additive exPlanations method(SHAP)</code>, A new methodology applicable of any complexity for ML model interpretation in chemoinformatics and medicinal chemistry is introduced. It is based upon the Shapley value concept from game theory and can be rationalized as an extension of the local interpretable model-agnostic explanations.</p>
+<p><strong>Key Findings:</strong><br>The <code>SHAP</code> methodologu enables the interpretation of ML models and their predictions, yielding feature importance for any ML model and therefore sheds light on the black box nature of many ML approaches.</p>
+<p><code>SHAP</code> analysis yielded meaningful explanations of compounded potency and multi-target predictions, revealing different model characteristics responsible for individual model.</p>
+]]></content>
+      <categories>
+        <category>FURP</category>
+        <category>Literature Review</category>
+      </categories>
+      <tags>
+        <tag>Multi-Target Tracking</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>FURP-Driven Literature Review I</title>
+    <url>/2022/06/07/FURP-Driven-Literature-Review-I/</url>
+    <content><![CDATA[<blockquote>
+<p>C. Huang, Y. Li and R. Nevatia, “Multiple Target Tracking by Learning-Based Hierarchical Association of Detection Responses,” in IEEE Transactions on Pattern Analysis and Machine Intelligence, vol. 35, no. 4, pp. 898-910, April 2013, doi: 10.1109&#x2F;TPAMI.2012.159.</p>
+</blockquote>
+<p>Driven by FURP(FoSE Undergraduate Research Placement) Programme.</p>
+<span id="more"></span>
+
+<h3 id="Multiple-Target-Tracking-by-Learning-Based-Hierarchical-Association-of-Detection-Responses"><a href="#Multiple-Target-Tracking-by-Learning-Based-Hierarchical-Association-of-Detection-Responses" class="headerlink" title="Multiple Target Tracking by Learning-Based Hierarchical Association of Detection Responses"></a>Multiple Target Tracking by Learning-Based Hierarchical Association of Detection Responses</h3><p><strong>Publisher:</strong> </p>
+<p>IEEE</p>
+<p><strong>Authors:</strong> </p>
+<p>Chang Huang; Yuan Li; Ramakant Nevatia</p>
+<p><strong>Index Terms</strong></p>
+<ul>
+<li>Multiple Target Tracking</li>
+<li>Hierarchical Association</li>
+<li>Bag Ranking</li>
+<li>AdaBoost</li>
+</ul>
+<p><strong>DOI:</strong> <a class="link"   href="https://doi.org/10.1109/TPAMI.2012.159" >10.1109&#x2F;TPAMI.2012.159<i class="fas fa-external-link-alt"></i></a></p>
+<p><strong>Background(Key Point):</strong></p>
+<p><strong>The Maximum A Posteriori (MAP) problem of Data Association-based Tracking(DAT)</strong></p>
+<p>There are two main components of a <strong>DAT</strong> approach:</p>
+<p>One is a <code>tracklet affinity model</code> that measures the likelihood of two tracklets belonging to the same target, providing fundamental evidences for DAT;</p>
+<p>The other one is the <code>association optimization framework</code> that determines which of the tracklets should be linked considering affinity measurements correspondingly.</p>
+<p>The MAP Problem considers initialization, termination and transitions of tracklets, together with the false alarm possibilities of the tracklets, which can be effectively evaluated by the Hungarian algorithm.</p>
+<p>The tracklet affinity model, which measures the likelihood of two tracklets belonging to the same target, is a linear combination of automatically learned weak nonparametric models upon various features. which is distinct from most of previous work that relies on heuristic selection of parametric models and manual tuning of their parameters.</p>
+<p><strong>Methodology:</strong></p>
+<p>Propose a DAT approach based on the hierachical association framework and a novel bag-ranking approach for learning tracklet affinity models which is derived from.</p>
+<p><strong>Key Findings:</strong></p>
+<p>The systematic experiments on the standard CAVIAR dataset and the highly challenging <code>TRECVID08</code> dataset show that this approach achieves significant improvement in tracking accuracy over previous state-of-the-art work.</p>
+<p>The main difficulty in applying this tracking framework to a real-time tracking system is that it has to postpone “unsafe” associations until enough evidence is collected to resolve the ambiguity, resulting in inevitable tracking lag for some difficult targets.</p>
+]]></content>
+      <categories>
+        <category>FURP</category>
+        <category>Literature Review</category>
+      </categories>
+      <tags>
+        <tag>Multi-Target Tracking</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>FURP-Driven Literature Review III</title>
+    <url>/2022/06/07/FURP-Driven-Literature-Review-III/</url>
+    <content><![CDATA[<blockquote>
+<p>Waegeman, W., Dembczyński, K. &amp; Hüllermeier, E. Multi-target prediction: a unifying view on problems and methods. Data Min Knowl Disc 33, 293–324 (2019). <a class="link"   href="https://doi.org/10.1007/s10618-018-0595-5" >https://doi.org/10.1007/s10618-018-0595-5<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<p>Driven by FURP(FoSE Undergraduate Research Placement) Programme.</p>
+<span id="more"></span>
+
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><p><strong>Publisher:</strong> Springer Nature</p>
+<p>Expert Systems with Applications</p>
+<p><strong>Authors:</strong> </p>
+<p>Willem Waegeman, Krzysztof Dembczyński, Eyke Hüllermeier </p>
+<p><strong>Index Terms</strong></p>
+<ul>
+<li>Extreme Learning Machine</li>
+<li>Regularization</li>
+<li>Multi-target regression</li>
+<li>Robust to outliers</li>
+<li>Alternating direction method of multipliers</li>
+</ul>
+<p><strong>DOI:</strong> <a class="link"   href="https://doi.org/10.1007/s10618-018-0595-5" >10.1007&#x2F;s10618-018-0595-5<i class="fas fa-external-link-alt"></i></a></p>
+<p><strong>Background(Key Point):</strong></p>
+<p>Many problem settings in machine learning are concerned with the simultaneous prediction of multiple target variables of diverse type. Amongst others, such problem settings arise in multivariate regression, multi-label classification, multi-task learning, dyadic prediction, zero-shot learning, network inference, and matrix completion. These subfields of machine learning are typically studied in isolation, without highlighting or exploring important relationships. </p>
+<p><strong>Methodology:</strong></p>
+<p>Present a unifying view on what we call multi-target prediction (MTP) problems and methods.</p>
+<p>Introduce a general framework that covers the above subfields as special cases, is accomplished by identifying a number of key properties, which distinguish such methods and determine their suitability for different types of problems.</p>
+<p><strong>Key Findings:</strong></p>
+<p><em>Note: This paper is not a typical review paper</em></p>
+<p>Intend to focus on some general principles that might be helpful in identifying the right approach for a given problem;</p>
+]]></content>
+      <categories>
+        <category>FURP</category>
+        <category>Literature Review</category>
+      </categories>
+      <tags>
+        <tag>Multi-Target Tracking</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Reading List</title>
     <url>/2022/03/03/Reading-List/</url>
     <content><![CDATA[<p>Most of the materials on this Reading List belongs to the Campus Library Collection.</p>
@@ -571,5 +556,20 @@
       <tags>
         <tag>Hello World</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>LeetCode Study Plan</title>
+    <url>/2022/03/02/LeetCode-Study-Plan/</url>
+    <content><![CDATA[<p>A brief, simplified mind map considering the <strong>LeetCode Study Plan</strong>.</p>
+<span id="more"></span>
+
+<p>Take a look at the features and implementations of different types of <strong>data structures</strong> and <strong>algorithms</strong> in the posts below.</p>
+<p>See also in my LeetCode Account if you wish to have a look at my solutions. &#x3D; &#x3D;+</p>
+<p>p.s. In most cases the code blocks are rendered in Python syntax, but the contents of which are simply pseudo-codes. Attempts of plagiarism, such as copy-paste-execute in your terminal would cause you nothing but a mess. <strong>IT’s NONE ACTUAL CODE.</strong></p>
+<hr>
+<h5 id="Algorithm-I-WIP"><a href="#Algorithm-I-WIP" class="headerlink" title="Algorithm-I (WIP)"></a>Algorithm-I (WIP)</h5><h5 id="Algorithm-II-WIP"><a href="#Algorithm-II-WIP" class="headerlink" title="Algorithm-II (WIP)"></a>Algorithm-II (WIP)</h5><h5 id="Algorithm-III-WIP"><a href="#Algorithm-III-WIP" class="headerlink" title="Algorithm-III (WIP)"></a>Algorithm-III (WIP)</h5>]]></content>
+      <categories>
+        <category>LeetCode Plan</category>
+      </categories>
   </entry>
 </search>
