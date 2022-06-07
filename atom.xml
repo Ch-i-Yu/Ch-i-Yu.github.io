@@ -6,7 +6,7 @@
   <link href="https://ch-i-yu.github.io/atom.xml" rel="self"/>
   
   <link href="https://ch-i-yu.github.io/"/>
-  <updated>2022-06-07T08:42:43.719Z</updated>
+  <updated>2022-06-07T13:16:49.157Z</updated>
   <id>https://ch-i-yu.github.io/</id>
   
   <author>
@@ -17,16 +17,70 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>FURP-Driven Literature Review III</title>
+    <link href="https://ch-i-yu.github.io/2022/06/07/FURP-Driven-Literature-Review-III/"/>
+    <id>https://ch-i-yu.github.io/2022/06/07/FURP-Driven-Literature-Review-III/</id>
+    <published>2022-06-07T13:16:49.000Z</published>
+    <updated>2022-06-07T13:16:49.157Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>Waegeman, W., Dembczyński, K. &amp; Hüllermeier, E. Multi-target prediction: a unifying view on problems and methods. Data Min Knowl Disc 33, 293–324 (2019). <a class="link"   href="https://doi.org/10.1007/s10618-018-0595-5" >https://doi.org/10.1007/s10618-018-0595-5<i class="fas fa-external-link-alt"></i></a></p></blockquote><p>Driven by FURP(FoSE Undergraduate Research Placement) Programme.</p><span id="more"></span><h2 id=""><a href="#" class="headerlink" title=""></a></h2><p><strong>Publisher:</strong> Springer Nature</p><p>Expert Systems with Applications</p><p><strong>Authors:</strong> </p><p>Willem Waegeman, Krzysztof Dembczyński, Eyke Hüllermeier </p><p><strong>Index Terms</strong></p><ul><li>Extreme Learning Machine</li><li>Regularization</li><li>Multi-target regression</li><li>Robust to outliers</li><li>Alternating direction method of multipliers</li></ul><p><strong>DOI:</strong> <a class="link"   href="https://doi.org/10.1007/s10618-018-0595-5" >10.1007&#x2F;s10618-018-0595-5<i class="fas fa-external-link-alt"></i></a></p><p><strong>Background(Key Point):</strong></p><p>Many problem settings in machine learning are concerned with the simultaneous prediction of multiple target variables of diverse type. Amongst others, such problem settings arise in multivariate regression, multi-label classification, multi-task learning, dyadic prediction, zero-shot learning, network inference, and matrix completion. These subfields of machine learning are typically studied in isolation, without highlighting or exploring important relationships. </p><p><strong>Methodology:</strong></p><p>Present a unifying view on what we call multi-target prediction (MTP) problems and methods.</p><p>Introduce a general framework that covers the above subfields as special cases, is accomplished by identifying a number of key properties, which distinguish such methods and determine their suitability for different types of problems.</p><p><strong>Key Findings:</strong></p><p><em>Note: This paper is not a typical review paper</em></p><p>Intend to focus on some general principles that might be helpful in identifying the right approach for a given problem;</p>]]></content>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Waegeman, W., Dembczyński, K. &amp;amp; Hüllermeier, E. Multi-target prediction: a unifying view on problems and methods. Data Min Knowl Disc 33, 293–324 (2019). &lt;a class=&quot;link&quot;   href=&quot;https://doi.org/10.1007/s10618-018-0595-5&quot; &gt;https://doi.org/10.1007/s10618-018-0595-5&lt;i class=&quot;fas fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Driven by FURP(FoSE Undergraduate Research Placement) Programme.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="FURP" scheme="https://ch-i-yu.github.io/categories/FURP/"/>
+    
+    <category term="Literature Review" scheme="https://ch-i-yu.github.io/categories/FURP/Literature-Review/"/>
+    
+    
+    <category term="Multi-Target Tracking" scheme="https://ch-i-yu.github.io/tags/Multi-Target-Tracking/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>FURP-Driven Literature Review II</title>
+    <link href="https://ch-i-yu.github.io/2022/06/07/FURP-Driven-Literature-Review-II/"/>
+    <id>https://ch-i-yu.github.io/2022/06/07/FURP-Driven-Literature-Review-II/</id>
+    <published>2022-06-07T10:02:15.000Z</published>
+    <updated>2022-06-07T10:02:15.549Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>Rodríguez-Pérez, R., Bajorath, J. Interpretation of machine learning models using shapley values: application to compound potency and multi-target activity predictions. J Comput Aided Mol Des 34, 1013–1026 (2020). <a class="link"   href="https://doi.org/10.1007/s10822-020-00314-0" >https://doi.org/10.1007/s10822-020-00314-0<i class="fas fa-external-link-alt"></i></a></p></blockquote><p>Driven by FURP(FoSE Undergraduate Research Placement) Programme.</p><span id="more"></span><h2 id="Interpretation-of-machine-learning-models-using-shapley-values-application-to-compound-potency-and-multi-target-activity-predictions"><a href="#Interpretation-of-machine-learning-models-using-shapley-values-application-to-compound-potency-and-multi-target-activity-predictions" class="headerlink" title="Interpretation of machine learning models using shapley values: application to compound potency and multi-target activity predictions"></a>Interpretation of machine learning models using shapley values: application to compound potency and multi-target activity predictions</h2><p><strong>Publisher:</strong> </p><p>Springer Nature, Journal of Computer-Aided Molecular Design</p><p><strong>Authors:</strong> </p><p>Raquel Rodríguez-Pérez, Jürgen Bajorath</p><p><strong>Index Terms</strong></p><ul><li>Machine learning</li><li>Black box character</li><li>Structure–activity relationships</li><li>Compound activity</li><li>Compound potency prediction</li><li>Multi-target modeling</li><li>Model interpretation</li><li>Feature importance</li><li>Shapley values</li></ul><p><strong>DOI:</strong> <a class="link"   href="https://doi.org/10.1007/s10822-020-00314-0" >10.1007&#x2F;s10822-020-00314-0<i class="fas fa-external-link-alt"></i></a></p><p><strong>Background(Key Point):</strong></p><p>Difficulties in interpreting machine learning(ML) models and their predictions limit the practical applicability of and confidence in ML in pharmaceutical research.</p><p>A short coming of many ML approaches is the difficulty to rationalize predictions.</p><p>Lack of interpretability might result from intrinsic black box character of ML methods such as neural network(NN) or support vector machine(SVM) algorithms. Futhermore, it might also result from using principally interpretable models such as decison trees(DTs) as large ensembles classifiers such as random forest(RF).</p><p><strong>Methodology:</strong></p><p><code>Shapley Additive exPlanations method(SHAP)</code>, A new methodology applicable of any complexity for ML model interpretation in chemoinformatics and medicinal chemistry is introduced. It is based upon the Shapley value concept from game theory and can be rationalized as an extension of the local interpretable model-agnostic explanations.</p><p><strong>Key Findings:</strong><br>The <code>SHAP</code> methodologu enables the interpretation of ML models and their predictions, yielding feature importance for any ML model and therefore sheds light on the black box nature of many ML approaches.</p><p><code>SHAP</code> analysis yielded meaningful explanations of compounded potency and multi-target predictions, revealing different model characteristics responsible for individual model.</p>]]></content>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Rodríguez-Pérez, R., Bajorath, J. Interpretation of machine learning models using shapley values: application to compound potency and multi-target activity predictions. J Comput Aided Mol Des 34, 1013–1026 (2020). &lt;a class=&quot;link&quot;   href=&quot;https://doi.org/10.1007/s10822-020-00314-0&quot; &gt;https://doi.org/10.1007/s10822-020-00314-0&lt;i class=&quot;fas fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Driven by FURP(FoSE Undergraduate Research Placement) Programme.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="FURP" scheme="https://ch-i-yu.github.io/categories/FURP/"/>
+    
+    <category term="Literature Review" scheme="https://ch-i-yu.github.io/categories/FURP/Literature-Review/"/>
+    
+    
+    <category term="Multi-Target Tracking" scheme="https://ch-i-yu.github.io/tags/Multi-Target-Tracking/"/>
+    
+  </entry>
+  
+  <entry>
     <title>FURP-Driven Literature Review I</title>
     <link href="https://ch-i-yu.github.io/2022/06/07/FURP-Driven-Literature-Review-I/"/>
     <id>https://ch-i-yu.github.io/2022/06/07/FURP-Driven-Literature-Review-I/</id>
     <published>2022-06-07T08:16:40.000Z</published>
-    <updated>2022-06-07T08:42:43.719Z</updated>
+    <updated>2022-06-07T09:27:55.367Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>Title:</strong> Multiple Target Tracking by Learning-Based Hierarchical Association of Detection Responses</p><p>Driven by FURP(FoSE Undergraduate Research Placement) Programme.</p><span id="more"></span><h3 id="Multiple-Target-Tracking-by-Learning-Based-Hierarchical-Association-of-Detection-Responses"><a href="#Multiple-Target-Tracking-by-Learning-Based-Hierarchical-Association-of-Detection-Responses" class="headerlink" title="Multiple Target Tracking by Learning-Based Hierarchical Association of Detection Responses"></a>Multiple Target Tracking by Learning-Based Hierarchical Association of Detection Responses</h3><p><strong>Publisher:</strong> IEEE</p><p><strong>Authors:</strong> Chang Huang; Yuan Li; Ramakant Nevatia</p><p><strong>Index Terms</strong></p><ul><li>Multiple Target Tracking</li><li>Hierarchical Association</li><li>Bag Ranking</li><li>AdaBoost</li></ul><p><strong>DOI:</strong><br><a class="link"   href="https://doi.org/10.1109/TPAMI.2012.159" >10.1109&#x2F;TPAMI.2012.159<i class="fas fa-external-link-alt"></i></a></p><p><strong>Background(Key Point): <br>The Maximum A Posteriori (MAP) problem of Data Association-based Tracking(DAT)</strong></p><p>There are two main components of a <strong>DAT</strong> approach:</p><p>One is a <code>tracklet affinity model</code> that measures the likelihood of two tracklets belonging to the same target, providing fundamental evidences for DAT;</p><p>The other one is the <code>association optimization framework</code> that determines which of the tracklets should be linked considering affinity measurements correspondingly.</p><p>The MAP Problem considers initialization, termination and transitions of tracklets, together with the false alarm possibilities of the tracklets, which can be effectively evaluated by the Hungarian algorithm.</p><p>The tracklet affinity model, which measures the likelihood of two tracklets belonging to the same target, is a linear combination of automatically learned weak nonparametric models upon various features. which is distinct from most of previous work that relies on heuristic selection of parametric models and manual tuning of their parameters.</p><p><strong>Methodology:</strong></p><p>Propose a DAT approach based on the hierachical association framework and a novel bag-ranking approach for learning tracklet affinity models which is derived from.</p><p><strong>Key Findings:</strong></p><p>The systematic experiments on the standard CAVIAR dataset and the highly challenging <code>TRECVID08</code> dataset show that this approach achieves significant improvement in tracking accuracy over previous state-of-the-art work.</p><p>The main difficulty in applying this tracking framework to a real-time tracking system is that it has to postpone “unsafe” associations until enough evidence is collected to resolve the ambiguity, resulting in inevitable tracking lag for some difficult targets.</p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>C. Huang, Y. Li and R. Nevatia, “Multiple Target Tracking by Learning-Based Hierarchical Association of Detection Responses,” in IEEE Transactions on Pattern Analysis and Machine Intelligence, vol. 35, no. 4, pp. 898-910, April 2013, doi: 10.1109&#x2F;TPAMI.2012.159.</p></blockquote><p>Driven by FURP(FoSE Undergraduate Research Placement) Programme.</p><span id="more"></span><h3 id="Multiple-Target-Tracking-by-Learning-Based-Hierarchical-Association-of-Detection-Responses"><a href="#Multiple-Target-Tracking-by-Learning-Based-Hierarchical-Association-of-Detection-Responses" class="headerlink" title="Multiple Target Tracking by Learning-Based Hierarchical Association of Detection Responses"></a>Multiple Target Tracking by Learning-Based Hierarchical Association of Detection Responses</h3><p><strong>Publisher:</strong> </p><p>IEEE</p><p><strong>Authors:</strong> </p><p>Chang Huang; Yuan Li; Ramakant Nevatia</p><p><strong>Index Terms</strong></p><ul><li>Multiple Target Tracking</li><li>Hierarchical Association</li><li>Bag Ranking</li><li>AdaBoost</li></ul><p><strong>DOI:</strong> <a class="link"   href="https://doi.org/10.1109/TPAMI.2012.159" >10.1109&#x2F;TPAMI.2012.159<i class="fas fa-external-link-alt"></i></a></p><p><strong>Background(Key Point):</strong></p><p><strong>The Maximum A Posteriori (MAP) problem of Data Association-based Tracking(DAT)</strong></p><p>There are two main components of a <strong>DAT</strong> approach:</p><p>One is a <code>tracklet affinity model</code> that measures the likelihood of two tracklets belonging to the same target, providing fundamental evidences for DAT;</p><p>The other one is the <code>association optimization framework</code> that determines which of the tracklets should be linked considering affinity measurements correspondingly.</p><p>The MAP Problem considers initialization, termination and transitions of tracklets, together with the false alarm possibilities of the tracklets, which can be effectively evaluated by the Hungarian algorithm.</p><p>The tracklet affinity model, which measures the likelihood of two tracklets belonging to the same target, is a linear combination of automatically learned weak nonparametric models upon various features. which is distinct from most of previous work that relies on heuristic selection of parametric models and manual tuning of their parameters.</p><p><strong>Methodology:</strong></p><p>Propose a DAT approach based on the hierachical association framework and a novel bag-ranking approach for learning tracklet affinity models which is derived from.</p><p><strong>Key Findings:</strong></p><p>The systematic experiments on the standard CAVIAR dataset and the highly challenging <code>TRECVID08</code> dataset show that this approach achieves significant improvement in tracking accuracy over previous state-of-the-art work.</p><p>The main difficulty in applying this tracking framework to a real-time tracking system is that it has to postpone “unsafe” associations until enough evidence is collected to resolve the ambiguity, resulting in inevitable tracking lag for some difficult targets.</p>]]></content>
     
     
-    <summary type="html">&lt;p&gt;&lt;strong&gt;Title:&lt;/strong&gt; Multiple Target Tracking by Learning-Based Hierarchical Association of Detection Responses&lt;/p&gt;
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;C. Huang, Y. Li and R. Nevatia, “Multiple Target Tracking by Learning-Based Hierarchical Association of Detection Responses,” in IEEE Transactions on Pattern Analysis and Machine Intelligence, vol. 35, no. 4, pp. 898-910, April 2013, doi: 10.1109&amp;#x2F;TPAMI.2012.159.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;Driven by FURP(FoSE Undergraduate Research Placement) Programme.&lt;/p&gt;</summary>
     
     
