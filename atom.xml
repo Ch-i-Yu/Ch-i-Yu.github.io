@@ -6,7 +6,7 @@
   <link href="https://ch-i-yu.github.io/atom.xml" rel="self"/>
   
   <link href="https://ch-i-yu.github.io/"/>
-  <updated>2022-06-07T08:21:44.624Z</updated>
+  <updated>2022-06-07T08:42:43.719Z</updated>
   <id>https://ch-i-yu.github.io/</id>
   
   <author>
@@ -17,13 +17,13 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Literature Review: A Glimpse of Federal Learning and Multi-Target Tracking I</title>
-    <link href="https://ch-i-yu.github.io/2022/06/07/Literature-Review-A-Glimpse-of-Federal-Learning-and-Multi-Target-Tracking-I/"/>
-    <id>https://ch-i-yu.github.io/2022/06/07/Literature-Review-A-Glimpse-of-Federal-Learning-and-Multi-Target-Tracking-I/</id>
+    <title>FURP-Driven Literature Review I</title>
+    <link href="https://ch-i-yu.github.io/2022/06/07/FURP-Driven-Literature-Review-I/"/>
+    <id>https://ch-i-yu.github.io/2022/06/07/FURP-Driven-Literature-Review-I/</id>
     <published>2022-06-07T08:16:40.000Z</published>
-    <updated>2022-06-07T08:21:44.624Z</updated>
+    <updated>2022-06-07T08:42:43.719Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>Title:</strong> Multiple Target Tracking by Learning-Based Hierarchical Association of Detection Responses</p><p>Driven by FURP(FoSE Undergraduate Research Placement) Programme.</p><span id="more"></span><h2 id="Federal-Learning"><a href="#Federal-Learning" class="headerlink" title="Federal Learning"></a>Federal Learning</h2><hr><h2 id="Multi-Target-Tracking"><a href="#Multi-Target-Tracking" class="headerlink" title="Multi-Target Tracking"></a>Multi-Target Tracking</h2><h3 id="Multiple-Target-Tracking-by-Learning-Based-Hierarchical-Association-of-Detection-Responses"><a href="#Multiple-Target-Tracking-by-Learning-Based-Hierarchical-Association-of-Detection-Responses" class="headerlink" title="Multiple Target Tracking by Learning-Based Hierarchical Association of Detection Responses"></a>Multiple Target Tracking by Learning-Based Hierarchical Association of Detection Responses</h3><p><strong>Publisher:</strong> IEEE</p><p><strong>Authors:</strong> Chang Huang; Yuan Li; Ramakant Nevatia</p><p><strong>Index Terms</strong></p><ul><li>Multiple Target Tracking</li><li>Hierarchical Association</li><li>Bag Ranking</li><li>AdaBoost</li></ul><p><strong>DOI:</strong><br><a class="link"   href="https://doi.org/10.1109/TPAMI.2012.159" >10.1109&#x2F;TPAMI.2012.159<i class="fas fa-external-link-alt"></i></a></p><p><strong>Background(Key Point): <br>The Maximum A Posteriori (MAP) problem of Data Association-based Tracking(DAT)</strong></p><p>There are two main components of a <strong>DAT</strong> approach:</p><p>One is a <code>tracklet affinity model</code> that measures the likelihood of two tracklets belonging to the same target, providing fundamental evidences for DAT;</p><p>The other one is the <code>association optimization framework</code> that determines which of the tracklets should be linked considering affinity measurements correspondingly.</p><p>The MAP Problem considers initialization, termination and transitions of tracklets, together with the false alarm possibilities of the tracklets, which can be effectively evaluated by the Hungarian algorithm.</p><p>The tracklet affinity model, which measures the likelihood of two tracklets belonging to the same target, is a linear combination of automatically learned weak nonparametric models upon various features. which is distinct from most of previous work that relies on heuristic selection of parametric models and manual tuning of their parameters.</p><p><strong>Methodology:</strong></p><p>Propose a DAT approach based on the hierachical association framework and a novel bag-ranking approach for learning tracklet affinity models which is derived from.</p><p><strong>Key Findings:</strong></p><p>The systematic experiments on the standard CAVIAR dataset and the highly challenging <code>TRECVID08</code> dataset show that this approach achieves significant improvement in tracking accuracy over previous state-of-the-art work.</p><p>The main difficulty in applying this tracking framework to a real-time tracking system is that it has to postpone “unsafe” associations until enough evidence is collected to resolve the ambiguity, resulting in inevitable tracking lag for some difficult targets.</p>]]></content>
+    <content type="html"><![CDATA[<p><strong>Title:</strong> Multiple Target Tracking by Learning-Based Hierarchical Association of Detection Responses</p><p>Driven by FURP(FoSE Undergraduate Research Placement) Programme.</p><span id="more"></span><h3 id="Multiple-Target-Tracking-by-Learning-Based-Hierarchical-Association-of-Detection-Responses"><a href="#Multiple-Target-Tracking-by-Learning-Based-Hierarchical-Association-of-Detection-Responses" class="headerlink" title="Multiple Target Tracking by Learning-Based Hierarchical Association of Detection Responses"></a>Multiple Target Tracking by Learning-Based Hierarchical Association of Detection Responses</h3><p><strong>Publisher:</strong> IEEE</p><p><strong>Authors:</strong> Chang Huang; Yuan Li; Ramakant Nevatia</p><p><strong>Index Terms</strong></p><ul><li>Multiple Target Tracking</li><li>Hierarchical Association</li><li>Bag Ranking</li><li>AdaBoost</li></ul><p><strong>DOI:</strong><br><a class="link"   href="https://doi.org/10.1109/TPAMI.2012.159" >10.1109&#x2F;TPAMI.2012.159<i class="fas fa-external-link-alt"></i></a></p><p><strong>Background(Key Point): <br>The Maximum A Posteriori (MAP) problem of Data Association-based Tracking(DAT)</strong></p><p>There are two main components of a <strong>DAT</strong> approach:</p><p>One is a <code>tracklet affinity model</code> that measures the likelihood of two tracklets belonging to the same target, providing fundamental evidences for DAT;</p><p>The other one is the <code>association optimization framework</code> that determines which of the tracklets should be linked considering affinity measurements correspondingly.</p><p>The MAP Problem considers initialization, termination and transitions of tracklets, together with the false alarm possibilities of the tracklets, which can be effectively evaluated by the Hungarian algorithm.</p><p>The tracklet affinity model, which measures the likelihood of two tracklets belonging to the same target, is a linear combination of automatically learned weak nonparametric models upon various features. which is distinct from most of previous work that relies on heuristic selection of parametric models and manual tuning of their parameters.</p><p><strong>Methodology:</strong></p><p>Propose a DAT approach based on the hierachical association framework and a novel bag-ranking approach for learning tracklet affinity models which is derived from.</p><p><strong>Key Findings:</strong></p><p>The systematic experiments on the standard CAVIAR dataset and the highly challenging <code>TRECVID08</code> dataset show that this approach achieves significant improvement in tracking accuracy over previous state-of-the-art work.</p><p>The main difficulty in applying this tracking framework to a real-time tracking system is that it has to postpone “unsafe” associations until enough evidence is collected to resolve the ambiguity, resulting in inevitable tracking lag for some difficult targets.</p>]]></content>
     
     
     <summary type="html">&lt;p&gt;&lt;strong&gt;Title:&lt;/strong&gt; Multiple Target Tracking by Learning-Based Hierarchical Association of Detection Responses&lt;/p&gt;
@@ -31,12 +31,10 @@
     
     
     
-    <category term="Literature Review" scheme="https://ch-i-yu.github.io/categories/Literature-Review/"/>
+    <category term="FURP" scheme="https://ch-i-yu.github.io/categories/FURP/"/>
     
-    <category term="FURP" scheme="https://ch-i-yu.github.io/categories/Literature-Review/FURP/"/>
+    <category term="Literature Review" scheme="https://ch-i-yu.github.io/categories/FURP/Literature-Review/"/>
     
-    
-    <category term="Federal Learning" scheme="https://ch-i-yu.github.io/tags/Federal-Learning/"/>
     
     <category term="Multi-Target Tracking" scheme="https://ch-i-yu.github.io/tags/Multi-Target-Tracking/"/>
     

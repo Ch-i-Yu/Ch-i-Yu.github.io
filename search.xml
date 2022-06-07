@@ -385,14 +385,13 @@
       </tags>
   </entry>
   <entry>
-    <title>Literature Review: A Glimpse of Federal Learning and Multi-Target Tracking I</title>
-    <url>/2022/06/07/Literature-Review-A-Glimpse-of-Federal-Learning-and-Multi-Target-Tracking-I/</url>
+    <title>FURP-Driven Literature Review I</title>
+    <url>/2022/06/07/FURP-Driven-Literature-Review-I/</url>
     <content><![CDATA[<p><strong>Title:</strong> Multiple Target Tracking by Learning-Based Hierarchical Association of Detection Responses</p>
 <p>Driven by FURP(FoSE Undergraduate Research Placement) Programme.</p>
 <span id="more"></span>
 
-<h2 id="Federal-Learning"><a href="#Federal-Learning" class="headerlink" title="Federal Learning"></a>Federal Learning</h2><hr>
-<h2 id="Multi-Target-Tracking"><a href="#Multi-Target-Tracking" class="headerlink" title="Multi-Target Tracking"></a>Multi-Target Tracking</h2><h3 id="Multiple-Target-Tracking-by-Learning-Based-Hierarchical-Association-of-Detection-Responses"><a href="#Multiple-Target-Tracking-by-Learning-Based-Hierarchical-Association-of-Detection-Responses" class="headerlink" title="Multiple Target Tracking by Learning-Based Hierarchical Association of Detection Responses"></a>Multiple Target Tracking by Learning-Based Hierarchical Association of Detection Responses</h3><p><strong>Publisher:</strong> IEEE</p>
+<h3 id="Multiple-Target-Tracking-by-Learning-Based-Hierarchical-Association-of-Detection-Responses"><a href="#Multiple-Target-Tracking-by-Learning-Based-Hierarchical-Association-of-Detection-Responses" class="headerlink" title="Multiple Target Tracking by Learning-Based Hierarchical Association of Detection Responses"></a>Multiple Target Tracking by Learning-Based Hierarchical Association of Detection Responses</h3><p><strong>Publisher:</strong> IEEE</p>
 <p><strong>Authors:</strong> Chang Huang; Yuan Li; Ramakant Nevatia</p>
 <p><strong>Index Terms</strong></p>
 <ul>
@@ -415,11 +414,10 @@
 <p>The main difficulty in applying this tracking framework to a real-time tracking system is that it has to postpone “unsafe” associations until enough evidence is collected to resolve the ambiguity, resulting in inevitable tracking lag for some difficult targets.</p>
 ]]></content>
       <categories>
-        <category>Literature Review</category>
         <category>FURP</category>
+        <category>Literature Review</category>
       </categories>
       <tags>
-        <tag>Federal Learning</tag>
         <tag>Multi-Target Tracking</tag>
       </tags>
   </entry>
