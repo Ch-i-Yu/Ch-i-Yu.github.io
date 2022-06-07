@@ -1,6 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Algorithm-I, Day 1</title>
+    <url>/2022/03/06/Algorithm-I-Day-1/</url>
+    <content><![CDATA[<p>Topic: Binary Search</p>
+<span id="more"></span>
+
+<blockquote>
+<p>Q704 Binary Search</p>
+<p>Q278 First Bad Version</p>
+<p>Q35 Search Insert Position</p>
+</blockquote>
+<p>A searching algorithm which finds an element’s position in a <strong>sequential(sorted)</strong> and <strong>comparable</strong> array.</p>
+<p>In this method, the element is always searched in the <strong>middle</strong> of a portion of an array sliced in halves.</p>
+<p>This method do follow the <strong>divide-and-conquer</strong> approach.</p>
+<hr>
+<h5 id="Iteration-Method"><a href="#Iteration-Method" class="headerlink" title="Iteration Method"></a>Iteration Method</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Do until the pointers L(Low/Left) and R(High/Right) meet each other,</span></span><br><span class="line"><span class="comment">## or do until the target element is found.</span></span><br><span class="line">	Mid = (L + R) / <span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> Target == Grid[Mid]</span><br><span class="line">        <span class="keyword">return</span> Mid</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> Target &gt; Grid[Mid]</span><br><span class="line">        L = Mid + <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span> <span class="comment">## Target &lt; Grid[Mid]</span></span><br><span class="line">    	R = Mid - <span class="number">1</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">continue</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="Recursion-Method"><a href="#Recursion-Method" class="headerlink" title="Recursion Method"></a>Recursion Method</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Define a function and calle itself within definition.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## Do until the pointers L(Low/Left) and R(High/Right) meet each other,</span></span><br><span class="line"><span class="comment">## or do until the target element is found.</span></span><br><span class="line">RM(Grid, Target, L, R)</span><br><span class="line">	<span class="keyword">if</span> L &gt; R</span><br><span class="line">    	<span class="keyword">return</span> Not Found</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    	Mid = (L + R) / <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> Target == Grid[Mid]</span><br><span class="line">        	<span class="keyword">return</span> Mid</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> Target &gt; Grid[Mid]</span><br><span class="line">        	returnRM(Grid, Target, Mid + <span class="number">1</span>, R)</span><br><span class="line">        <span class="keyword">else</span> <span class="comment">## Target &lt; Grid[Mid]</span></span><br><span class="line">        	returnRM(Grid, Target, L, Mid - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<h5 id="Time-Complexities"><a href="#Time-Complexities" class="headerlink" title="Time Complexities"></a>Time Complexities</h5><ul>
+<li>Best Case Complexity: O(1)</li>
+<li>Worst Case Complexity: O(log n)</li>
+<li><strong>Average Case Complexity: O(log n)</strong></li>
+</ul>
+<h5 id="Space-Complexities"><a href="#Space-Complexities" class="headerlink" title="Space Complexities"></a>Space Complexities</h5><ul>
+<li>O(1)</li>
+</ul>
+<hr>
+<h5 id="Footnotes"><a href="#Footnotes" class="headerlink" title="Footnotes"></a>Footnotes</h5><p>In <strong>Q278 First Bad Version</strong>:</p>
+<p>Pointer <code>L</code>  represents the location of the first bad version.</p>
+<p>In <strong>Q35 Search Insert Position</strong>:</p>
+<p>Pointer <code>L</code>  represents the location of the target insert position.</p>
+]]></content>
+      <categories>
+        <category>LeetCode Plan</category>
+        <category>Algorithm-I</category>
+      </categories>
+      <tags>
+        <tag>Binary Search</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Advanced Module</title>
+    <url>/2022/03/02/Advanced-Module/</url>
+    <content><![CDATA[<p>Get a glimpse of the advanced modules I’ve taken, with notes, coursework, projects and etc attached. </p>
+<span id="more"></span>
+
+<h3 id="Deep-Learning-Specialization"><a href="#Deep-Learning-Specialization" class="headerlink" title="Deep Learning Specialization"></a>Deep Learning Specialization</h3><blockquote>
+<p>Become a Machine Learning expert.<br>Master the fundamentals of deep learning and break into AI.<br>Recently updated with cutting-edge techniques!</p>
+</blockquote>
+<p><strong>Source</strong>: <a class="link"   href="https://www.coursera.org/specializations/deep-learning" >Coursera<i class="fas fa-external-link-alt"></i></a></p>
+<ul>
+<li><p><input disabled="" type="checkbox"> 
+<strong>Neural Networks and Deep Learning</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>Structuring Machine Learning Projects</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>Convolutional Neural Networks</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>Sequence Models</strong></p>
+</li>
+</ul>
+<hr>
+<h3 id="From-Nand-to-Tetris"><a href="#From-Nand-to-Tetris" class="headerlink" title="From Nand to Tetris"></a>From Nand to Tetris</h3><blockquote>
+<p>Building a Modern Computer From First Principles.</p>
+</blockquote>
+<p><strong>Source:</strong> <a class="link"   href="https://www.nand2tetris.org/" >Nand2Tetris’s Official Website<i class="fas fa-external-link-alt"></i></a></p>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>From Nand to Tetris: Part I</strong></li>
+<li><input disabled="" type="checkbox"> <strong>From Nand to Tetris: Part II</strong></li>
+</ul>
+<hr>
+<p>More articles about code tips, learning experiences and coursework&#x2F;projects are on the way! &#x3D; &#x3D;+</p>
+]]></content>
+      <categories>
+        <category>Advanced Module</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Algorithm-I, Day 2-6</title>
+    <url>/2022/03/08/Algorithm-I-Day-2-6/</url>
+    <content><![CDATA[<p>Topic: Two Pointers with Sliding Window </p>
+<span id="more"></span>
+
+<blockquote>
+<p>Q977 Squares of a Sorted Array</p>
+<p>Q189 Rotate Array</p>
+<p>Q283 Move Zeroes</p>
+<p>Q167 Two Sum</p>
+<p>Q344 Reverse String</p>
+<p>Q557 Reverse Words in a String III</p>
+<p>Q876 Middle of the Linked List</p>
+<p>Q19 Remove Nth Node From End of List</p>
+<p>Q3 Longest Substring Without Repeating Characters</p>
+<p>Q567 Permutation in String</p>
+</blockquote>
+<p>A searching algorithm which finds a pair of element’s position in a <strong>sequential(sorted)</strong> array.</p>
+<p>e.g. Given a enumerable array <code>Grid</code> (maybe sorted in some order), having finite integers, Two-Pointers method can find if there exists any <strong>pair of elements</strong> (<code>Grid[i]</code>, <code>Grid[j]</code>) such that suits some given target.</p>
+<blockquote>
+<p><strong>Note:</strong><br>This pair of elements can also represents a sequence of items of an array, which starts at item No. i and stops at item No. j.</p>
+</blockquote>
+<hr>
+<h5 id="Pre-amp-Post-x2F-Sliding-Window-Method"><a href="#Pre-amp-Post-x2F-Sliding-Window-Method" class="headerlink" title="Pre&amp;Post &#x2F; Sliding Window Method"></a>Pre&amp;Post &#x2F; Sliding Window Method</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Ensure that pointer H(High) is kinda ahead of the pointer L(Low).</span></span><br><span class="line"><span class="comment">## Hence, the pointers L &amp; H spans a window.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> H &lt; Border: </span><br><span class="line">    Window.push(H)		<span class="comment">## Expand the Window</span></span><br><span class="line">    H++;</span><br><span class="line">    <span class="keyword">while</span> valid Window:</span><br><span class="line">		update Window <span class="keyword">if</span> necessary</span><br><span class="line">        Window.pop(L)	 <span class="comment">## Shrink the Window</span></span><br><span class="line">        L++</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> Window</span><br></pre></td></tr></table></figure>
+
+<h5 id="Left-amp-Right-Method"><a href="#Left-amp-Right-Method" class="headerlink" title="Left&amp;Right Method"></a>Left&amp;Right Method</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Do until the pointers L(Left) and R(Right) meet each other,</span></span><br><span class="line"><span class="comment">## Or do until the target pair is found.</span></span><br><span class="line">    <span class="keyword">if</span> Target == Grid[L] + Grid[R]</span><br><span class="line">        <span class="keyword">return</span> L, R</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> Target &gt; Grid[L] + Grid[R]</span><br><span class="line">        R -= <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span> <span class="comment">## Target &lt; Grid[L] + Grid[R]</span></span><br><span class="line">    	L += <span class="number">1</span></span><br><span class="line">	</span><br><span class="line">    <span class="keyword">continue</span></span><br><span class="line"><span class="comment">## Note: </span></span><br><span class="line"><span class="comment">## The explanation above implicitly assume that</span></span><br><span class="line"><span class="comment">## the array Grid is sorted ascendingly.</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="Time-Complexities"><a href="#Time-Complexities" class="headerlink" title="Time Complexities"></a>Time Complexities</h5><ul>
+<li>Best Case Complexity: O(1)</li>
+<li>Worst Case Complexity: O(n)</li>
+<li><strong>Average Case Complexity: O(n)</strong></li>
+</ul>
+<h5 id="Space-Complexities"><a href="#Space-Complexities" class="headerlink" title="Space Complexities"></a>Space Complexities</h5><ul>
+<li>O(1)</li>
+</ul>
+<hr>
+<h5 id="Footnote"><a href="#Footnote" class="headerlink" title="Footnote"></a>Footnote</h5><p>In <strong>Q977 Squares of a Sorted Array</strong>:</p>
+<p>Left&amp;Right Method is applied. Take The absolute value for comparison.</p>
+<p>In <strong>Q189 Rotate Array</strong>:</p>
+<p>See also in: &lt; Article Not Published Yet &gt;</p>
+<p>In <strong>Q283 Move Zeroes</strong>:</p>
+<p>Left&amp;Right Method is applied. One Pointer stands for the current working position, and another stands for the staing point of pushing in &#x2F; filling with zeros.</p>
+<p>In <strong>Q167 Two Sum</strong>:</p>
+<p>Left&amp;Right Method is applied.</p>
+<p>Note: The given input array is sorted.</p>
+<p>In <strong>Q344 Reverse String</strong>:</p>
+<p>Left&amp;Right Method is applied. </p>
+<p>In <strong>Q557 Reverse Words in a String III</strong>:</p>
+<p>Left&amp;Right Method is applied. Just make wise usage of slicers.</p>
+<p>In <strong>Q876 Middle of the Linked List</strong>:</p>
+<p>Pre&amp;Post &#x2F; Sliding Window Method is recommended.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">Pre += <span class="number">1</span></span><br><span class="line">Post += <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p>In <strong>Q19 Remove Nth Node From End of List</strong>:</p>
+<p>Left&amp;Right Method is applied. </p>
+<p>Repeat the “process” for N times, then remove the node.</p>
+<p>In <strong>Q3 Longest Substring Without Repeating Characters</strong>:</p>
+<p>Pre&amp;Post &#x2F; Sliding Window Method is applied.</p>
+<p>In <strong>Q567 Permutation in String</strong>:</p>
+<p>Note: It’s much faster to create 2 <strong>dictionarys</strong> and compare them instead.</p>
+]]></content>
+      <categories>
+        <category>LeetCode Plan</category>
+        <category>Algorithm-I</category>
+      </categories>
+      <tags>
+        <tag>Two Pointers</tag>
+        <tag>Sliding Window</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>A Haskell Walkthrough</title>
     <url>/2022/03/12/A-Haskell-Walkthrough/</url>
     <content><![CDATA[<p>Brief solutions of most chapters in <strong>Programming in Haskell</strong>.</p>
@@ -230,161 +385,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Advanced Module</title>
-    <url>/2022/03/02/Advanced-Module/</url>
-    <content><![CDATA[<p>Get a glimpse of the advanced modules I’ve taken, with notes, coursework, projects and etc attached. </p>
-<span id="more"></span>
-
-<h3 id="Deep-Learning-Specialization"><a href="#Deep-Learning-Specialization" class="headerlink" title="Deep Learning Specialization"></a>Deep Learning Specialization</h3><blockquote>
-<p>Become a Machine Learning expert.<br>Master the fundamentals of deep learning and break into AI.<br>Recently updated with cutting-edge techniques!</p>
-</blockquote>
-<p><strong>Source</strong>: <a class="link"   href="https://www.coursera.org/specializations/deep-learning" >Coursera<i class="fas fa-external-link-alt"></i></a></p>
-<ul>
-<li><p><input disabled="" type="checkbox"> 
-<strong>Neural Networks and Deep Learning</strong></p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-<strong>Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization</strong></p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-<strong>Structuring Machine Learning Projects</strong></p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-<strong>Convolutional Neural Networks</strong></p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-<strong>Sequence Models</strong></p>
-</li>
-</ul>
-<hr>
-<h3 id="From-Nand-to-Tetris"><a href="#From-Nand-to-Tetris" class="headerlink" title="From Nand to Tetris"></a>From Nand to Tetris</h3><blockquote>
-<p>Building a Modern Computer From First Principles.</p>
-</blockquote>
-<p><strong>Source:</strong> <a class="link"   href="https://www.nand2tetris.org/" >Nand2Tetris’s Official Website<i class="fas fa-external-link-alt"></i></a></p>
-<ul>
-<li><input disabled="" type="checkbox"> <strong>From Nand to Tetris: Part I</strong></li>
-<li><input disabled="" type="checkbox"> <strong>From Nand to Tetris: Part II</strong></li>
-</ul>
-<hr>
-<p>More articles about code tips, learning experiences and coursework&#x2F;projects are on the way! &#x3D; &#x3D;+</p>
-]]></content>
-      <categories>
-        <category>Advanced Module</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Algorithm-I, Day 1</title>
-    <url>/2022/03/06/Algorithm-I-Day-1/</url>
-    <content><![CDATA[<p>Topic: Binary Search</p>
-<span id="more"></span>
-
-<blockquote>
-<p>Q704 Binary Search</p>
-<p>Q278 First Bad Version</p>
-<p>Q35 Search Insert Position</p>
-</blockquote>
-<p>A searching algorithm which finds an element’s position in a <strong>sequential(sorted)</strong> and <strong>comparable</strong> array.</p>
-<p>In this method, the element is always searched in the <strong>middle</strong> of a portion of an array sliced in halves.</p>
-<p>This method do follow the <strong>divide-and-conquer</strong> approach.</p>
-<hr>
-<h5 id="Iteration-Method"><a href="#Iteration-Method" class="headerlink" title="Iteration Method"></a>Iteration Method</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Do until the pointers L(Low/Left) and R(High/Right) meet each other,</span></span><br><span class="line"><span class="comment">## or do until the target element is found.</span></span><br><span class="line">	Mid = (L + R) / <span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> Target == Grid[Mid]</span><br><span class="line">        <span class="keyword">return</span> Mid</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> Target &gt; Grid[Mid]</span><br><span class="line">        L = Mid + <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span> <span class="comment">## Target &lt; Grid[Mid]</span></span><br><span class="line">    	R = Mid - <span class="number">1</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">continue</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="Recursion-Method"><a href="#Recursion-Method" class="headerlink" title="Recursion Method"></a>Recursion Method</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Define a function and calle itself within definition.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## Do until the pointers L(Low/Left) and R(High/Right) meet each other,</span></span><br><span class="line"><span class="comment">## or do until the target element is found.</span></span><br><span class="line">RM(Grid, Target, L, R)</span><br><span class="line">	<span class="keyword">if</span> L &gt; R</span><br><span class="line">    	<span class="keyword">return</span> Not Found</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    	Mid = (L + R) / <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> Target == Grid[Mid]</span><br><span class="line">        	<span class="keyword">return</span> Mid</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> Target &gt; Grid[Mid]</span><br><span class="line">        	returnRM(Grid, Target, Mid + <span class="number">1</span>, R)</span><br><span class="line">        <span class="keyword">else</span> <span class="comment">## Target &lt; Grid[Mid]</span></span><br><span class="line">        	returnRM(Grid, Target, L, Mid - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
-<h5 id="Time-Complexities"><a href="#Time-Complexities" class="headerlink" title="Time Complexities"></a>Time Complexities</h5><ul>
-<li>Best Case Complexity: O(1)</li>
-<li>Worst Case Complexity: O(log n)</li>
-<li><strong>Average Case Complexity: O(log n)</strong></li>
-</ul>
-<h5 id="Space-Complexities"><a href="#Space-Complexities" class="headerlink" title="Space Complexities"></a>Space Complexities</h5><ul>
-<li>O(1)</li>
-</ul>
-<hr>
-<h5 id="Footnotes"><a href="#Footnotes" class="headerlink" title="Footnotes"></a>Footnotes</h5><p>In <strong>Q278 First Bad Version</strong>:</p>
-<p>Pointer <code>L</code>  represents the location of the first bad version.</p>
-<p>In <strong>Q35 Search Insert Position</strong>:</p>
-<p>Pointer <code>L</code>  represents the location of the target insert position.</p>
-]]></content>
-      <categories>
-        <category>LeetCode Plan</category>
-        <category>Algorithm-I</category>
-      </categories>
-      <tags>
-        <tag>Binary Search</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Algorithm-I, Day 2-6</title>
-    <url>/2022/03/08/Algorithm-I-Day-2-6/</url>
-    <content><![CDATA[<p>Topic: Two Pointers with Sliding Window </p>
-<span id="more"></span>
-
-<blockquote>
-<p>Q977 Squares of a Sorted Array</p>
-<p>Q189 Rotate Array</p>
-<p>Q283 Move Zeroes</p>
-<p>Q167 Two Sum</p>
-<p>Q344 Reverse String</p>
-<p>Q557 Reverse Words in a String III</p>
-<p>Q876 Middle of the Linked List</p>
-<p>Q19 Remove Nth Node From End of List</p>
-<p>Q3 Longest Substring Without Repeating Characters</p>
-<p>Q567 Permutation in String</p>
-</blockquote>
-<p>A searching algorithm which finds a pair of element’s position in a <strong>sequential(sorted)</strong> array.</p>
-<p>e.g. Given a enumerable array <code>Grid</code> (maybe sorted in some order), having finite integers, Two-Pointers method can find if there exists any <strong>pair of elements</strong> (<code>Grid[i]</code>, <code>Grid[j]</code>) such that suits some given target.</p>
-<blockquote>
-<p><strong>Note:</strong><br>This pair of elements can also represents a sequence of items of an array, which starts at item No. i and stops at item No. j.</p>
-</blockquote>
-<hr>
-<h5 id="Pre-amp-Post-x2F-Sliding-Window-Method"><a href="#Pre-amp-Post-x2F-Sliding-Window-Method" class="headerlink" title="Pre&amp;Post &#x2F; Sliding Window Method"></a>Pre&amp;Post &#x2F; Sliding Window Method</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Ensure that pointer H(High) is kinda ahead of the pointer L(Low).</span></span><br><span class="line"><span class="comment">## Hence, the pointers L &amp; H spans a window.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> H &lt; Border: </span><br><span class="line">    Window.push(H)		<span class="comment">## Expand the Window</span></span><br><span class="line">    H++;</span><br><span class="line">    <span class="keyword">while</span> valid Window:</span><br><span class="line">		update Window <span class="keyword">if</span> necessary</span><br><span class="line">        Window.pop(L)	 <span class="comment">## Shrink the Window</span></span><br><span class="line">        L++</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> Window</span><br></pre></td></tr></table></figure>
-
-<h5 id="Left-amp-Right-Method"><a href="#Left-amp-Right-Method" class="headerlink" title="Left&amp;Right Method"></a>Left&amp;Right Method</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Do until the pointers L(Left) and R(Right) meet each other,</span></span><br><span class="line"><span class="comment">## Or do until the target pair is found.</span></span><br><span class="line">    <span class="keyword">if</span> Target == Grid[L] + Grid[R]</span><br><span class="line">        <span class="keyword">return</span> L, R</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> Target &gt; Grid[L] + Grid[R]</span><br><span class="line">        R -= <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span> <span class="comment">## Target &lt; Grid[L] + Grid[R]</span></span><br><span class="line">    	L += <span class="number">1</span></span><br><span class="line">	</span><br><span class="line">    <span class="keyword">continue</span></span><br><span class="line"><span class="comment">## Note: </span></span><br><span class="line"><span class="comment">## The explanation above implicitly assume that</span></span><br><span class="line"><span class="comment">## the array Grid is sorted ascendingly.</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="Time-Complexities"><a href="#Time-Complexities" class="headerlink" title="Time Complexities"></a>Time Complexities</h5><ul>
-<li>Best Case Complexity: O(1)</li>
-<li>Worst Case Complexity: O(n)</li>
-<li><strong>Average Case Complexity: O(n)</strong></li>
-</ul>
-<h5 id="Space-Complexities"><a href="#Space-Complexities" class="headerlink" title="Space Complexities"></a>Space Complexities</h5><ul>
-<li>O(1)</li>
-</ul>
-<hr>
-<h5 id="Footnote"><a href="#Footnote" class="headerlink" title="Footnote"></a>Footnote</h5><p>In <strong>Q977 Squares of a Sorted Array</strong>:</p>
-<p>Left&amp;Right Method is applied. Take The absolute value for comparison.</p>
-<p>In <strong>Q189 Rotate Array</strong>:</p>
-<p>See also in: &lt; Article Not Published Yet &gt;</p>
-<p>In <strong>Q283 Move Zeroes</strong>:</p>
-<p>Left&amp;Right Method is applied. One Pointer stands for the current working position, and another stands for the staing point of pushing in &#x2F; filling with zeros.</p>
-<p>In <strong>Q167 Two Sum</strong>:</p>
-<p>Left&amp;Right Method is applied.</p>
-<p>Note: The given input array is sorted.</p>
-<p>In <strong>Q344 Reverse String</strong>:</p>
-<p>Left&amp;Right Method is applied. </p>
-<p>In <strong>Q557 Reverse Words in a String III</strong>:</p>
-<p>Left&amp;Right Method is applied. Just make wise usage of slicers.</p>
-<p>In <strong>Q876 Middle of the Linked List</strong>:</p>
-<p>Pre&amp;Post &#x2F; Sliding Window Method is recommended.</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">Pre += <span class="number">1</span></span><br><span class="line">Post += <span class="number">2</span></span><br></pre></td></tr></table></figure>
-
-<p>In <strong>Q19 Remove Nth Node From End of List</strong>:</p>
-<p>Left&amp;Right Method is applied. </p>
-<p>Repeat the “process” for N times, then remove the node.</p>
-<p>In <strong>Q3 Longest Substring Without Repeating Characters</strong>:</p>
-<p>Pre&amp;Post &#x2F; Sliding Window Method is applied.</p>
-<p>In <strong>Q567 Permutation in String</strong>:</p>
-<p>Note: It’s much faster to create 2 <strong>dictionarys</strong> and compare them instead.</p>
-]]></content>
-      <categories>
-        <category>LeetCode Plan</category>
-        <category>Algorithm-I</category>
-      </categories>
-      <tags>
-        <tag>Two Pointers</tag>
-        <tag>Sliding Window</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>FURP-Driven Literature Review I</title>
     <url>/2022/06/07/FURP-Driven-Literature-Review-I/</url>
     <content><![CDATA[<p><strong>Title:</strong> Multiple Target Tracking by Learning-Based Hierarchical Association of Detection Responses</p>
@@ -422,21 +422,6 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode Study Plan</title>
-    <url>/2022/03/02/LeetCode-Study-Plan/</url>
-    <content><![CDATA[<p>A brief, simplified mind map considering the <strong>LeetCode Study Plan</strong>.</p>
-<span id="more"></span>
-
-<p>Take a look at the features and implementations of different types of <strong>data structures</strong> and <strong>algorithms</strong> in the posts below.</p>
-<p>See also in my LeetCode Account if you wish to have a look at my solutions. &#x3D; &#x3D;+</p>
-<p>p.s. In most cases the code blocks are rendered in Python syntax, but the contents of which are simply pseudo-codes. Attempts of plagiarism, such as copy-paste-execute in your terminal would cause you nothing but a mess. <strong>IT’s NONE ACTUAL CODE.</strong></p>
-<hr>
-<h5 id="Algorithm-I-WIP"><a href="#Algorithm-I-WIP" class="headerlink" title="Algorithm-I (WIP)"></a>Algorithm-I (WIP)</h5><h5 id="Algorithm-II-WIP"><a href="#Algorithm-II-WIP" class="headerlink" title="Algorithm-II (WIP)"></a>Algorithm-II (WIP)</h5><h5 id="Algorithm-III-WIP"><a href="#Algorithm-III-WIP" class="headerlink" title="Algorithm-III (WIP)"></a>Algorithm-III (WIP)</h5>]]></content>
-      <categories>
-        <category>LeetCode Plan</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Reading List</title>
     <url>/2022/03/03/Reading-List/</url>
     <content><![CDATA[<p>Most of the materials on this Reading List belongs to the Campus Library Collection.</p>
@@ -454,6 +439,21 @@
 ]]></content>
       <categories>
         <category>Reading List</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>LeetCode Study Plan</title>
+    <url>/2022/03/02/LeetCode-Study-Plan/</url>
+    <content><![CDATA[<p>A brief, simplified mind map considering the <strong>LeetCode Study Plan</strong>.</p>
+<span id="more"></span>
+
+<p>Take a look at the features and implementations of different types of <strong>data structures</strong> and <strong>algorithms</strong> in the posts below.</p>
+<p>See also in my LeetCode Account if you wish to have a look at my solutions. &#x3D; &#x3D;+</p>
+<p>p.s. In most cases the code blocks are rendered in Python syntax, but the contents of which are simply pseudo-codes. Attempts of plagiarism, such as copy-paste-execute in your terminal would cause you nothing but a mess. <strong>IT’s NONE ACTUAL CODE.</strong></p>
+<hr>
+<h5 id="Algorithm-I-WIP"><a href="#Algorithm-I-WIP" class="headerlink" title="Algorithm-I (WIP)"></a>Algorithm-I (WIP)</h5><h5 id="Algorithm-II-WIP"><a href="#Algorithm-II-WIP" class="headerlink" title="Algorithm-II (WIP)"></a>Algorithm-II (WIP)</h5><h5 id="Algorithm-III-WIP"><a href="#Algorithm-III-WIP" class="headerlink" title="Algorithm-III (WIP)"></a>Algorithm-III (WIP)</h5>]]></content>
+      <categories>
+        <category>LeetCode Plan</category>
       </categories>
   </entry>
   <entry>
