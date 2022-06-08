@@ -6,7 +6,7 @@
   <link href="https://ch-i-yu.github.io/atom.xml" rel="self"/>
   
   <link href="https://ch-i-yu.github.io/"/>
-  <updated>2022-06-07T13:16:49.157Z</updated>
+  <updated>2022-06-08T12:40:37.535Z</updated>
   <id>https://ch-i-yu.github.io/</id>
   
   <author>
@@ -15,6 +15,57 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>FURP-Driven Literature Review V</title>
+    <link href="https://ch-i-yu.github.io/2022/06/08/FURP-Driven-Literature-Review-V/"/>
+    <id>https://ch-i-yu.github.io/2022/06/08/FURP-Driven-Literature-Review-V/</id>
+    <published>2022-06-08T12:40:37.000Z</published>
+    <updated>2022-06-08T12:40:37.535Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>Osojnik, A., Panov, P. &amp; Džeroski, S. Multi-label classification via multi-target regression on data streams. Mach Learn 106, 745–770 (2017). <a class="link"   href="https://doi.org/10.1007/s10994-016-5613-5" >https://doi.org/10.1007/s10994-016-5613-5<i class="fas fa-external-link-alt"></i></a></p></blockquote><p>Driven by FURP(FoSE Undergraduate Research Placement) Programme.</p><span id="more"></span><h2 id="Multi-label-classification-via-multi-target-regression-on-data-streams"><a href="#Multi-label-classification-via-multi-target-regression-on-data-streams" class="headerlink" title="Multi-label classification via multi-target regression on data streams"></a>Multi-label classification via multi-target regression on data streams</h2><p><strong>Publisher:</strong> </p><p>Springer, Machine Learning</p><p><strong>Authors:</strong> </p><p>Aljaž Osojnik, Panče Panov, Sašo Džeroski </p><p><strong>Index Terms</strong></p><ul><li>Multi-label classification</li><li>Multi-target regression</li><li>Data stream mining</li></ul><p><strong>DOI:</strong> <a class="link"   href="https://doi.org/10.1007/s10994-016-5613-5" >10.1007&#x2F;s10994-016-5613-5<i class="fas fa-external-link-alt"></i></a></p><p><strong>Background(Key Point):</strong></p><p>Multi-label classification(MLC) tasks are encountered more and more frequently in machine learning applications, however, only a few MLC methods exists for classical batch setting.</p><p><strong>Methodology:</strong></p><p>Propose a new methodology for MLC tasks via multi-target regression in a stream setting.</p><p>Develop a streaming multi-target regressor ISOUP-Tree that use this approach.</p><p><strong>Key Findings:</strong></p><p>Two variants of the ISOUP-Tree method(building regression and model trees) were experimentally compared and evaluated, and it turns out that the ensembles of iSOUP-Trees perform significantly better on some of these measures, especially the ones based on label ranking, and are not significantly worse than the competitors on any of the remaining measures. </p>]]></content>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Osojnik, A., Panov, P. &amp;amp; Džeroski, S. Multi-label classification via multi-target regression on data streams. Mach Learn 106, 745–770 (2017). &lt;a class=&quot;link&quot;   href=&quot;https://doi.org/10.1007/s10994-016-5613-5&quot; &gt;https://doi.org/10.1007/s10994-016-5613-5&lt;i class=&quot;fas fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Driven by FURP(FoSE Undergraduate Research Placement) Programme.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="FURP" scheme="https://ch-i-yu.github.io/categories/FURP/"/>
+    
+    <category term="Literature Review" scheme="https://ch-i-yu.github.io/categories/FURP/Literature-Review/"/>
+    
+    
+    <category term="Multi-Target Tracking" scheme="https://ch-i-yu.github.io/tags/Multi-Target-Tracking/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>FURP-Driven Literature Review IV</title>
+    <link href="https://ch-i-yu.github.io/2022/06/08/FURP-Driven-Literature-Review-IV/"/>
+    <id>https://ch-i-yu.github.io/2022/06/08/FURP-Driven-Literature-Review-IV/</id>
+    <published>2022-06-08T12:20:11.000Z</published>
+    <updated>2022-06-08T12:20:11.390Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>Petković, M., Kocev, D. &amp; Džeroski, S. Feature ranking for multi-target regression. Mach Learn 109, 1179–1204 (2020). <a class="link"   href="https://doi.org/10.1007/s10994-019-05829-8cement" >https://doi.org/10.1007/s10994-019-05829-8cement<i class="fas fa-external-link-alt"></i></a>) Programme.</p></blockquote><span id="more"></span><h3 id="Feature-ranking-for-multi-target-regression"><a href="#Feature-ranking-for-multi-target-regression" class="headerlink" title="Feature ranking for multi-target regression"></a>Feature ranking for multi-target regression</h3><p><strong>Publisher:</strong> </p><p>Springer Link, Special Issue of the Discovery Science 2017</p><p><strong>Authors:</strong> </p><p>Matej Petokovic, Dragi Kocev, Saso Dzeroski</p><p><strong>Index Terms</strong></p><ul><li>Feature ranking</li><li>Multi target regression</li><li>Tree based methods</li><li>Relief</li></ul><p><strong>DOI:</strong> <a class="link"   href="https://doi.org/10.1007/s10994-019-05829-8" >10.1007&#x2F;s10994-019-05829-8<i class="fas fa-external-link-alt"></i></a></p><p><strong>Background(Key Point):</strong></p><p>Multi-target regression(MTR), which concerns problems with multiple continuous dependent&#x2F;target variables, is lack of studies in performing feature ranking in the context of MTR so far.</p><p><strong>Methodology:</strong></p><p>Two groups of feature ranking scores for MTR: scores(Symbolic, Genie3, Random Forest score) based on ensembles(bagging, random forests, extra tress) and a score derived as an extension of the RReliefF method was studied.</p><p>A generic data-transformation approach to MTR feature ranking and thus have two version of each score.</p><p><strong>Key Findings:</strong></p><p>The results identify the parameters that influence the quality of the rankings, reveal that both groups of methods produce relevant feature rankings, and show that the Symbolic and Genie3 score, coupled with random forest ensembles, yield the best rankings.s</p>]]></content>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Petković, M., Kocev, D. &amp;amp; Džeroski, S. Feature ranking for multi-target regression. Mach Learn 109, 1179–1204 (2020). &lt;a class=&quot;link&quot;   href=&quot;https://doi.org/10.1007/s10994-019-05829-8cement&quot; &gt;https://doi.org/10.1007/s10994-019-05829-8cement&lt;i class=&quot;fas fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;) Programme.&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="Literature Review" scheme="https://ch-i-yu.github.io/categories/Literature-Review/"/>
+    
+    <category term="FURP" scheme="https://ch-i-yu.github.io/categories/Literature-Review/FURP/"/>
+    
+    
+    <category term="Multi-Target Tracking" scheme="https://ch-i-yu.github.io/tags/Multi-Target-Tracking/"/>
+    
+  </entry>
   
   <entry>
     <title>FURP-Driven Literature Review III</title>
