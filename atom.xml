@@ -6,7 +6,7 @@
   <link href="https://ch-i-yu.github.io/atom.xml" rel="self"/>
   
   <link href="https://ch-i-yu.github.io/"/>
-  <updated>2022-06-08T12:40:37.535Z</updated>
+  <updated>2022-06-14T10:45:01.461Z</updated>
   <id>https://ch-i-yu.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Project: Simple Face-Mask Detector</title>
+    <link href="https://ch-i-yu.github.io/2022/06/14/Project-Simple-Face-Mask-Detector/"/>
+    <id>https://ch-i-yu.github.io/2022/06/14/Project-Simple-Face-Mask-Detector/</id>
+    <published>2022-06-14T10:40:27.000Z</published>
+    <updated>2022-06-14T10:45:01.461Z</updated>
+    
+    <content type="html"><![CDATA[<p>A Simple Face-Mask Detector built with <strong>OpenCV</strong>, <strong>Keras(Tensorflow)</strong> in order to detect face masks in both images and video streams.</p><p><img src="/../images/preview-SFMD-streamlit-pic.png" alt="A Streamlit webApp Preview."></p><p>See also in: <a class="link"   href="https://github.com/Ch-i-Yu/Simple-Face-Mask-Detector/blob/main/Readme-Image/masked_girls.gif" >GitHub<i class="fas fa-external-link-alt"></i></a> &amp; <a class="link"   href="https://share.streamlit.io/ch-i-yu/simple-face-mask-detector/main/Simple_Face-Mask_Detector_App.py" >Streamlit Cloud<i class="fas fa-external-link-alt"></i></a></p><span id="more"></span><h3 id="TechStack-x2F-Framework"><a href="#TechStack-x2F-Framework" class="headerlink" title="TechStack&#x2F;Framework"></a>TechStack&#x2F;Framework</h3><ul><li>OpenCV</li><li>Keras(Tensorflow)</li><li>MobileNetV2<ul><li>Optimizer: Adam</li><li>Loss: Binary Crossentropy</li><li>Metrics: Accuracy</li></ul></li><li>Caffe-based Face Detector</li></ul><h3 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h3><p>The dataset was created by Prajna Bhandary.</p><p>The dataset consists of 1,376 images belongs to two classes:</p><ul><li>with_mask: 690 images</li><li>without_mask: 686 images</li></ul><p>The images used were real images of human faces, however artificial face masks were added to create an artificial (but still real-world applicable) dataset.</p><h3 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h3><p>All the dependencies and required libraries are included in the file <code>requirements.txt</code>.</p><p><em>Note: packages.txt is importing streamlit-needed exnternal dependencies. Ignore it if you are using Ananconda venv.</em></p><h3 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h3><p>The model gave 98% accuracy for Face Mask Detection after training.<br><br>See also in the following accuracy&#x2F;loss training curve plot:<br><img src="./Plots/plot.png"></p><h3 id="Working"><a href="#Working" class="headerlink" title="Working"></a>Working</h3><ol><li><p>To train the Face-Mask Detector, execute the following sample command:</p><p><code>python train_detector.py -d Dataset</code></p></li><li><p>To detect face masks in an single image, execute the following sample command:</p><p><code>python predict_image.py -i .\Examples\Images\image-01.jpg</code></p></li><li><p>To detect face masks in video streams, execute the following sample command:</p><p><code>python predict_video.py</code></p></li><li><p>To find a Web-App version of the Simple Face-Mask Detector, execute the following sample command:</p><p><code>streamlit run Simple_Face-Mask_Detector_App.py</code></p><p>or</p><p><code>streamlit run https://raw.githubusercontent.com/Ch-i-Yu/Simple-Face-Mask-Detector/main/Simple_Face-Mask_Detector_App.py</code></p><p>or simply visit <a class="link"   href="https://share.streamlit.io/ch-i-yu/simple-face-mask-detector/main/Simple_Face-Mask_Detector_App.py" >Streamlit App Link<i class="fas fa-external-link-alt"></i></a>.</p></li></ol><h3 id="Inspiration"><a href="#Inspiration" class="headerlink" title="Inspiration"></a>Inspiration</h3><p>This simplified, hello-world like project for a greenhand in Computer vision is inspired by the efforts of <strong>Adrian Rosebrock</strong> and <strong>Prajna Bhandary</strong>.</p><h3 id="Special-Thanks-to…"><a href="#Special-Thanks-to…" class="headerlink" title="Special Thanks to…"></a>Special Thanks to…</h3><p>Thanks for my awesome guys, <strong>Xiyu L.</strong> and <strong>Feng J.</strong> who helped me to test my tiny project and record the lovely gif in the front of this page.</p><h3 id="License"><a href="#License" class="headerlink" title="License"></a>License</h3><p>MIT © <a class="link"   href="https://github.com/Ch-i-Yu" >Ch’i YU<i class="fas fa-external-link-alt"></i></a></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;A Simple Face-Mask Detector built with &lt;strong&gt;OpenCV&lt;/strong&gt;, &lt;strong&gt;Keras(Tensorflow)&lt;/strong&gt; in order to detect face masks in both images and video streams.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/../images/preview-SFMD-streamlit-pic.png&quot; alt=&quot;A Streamlit webApp Preview.&quot;&gt;&lt;/p&gt;
+&lt;p&gt;See also in: &lt;a class=&quot;link&quot;   href=&quot;https://github.com/Ch-i-Yu/Simple-Face-Mask-Detector/blob/main/Readme-Image/masked_girls.gif&quot; &gt;GitHub&lt;i class=&quot;fas fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt; &amp;amp; &lt;a class=&quot;link&quot;   href=&quot;https://share.streamlit.io/ch-i-yu/simple-face-mask-detector/main/Simple_Face-Mask_Detector_App.py&quot; &gt;Streamlit Cloud&lt;i class=&quot;fas fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Project" scheme="https://ch-i-yu.github.io/categories/Project/"/>
+    
+    
+    <category term="Computer Vision" scheme="https://ch-i-yu.github.io/tags/Computer-Vision/"/>
+    
+    <category term="Personal Project" scheme="https://ch-i-yu.github.io/tags/Personal-Project/"/>
+    
+  </entry>
   
   <entry>
     <title>FURP-Driven Literature Review V</title>
@@ -243,7 +268,7 @@
     <link href="https://ch-i-yu.github.io/2022/03/03/Reading-List/"/>
     <id>https://ch-i-yu.github.io/2022/03/03/Reading-List/</id>
     <published>2022-03-03T06:01:35.000Z</published>
-    <updated>2022-05-20T16:03:03.984Z</updated>
+    <updated>2022-06-14T10:44:54.623Z</updated>
     
     <content type="html"><![CDATA[<p>Most of the materials on this Reading List belongs to the Campus Library Collection.</p><span id="more"></span> <h5 id="Offline-Reading-List"><a href="#Offline-Reading-List" class="headerlink" title="Offline Reading List:"></a>Offline Reading List:</h5><ul><li><input disabled="" type="checkbox"> <strong>Topic:</strong> Heuristic Methods<br>  <strong>Reference:</strong><br>  <strong>Tags:</strong><br>  <strong>Notes:</strong> </li><li><input disabled="" type="checkbox"> <strong>Topic:</strong> Fuzzy Logic<br>  <strong>Reference:</strong><br>  <strong>Tags:</strong><br>  <strong>Notes:</strong> </li><li><input disabled="" type="checkbox"> <strong>Topic:</strong> Game Theory<br>  <strong>Reference:</strong><br>  <strong>Tags:</strong><br>  <strong>Notes:</strong> </li><li><input disabled="" type="checkbox"> <strong>Topic:</strong> Evolutionary Computation<br>  <strong>Reference:</strong><br>  <strong>Tags:</strong><br>  <strong>Notes:</strong></li><li><input disabled="" type="checkbox"> <strong>Topic:</strong> Evolutionary Game Theory<br>  <strong>Reference:</strong><br>  <strong>Tags:</strong><br>  <strong>Notes:</strong></li></ul><hr><p>More articles about code tips, learning experiences and reading notes are on the way! &#x3D; &#x3D;+</p>]]></content>
     
@@ -262,7 +287,7 @@
     <link href="https://ch-i-yu.github.io/2022/03/02/Advanced-Module/"/>
     <id>https://ch-i-yu.github.io/2022/03/02/Advanced-Module/</id>
     <published>2022-03-02T09:39:21.000Z</published>
-    <updated>2022-05-20T16:03:03.982Z</updated>
+    <updated>2022-06-14T10:44:41.262Z</updated>
     
     <content type="html"><![CDATA[<p>Get a glimpse of the advanced modules I’ve taken, with notes, coursework, projects and etc attached. </p><span id="more"></span><h3 id="Deep-Learning-Specialization"><a href="#Deep-Learning-Specialization" class="headerlink" title="Deep Learning Specialization"></a>Deep Learning Specialization</h3><blockquote><p>Become a Machine Learning expert.<br>Master the fundamentals of deep learning and break into AI.<br>Recently updated with cutting-edge techniques!</p></blockquote><p><strong>Source</strong>: <a class="link"   href="https://www.coursera.org/specializations/deep-learning" >Coursera<i class="fas fa-external-link-alt"></i></a></p><ul><li><p><input disabled="" type="checkbox"> <strong>Neural Networks and Deep Learning</strong></p></li><li><p><input disabled="" type="checkbox"> <strong>Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization</strong></p></li><li><p><input disabled="" type="checkbox"> <strong>Structuring Machine Learning Projects</strong></p></li><li><p><input disabled="" type="checkbox"> <strong>Convolutional Neural Networks</strong></p></li><li><p><input disabled="" type="checkbox"> <strong>Sequence Models</strong></p></li></ul><hr><h3 id="From-Nand-to-Tetris"><a href="#From-Nand-to-Tetris" class="headerlink" title="From Nand to Tetris"></a>From Nand to Tetris</h3><blockquote><p>Building a Modern Computer From First Principles.</p></blockquote><p><strong>Source:</strong> <a class="link"   href="https://www.nand2tetris.org/" >Nand2Tetris’s Official Website<i class="fas fa-external-link-alt"></i></a></p><ul><li><input disabled="" type="checkbox"> <strong>From Nand to Tetris: Part I</strong></li><li><input disabled="" type="checkbox"> <strong>From Nand to Tetris: Part II</strong></li></ul><hr><p>More articles about code tips, learning experiences and coursework&#x2F;projects are on the way! &#x3D; &#x3D;+</p>]]></content>
     
@@ -281,7 +306,7 @@
     <link href="https://ch-i-yu.github.io/2022/03/02/LeetCode-Study-Plan/"/>
     <id>https://ch-i-yu.github.io/2022/03/02/LeetCode-Study-Plan/</id>
     <published>2022-03-02T09:36:28.000Z</published>
-    <updated>2022-05-20T16:03:03.983Z</updated>
+    <updated>2022-06-14T10:44:46.448Z</updated>
     
     <content type="html"><![CDATA[<p>A brief, simplified mind map considering the <strong>LeetCode Study Plan</strong>.</p><span id="more"></span><p>Take a look at the features and implementations of different types of <strong>data structures</strong> and <strong>algorithms</strong> in the posts below.</p><p>See also in my LeetCode Account if you wish to have a look at my solutions. &#x3D; &#x3D;+</p><p>p.s. In most cases the code blocks are rendered in Python syntax, but the contents of which are simply pseudo-codes. Attempts of plagiarism, such as copy-paste-execute in your terminal would cause you nothing but a mess. <strong>IT’s NONE ACTUAL CODE.</strong></p><hr><h5 id="Algorithm-I-WIP"><a href="#Algorithm-I-WIP" class="headerlink" title="Algorithm-I (WIP)"></a>Algorithm-I (WIP)</h5><h5 id="Algorithm-II-WIP"><a href="#Algorithm-II-WIP" class="headerlink" title="Algorithm-II (WIP)"></a>Algorithm-II (WIP)</h5><h5 id="Algorithm-III-WIP"><a href="#Algorithm-III-WIP" class="headerlink" title="Algorithm-III (WIP)"></a>Algorithm-III (WIP)</h5>]]></content>
     

@@ -1,6 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Advanced Module</title>
+    <url>/2022/03/02/Advanced-Module/</url>
+    <content><![CDATA[<p>Get a glimpse of the advanced modules I’ve taken, with notes, coursework, projects and etc attached. </p>
+<span id="more"></span>
+
+<h3 id="Deep-Learning-Specialization"><a href="#Deep-Learning-Specialization" class="headerlink" title="Deep Learning Specialization"></a>Deep Learning Specialization</h3><blockquote>
+<p>Become a Machine Learning expert.<br>Master the fundamentals of deep learning and break into AI.<br>Recently updated with cutting-edge techniques!</p>
+</blockquote>
+<p><strong>Source</strong>: <a class="link"   href="https://www.coursera.org/specializations/deep-learning" >Coursera<i class="fas fa-external-link-alt"></i></a></p>
+<ul>
+<li><p><input disabled="" type="checkbox"> 
+<strong>Neural Networks and Deep Learning</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>Structuring Machine Learning Projects</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>Convolutional Neural Networks</strong></p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+<strong>Sequence Models</strong></p>
+</li>
+</ul>
+<hr>
+<h3 id="From-Nand-to-Tetris"><a href="#From-Nand-to-Tetris" class="headerlink" title="From Nand to Tetris"></a>From Nand to Tetris</h3><blockquote>
+<p>Building a Modern Computer From First Principles.</p>
+</blockquote>
+<p><strong>Source:</strong> <a class="link"   href="https://www.nand2tetris.org/" >Nand2Tetris’s Official Website<i class="fas fa-external-link-alt"></i></a></p>
+<ul>
+<li><input disabled="" type="checkbox"> <strong>From Nand to Tetris: Part I</strong></li>
+<li><input disabled="" type="checkbox"> <strong>From Nand to Tetris: Part II</strong></li>
+</ul>
+<hr>
+<p>More articles about code tips, learning experiences and coursework&#x2F;projects are on the way! &#x3D; &#x3D;+</p>
+]]></content>
+      <categories>
+        <category>Advanced Module</category>
+      </categories>
+  </entry>
+  <entry>
     <title>A Haskell Walkthrough</title>
     <url>/2022/03/12/A-Haskell-Walkthrough/</url>
     <content><![CDATA[<p>Brief solutions of most chapters in <strong>Programming in Haskell</strong>.</p>
@@ -230,90 +273,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Advanced Module</title>
-    <url>/2022/03/02/Advanced-Module/</url>
-    <content><![CDATA[<p>Get a glimpse of the advanced modules I’ve taken, with notes, coursework, projects and etc attached. </p>
-<span id="more"></span>
-
-<h3 id="Deep-Learning-Specialization"><a href="#Deep-Learning-Specialization" class="headerlink" title="Deep Learning Specialization"></a>Deep Learning Specialization</h3><blockquote>
-<p>Become a Machine Learning expert.<br>Master the fundamentals of deep learning and break into AI.<br>Recently updated with cutting-edge techniques!</p>
-</blockquote>
-<p><strong>Source</strong>: <a class="link"   href="https://www.coursera.org/specializations/deep-learning" >Coursera<i class="fas fa-external-link-alt"></i></a></p>
-<ul>
-<li><p><input disabled="" type="checkbox"> 
-<strong>Neural Networks and Deep Learning</strong></p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-<strong>Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization</strong></p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-<strong>Structuring Machine Learning Projects</strong></p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-<strong>Convolutional Neural Networks</strong></p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-<strong>Sequence Models</strong></p>
-</li>
-</ul>
-<hr>
-<h3 id="From-Nand-to-Tetris"><a href="#From-Nand-to-Tetris" class="headerlink" title="From Nand to Tetris"></a>From Nand to Tetris</h3><blockquote>
-<p>Building a Modern Computer From First Principles.</p>
-</blockquote>
-<p><strong>Source:</strong> <a class="link"   href="https://www.nand2tetris.org/" >Nand2Tetris’s Official Website<i class="fas fa-external-link-alt"></i></a></p>
-<ul>
-<li><input disabled="" type="checkbox"> <strong>From Nand to Tetris: Part I</strong></li>
-<li><input disabled="" type="checkbox"> <strong>From Nand to Tetris: Part II</strong></li>
-</ul>
-<hr>
-<p>More articles about code tips, learning experiences and coursework&#x2F;projects are on the way! &#x3D; &#x3D;+</p>
-]]></content>
-      <categories>
-        <category>Advanced Module</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Algorithm-I, Day 1</title>
-    <url>/2022/03/06/Algorithm-I-Day-1/</url>
-    <content><![CDATA[<p>Topic: Binary Search</p>
-<span id="more"></span>
-
-<blockquote>
-<p>Q704 Binary Search</p>
-<p>Q278 First Bad Version</p>
-<p>Q35 Search Insert Position</p>
-</blockquote>
-<p>A searching algorithm which finds an element’s position in a <strong>sequential(sorted)</strong> and <strong>comparable</strong> array.</p>
-<p>In this method, the element is always searched in the <strong>middle</strong> of a portion of an array sliced in halves.</p>
-<p>This method do follow the <strong>divide-and-conquer</strong> approach.</p>
-<hr>
-<h5 id="Iteration-Method"><a href="#Iteration-Method" class="headerlink" title="Iteration Method"></a>Iteration Method</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Do until the pointers L(Low/Left) and R(High/Right) meet each other,</span></span><br><span class="line"><span class="comment">## or do until the target element is found.</span></span><br><span class="line">	Mid = (L + R) / <span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> Target == Grid[Mid]</span><br><span class="line">        <span class="keyword">return</span> Mid</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> Target &gt; Grid[Mid]</span><br><span class="line">        L = Mid + <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span> <span class="comment">## Target &lt; Grid[Mid]</span></span><br><span class="line">    	R = Mid - <span class="number">1</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">continue</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="Recursion-Method"><a href="#Recursion-Method" class="headerlink" title="Recursion Method"></a>Recursion Method</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Define a function and calle itself within definition.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## Do until the pointers L(Low/Left) and R(High/Right) meet each other,</span></span><br><span class="line"><span class="comment">## or do until the target element is found.</span></span><br><span class="line">RM(Grid, Target, L, R)</span><br><span class="line">	<span class="keyword">if</span> L &gt; R</span><br><span class="line">    	<span class="keyword">return</span> Not Found</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    	Mid = (L + R) / <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> Target == Grid[Mid]</span><br><span class="line">        	<span class="keyword">return</span> Mid</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> Target &gt; Grid[Mid]</span><br><span class="line">        	returnRM(Grid, Target, Mid + <span class="number">1</span>, R)</span><br><span class="line">        <span class="keyword">else</span> <span class="comment">## Target &lt; Grid[Mid]</span></span><br><span class="line">        	returnRM(Grid, Target, L, Mid - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
-<h5 id="Time-Complexities"><a href="#Time-Complexities" class="headerlink" title="Time Complexities"></a>Time Complexities</h5><ul>
-<li>Best Case Complexity: O(1)</li>
-<li>Worst Case Complexity: O(log n)</li>
-<li><strong>Average Case Complexity: O(log n)</strong></li>
-</ul>
-<h5 id="Space-Complexities"><a href="#Space-Complexities" class="headerlink" title="Space Complexities"></a>Space Complexities</h5><ul>
-<li>O(1)</li>
-</ul>
-<hr>
-<h5 id="Footnotes"><a href="#Footnotes" class="headerlink" title="Footnotes"></a>Footnotes</h5><p>In <strong>Q278 First Bad Version</strong>:</p>
-<p>Pointer <code>L</code>  represents the location of the first bad version.</p>
-<p>In <strong>Q35 Search Insert Position</strong>:</p>
-<p>Pointer <code>L</code>  represents the location of the target insert position.</p>
-]]></content>
-      <categories>
-        <category>LeetCode Plan</category>
-        <category>Algorithm-I</category>
-      </categories>
-      <tags>
-        <tag>Binary Search</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Algorithm-I, Day 2-6</title>
     <url>/2022/03/08/Algorithm-I-Day-2-6/</url>
     <content><![CDATA[<p>Topic: Two Pointers with Sliding Window </p>
@@ -385,6 +344,47 @@
       </tags>
   </entry>
   <entry>
+    <title>Algorithm-I, Day 1</title>
+    <url>/2022/03/06/Algorithm-I-Day-1/</url>
+    <content><![CDATA[<p>Topic: Binary Search</p>
+<span id="more"></span>
+
+<blockquote>
+<p>Q704 Binary Search</p>
+<p>Q278 First Bad Version</p>
+<p>Q35 Search Insert Position</p>
+</blockquote>
+<p>A searching algorithm which finds an element’s position in a <strong>sequential(sorted)</strong> and <strong>comparable</strong> array.</p>
+<p>In this method, the element is always searched in the <strong>middle</strong> of a portion of an array sliced in halves.</p>
+<p>This method do follow the <strong>divide-and-conquer</strong> approach.</p>
+<hr>
+<h5 id="Iteration-Method"><a href="#Iteration-Method" class="headerlink" title="Iteration Method"></a>Iteration Method</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Do until the pointers L(Low/Left) and R(High/Right) meet each other,</span></span><br><span class="line"><span class="comment">## or do until the target element is found.</span></span><br><span class="line">	Mid = (L + R) / <span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> Target == Grid[Mid]</span><br><span class="line">        <span class="keyword">return</span> Mid</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> Target &gt; Grid[Mid]</span><br><span class="line">        L = Mid + <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span> <span class="comment">## Target &lt; Grid[Mid]</span></span><br><span class="line">    	R = Mid - <span class="number">1</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">continue</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="Recursion-Method"><a href="#Recursion-Method" class="headerlink" title="Recursion Method"></a>Recursion Method</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Define a function and calle itself within definition.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## Do until the pointers L(Low/Left) and R(High/Right) meet each other,</span></span><br><span class="line"><span class="comment">## or do until the target element is found.</span></span><br><span class="line">RM(Grid, Target, L, R)</span><br><span class="line">	<span class="keyword">if</span> L &gt; R</span><br><span class="line">    	<span class="keyword">return</span> Not Found</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    	Mid = (L + R) / <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> Target == Grid[Mid]</span><br><span class="line">        	<span class="keyword">return</span> Mid</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> Target &gt; Grid[Mid]</span><br><span class="line">        	returnRM(Grid, Target, Mid + <span class="number">1</span>, R)</span><br><span class="line">        <span class="keyword">else</span> <span class="comment">## Target &lt; Grid[Mid]</span></span><br><span class="line">        	returnRM(Grid, Target, L, Mid - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<h5 id="Time-Complexities"><a href="#Time-Complexities" class="headerlink" title="Time Complexities"></a>Time Complexities</h5><ul>
+<li>Best Case Complexity: O(1)</li>
+<li>Worst Case Complexity: O(log n)</li>
+<li><strong>Average Case Complexity: O(log n)</strong></li>
+</ul>
+<h5 id="Space-Complexities"><a href="#Space-Complexities" class="headerlink" title="Space Complexities"></a>Space Complexities</h5><ul>
+<li>O(1)</li>
+</ul>
+<hr>
+<h5 id="Footnotes"><a href="#Footnotes" class="headerlink" title="Footnotes"></a>Footnotes</h5><p>In <strong>Q278 First Bad Version</strong>:</p>
+<p>Pointer <code>L</code>  represents the location of the first bad version.</p>
+<p>In <strong>Q35 Search Insert Position</strong>:</p>
+<p>Pointer <code>L</code>  represents the location of the target insert position.</p>
+]]></content>
+      <categories>
+        <category>LeetCode Plan</category>
+        <category>Algorithm-I</category>
+      </categories>
+      <tags>
+        <tag>Binary Search</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>FURP-Driven Literature Review I</title>
     <url>/2022/06/07/FURP-Driven-Literature-Review-I/</url>
     <content><![CDATA[<blockquote>
@@ -417,6 +417,45 @@
 <p><strong>Key Findings:</strong></p>
 <p>The systematic experiments on the standard CAVIAR dataset and the highly challenging <code>TRECVID08</code> dataset show that this approach achieves significant improvement in tracking accuracy over previous state-of-the-art work.</p>
 <p>The main difficulty in applying this tracking framework to a real-time tracking system is that it has to postpone “unsafe” associations until enough evidence is collected to resolve the ambiguity, resulting in inevitable tracking lag for some difficult targets.</p>
+]]></content>
+      <categories>
+        <category>FURP</category>
+        <category>Literature Review</category>
+      </categories>
+      <tags>
+        <tag>Multi-Target Tracking</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>FURP-Driven Literature Review III</title>
+    <url>/2022/06/07/FURP-Driven-Literature-Review-III/</url>
+    <content><![CDATA[<blockquote>
+<p>Waegeman, W., Dembczyński, K. &amp; Hüllermeier, E. Multi-target prediction: a unifying view on problems and methods. Data Min Knowl Disc 33, 293–324 (2019). <a class="link"   href="https://doi.org/10.1007/s10618-018-0595-5" >https://doi.org/10.1007/s10618-018-0595-5<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<p>Driven by FURP(FoSE Undergraduate Research Placement) Programme.</p>
+<span id="more"></span>
+
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><p><strong>Publisher:</strong> Springer Nature</p>
+<p>Expert Systems with Applications</p>
+<p><strong>Authors:</strong> </p>
+<p>Willem Waegeman, Krzysztof Dembczyński, Eyke Hüllermeier </p>
+<p><strong>Index Terms</strong></p>
+<ul>
+<li>Extreme Learning Machine</li>
+<li>Regularization</li>
+<li>Multi-target regression</li>
+<li>Robust to outliers</li>
+<li>Alternating direction method of multipliers</li>
+</ul>
+<p><strong>DOI:</strong> <a class="link"   href="https://doi.org/10.1007/s10618-018-0595-5" >10.1007&#x2F;s10618-018-0595-5<i class="fas fa-external-link-alt"></i></a></p>
+<p><strong>Background(Key Point):</strong></p>
+<p>Many problem settings in machine learning are concerned with the simultaneous prediction of multiple target variables of diverse type. Amongst others, such problem settings arise in multivariate regression, multi-label classification, multi-task learning, dyadic prediction, zero-shot learning, network inference, and matrix completion. These subfields of machine learning are typically studied in isolation, without highlighting or exploring important relationships. </p>
+<p><strong>Methodology:</strong></p>
+<p>Present a unifying view on what we call multi-target prediction (MTP) problems and methods.</p>
+<p>Introduce a general framework that covers the above subfields as special cases, is accomplished by identifying a number of key properties, which distinguish such methods and determine their suitability for different types of problems.</p>
+<p><strong>Key Findings:</strong></p>
+<p><em>Note: This paper is not a typical review paper</em></p>
+<p>Intend to focus on some general principles that might be helpful in identifying the right approach for a given problem;</p>
 ]]></content>
       <categories>
         <category>FURP</category>
@@ -470,81 +509,6 @@
       </tags>
   </entry>
   <entry>
-    <title>FURP-Driven Literature Review V</title>
-    <url>/2022/06/08/FURP-Driven-Literature-Review-V/</url>
-    <content><![CDATA[<blockquote>
-<p>Osojnik, A., Panov, P. &amp; Džeroski, S. Multi-label classification via multi-target regression on data streams. Mach Learn 106, 745–770 (2017). <a class="link"   href="https://doi.org/10.1007/s10994-016-5613-5" >https://doi.org/10.1007/s10994-016-5613-5<i class="fas fa-external-link-alt"></i></a></p>
-</blockquote>
-<p>Driven by FURP(FoSE Undergraduate Research Placement) Programme.</p>
-<span id="more"></span>
-
-<h2 id="Multi-label-classification-via-multi-target-regression-on-data-streams"><a href="#Multi-label-classification-via-multi-target-regression-on-data-streams" class="headerlink" title="Multi-label classification via multi-target regression on data streams"></a>Multi-label classification via multi-target regression on data streams</h2><p><strong>Publisher:</strong> </p>
-<p>Springer, Machine Learning</p>
-<p><strong>Authors:</strong> </p>
-<p>Aljaž Osojnik, Panče Panov, Sašo Džeroski </p>
-<p><strong>Index Terms</strong></p>
-<ul>
-<li>Multi-label classification</li>
-<li>Multi-target regression</li>
-<li>Data stream mining</li>
-</ul>
-<p><strong>DOI:</strong> <a class="link"   href="https://doi.org/10.1007/s10994-016-5613-5" >10.1007&#x2F;s10994-016-5613-5<i class="fas fa-external-link-alt"></i></a></p>
-<p><strong>Background(Key Point):</strong></p>
-<p>Multi-label classification(MLC) tasks are encountered more and more frequently in machine learning applications, however, only a few MLC methods exists for classical batch setting.</p>
-<p><strong>Methodology:</strong></p>
-<p>Propose a new methodology for MLC tasks via multi-target regression in a stream setting.</p>
-<p>Develop a streaming multi-target regressor ISOUP-Tree that use this approach.</p>
-<p><strong>Key Findings:</strong></p>
-<p>Two variants of the ISOUP-Tree method(building regression and model trees) were experimentally compared and evaluated, and it turns out that the ensembles of iSOUP-Trees perform significantly better on some of these measures, especially the ones based on label ranking, and are not significantly worse than the competitors on any of the remaining measures. </p>
-]]></content>
-      <categories>
-        <category>FURP</category>
-        <category>Literature Review</category>
-      </categories>
-      <tags>
-        <tag>Multi-Target Tracking</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>FURP-Driven Literature Review III</title>
-    <url>/2022/06/07/FURP-Driven-Literature-Review-III/</url>
-    <content><![CDATA[<blockquote>
-<p>Waegeman, W., Dembczyński, K. &amp; Hüllermeier, E. Multi-target prediction: a unifying view on problems and methods. Data Min Knowl Disc 33, 293–324 (2019). <a class="link"   href="https://doi.org/10.1007/s10618-018-0595-5" >https://doi.org/10.1007/s10618-018-0595-5<i class="fas fa-external-link-alt"></i></a></p>
-</blockquote>
-<p>Driven by FURP(FoSE Undergraduate Research Placement) Programme.</p>
-<span id="more"></span>
-
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2><p><strong>Publisher:</strong> Springer Nature</p>
-<p>Expert Systems with Applications</p>
-<p><strong>Authors:</strong> </p>
-<p>Willem Waegeman, Krzysztof Dembczyński, Eyke Hüllermeier </p>
-<p><strong>Index Terms</strong></p>
-<ul>
-<li>Extreme Learning Machine</li>
-<li>Regularization</li>
-<li>Multi-target regression</li>
-<li>Robust to outliers</li>
-<li>Alternating direction method of multipliers</li>
-</ul>
-<p><strong>DOI:</strong> <a class="link"   href="https://doi.org/10.1007/s10618-018-0595-5" >10.1007&#x2F;s10618-018-0595-5<i class="fas fa-external-link-alt"></i></a></p>
-<p><strong>Background(Key Point):</strong></p>
-<p>Many problem settings in machine learning are concerned with the simultaneous prediction of multiple target variables of diverse type. Amongst others, such problem settings arise in multivariate regression, multi-label classification, multi-task learning, dyadic prediction, zero-shot learning, network inference, and matrix completion. These subfields of machine learning are typically studied in isolation, without highlighting or exploring important relationships. </p>
-<p><strong>Methodology:</strong></p>
-<p>Present a unifying view on what we call multi-target prediction (MTP) problems and methods.</p>
-<p>Introduce a general framework that covers the above subfields as special cases, is accomplished by identifying a number of key properties, which distinguish such methods and determine their suitability for different types of problems.</p>
-<p><strong>Key Findings:</strong></p>
-<p><em>Note: This paper is not a typical review paper</em></p>
-<p>Intend to focus on some general principles that might be helpful in identifying the right approach for a given problem;</p>
-]]></content>
-      <categories>
-        <category>FURP</category>
-        <category>Literature Review</category>
-      </categories>
-      <tags>
-        <tag>Multi-Target Tracking</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>FURP-Driven Literature Review IV</title>
     <url>/2022/06/08/FURP-Driven-Literature-Review-IV/</url>
     <content><![CDATA[<blockquote>
@@ -575,6 +539,42 @@
       <categories>
         <category>Literature Review</category>
         <category>FURP</category>
+      </categories>
+      <tags>
+        <tag>Multi-Target Tracking</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>FURP-Driven Literature Review V</title>
+    <url>/2022/06/08/FURP-Driven-Literature-Review-V/</url>
+    <content><![CDATA[<blockquote>
+<p>Osojnik, A., Panov, P. &amp; Džeroski, S. Multi-label classification via multi-target regression on data streams. Mach Learn 106, 745–770 (2017). <a class="link"   href="https://doi.org/10.1007/s10994-016-5613-5" >https://doi.org/10.1007/s10994-016-5613-5<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<p>Driven by FURP(FoSE Undergraduate Research Placement) Programme.</p>
+<span id="more"></span>
+
+<h2 id="Multi-label-classification-via-multi-target-regression-on-data-streams"><a href="#Multi-label-classification-via-multi-target-regression-on-data-streams" class="headerlink" title="Multi-label classification via multi-target regression on data streams"></a>Multi-label classification via multi-target regression on data streams</h2><p><strong>Publisher:</strong> </p>
+<p>Springer, Machine Learning</p>
+<p><strong>Authors:</strong> </p>
+<p>Aljaž Osojnik, Panče Panov, Sašo Džeroski </p>
+<p><strong>Index Terms</strong></p>
+<ul>
+<li>Multi-label classification</li>
+<li>Multi-target regression</li>
+<li>Data stream mining</li>
+</ul>
+<p><strong>DOI:</strong> <a class="link"   href="https://doi.org/10.1007/s10994-016-5613-5" >10.1007&#x2F;s10994-016-5613-5<i class="fas fa-external-link-alt"></i></a></p>
+<p><strong>Background(Key Point):</strong></p>
+<p>Multi-label classification(MLC) tasks are encountered more and more frequently in machine learning applications, however, only a few MLC methods exists for classical batch setting.</p>
+<p><strong>Methodology:</strong></p>
+<p>Propose a new methodology for MLC tasks via multi-target regression in a stream setting.</p>
+<p>Develop a streaming multi-target regressor ISOUP-Tree that use this approach.</p>
+<p><strong>Key Findings:</strong></p>
+<p>Two variants of the ISOUP-Tree method(building regression and model trees) were experimentally compared and evaluated, and it turns out that the ensembles of iSOUP-Trees perform significantly better on some of these measures, especially the ones based on label ranking, and are not significantly worse than the competitors on any of the remaining measures. </p>
+]]></content>
+      <categories>
+        <category>FURP</category>
+        <category>Literature Review</category>
       </categories>
       <tags>
         <tag>Multi-Target Tracking</tag>
@@ -614,6 +614,64 @@
       <categories>
         <category>Reading List</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Project: Simple Face-Mask Detector</title>
+    <url>/2022/06/14/Project-Simple-Face-Mask-Detector/</url>
+    <content><![CDATA[<p>A Simple Face-Mask Detector built with <strong>OpenCV</strong>, <strong>Keras(Tensorflow)</strong> in order to detect face masks in both images and video streams.</p>
+<p><img src="/../images/preview-SFMD-streamlit-pic.png" alt="A Streamlit webApp Preview."></p>
+<p>See also in: <a class="link"   href="https://github.com/Ch-i-Yu/Simple-Face-Mask-Detector/blob/main/Readme-Image/masked_girls.gif" >GitHub<i class="fas fa-external-link-alt"></i></a> &amp; <a class="link"   href="https://share.streamlit.io/ch-i-yu/simple-face-mask-detector/main/Simple_Face-Mask_Detector_App.py" >Streamlit Cloud<i class="fas fa-external-link-alt"></i></a></p>
+<span id="more"></span>
+
+<h3 id="TechStack-x2F-Framework"><a href="#TechStack-x2F-Framework" class="headerlink" title="TechStack&#x2F;Framework"></a>TechStack&#x2F;Framework</h3><ul>
+<li>OpenCV</li>
+<li>Keras(Tensorflow)</li>
+<li>MobileNetV2<ul>
+<li>Optimizer: Adam</li>
+<li>Loss: Binary Crossentropy</li>
+<li>Metrics: Accuracy</li>
+</ul>
+</li>
+<li>Caffe-based Face Detector</li>
+</ul>
+<h3 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h3><p>The dataset was created by Prajna Bhandary.</p>
+<p>The dataset consists of 1,376 images belongs to two classes:</p>
+<ul>
+<li>with_mask: 690 images</li>
+<li>without_mask: 686 images</li>
+</ul>
+<p>The images used were real images of human faces, however artificial face masks were added to create an artificial (but still real-world applicable) dataset.</p>
+<h3 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h3><p>All the dependencies and required libraries are included in the file <code>requirements.txt</code>.</p>
+<p><em>Note: packages.txt is importing streamlit-needed exnternal dependencies. Ignore it if you are using Ananconda venv.</em></p>
+<h3 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h3><p>The model gave 98% accuracy for Face Mask Detection after training.<br><br>See also in the following accuracy&#x2F;loss training curve plot:<br><img src="./Plots/plot.png"></p>
+<h3 id="Working"><a href="#Working" class="headerlink" title="Working"></a>Working</h3><ol>
+<li><p>To train the Face-Mask Detector, execute the following sample command:</p>
+<p><code>python train_detector.py -d Dataset</code></p>
+</li>
+<li><p>To detect face masks in an single image, execute the following sample command:</p>
+<p><code>python predict_image.py -i .\Examples\Images\image-01.jpg</code></p>
+</li>
+<li><p>To detect face masks in video streams, execute the following sample command:</p>
+<p><code>python predict_video.py</code></p>
+</li>
+<li><p>To find a Web-App version of the Simple Face-Mask Detector, execute the following sample command:</p>
+<p><code>streamlit run Simple_Face-Mask_Detector_App.py</code></p>
+<p>or</p>
+<p><code>streamlit run https://raw.githubusercontent.com/Ch-i-Yu/Simple-Face-Mask-Detector/main/Simple_Face-Mask_Detector_App.py</code></p>
+<p>or simply visit <a class="link"   href="https://share.streamlit.io/ch-i-yu/simple-face-mask-detector/main/Simple_Face-Mask_Detector_App.py" >Streamlit App Link<i class="fas fa-external-link-alt"></i></a>.</p>
+</li>
+</ol>
+<h3 id="Inspiration"><a href="#Inspiration" class="headerlink" title="Inspiration"></a>Inspiration</h3><p>This simplified, hello-world like project for a greenhand in Computer vision is inspired by the efforts of <strong>Adrian Rosebrock</strong> and <strong>Prajna Bhandary</strong>.</p>
+<h3 id="Special-Thanks-to…"><a href="#Special-Thanks-to…" class="headerlink" title="Special Thanks to…"></a>Special Thanks to…</h3><p>Thanks for my awesome guys, <strong>Xiyu L.</strong> and <strong>Feng J.</strong> who helped me to test my tiny project and record the lovely gif in the front of this page.</p>
+<h3 id="License"><a href="#License" class="headerlink" title="License"></a>License</h3><p>MIT © <a class="link"   href="https://github.com/Ch-i-Yu" >Ch’i YU<i class="fas fa-external-link-alt"></i></a></p>
+]]></content>
+      <categories>
+        <category>Project</category>
+      </categories>
+      <tags>
+        <tag>Computer Vision</tag>
+        <tag>Personal Project</tag>
+      </tags>
   </entry>
   <entry>
     <title>Hello World</title>
