@@ -44,6 +44,118 @@
       </categories>
   </entry>
   <entry>
+    <title>Algorithm-I, Day 2-6</title>
+    <url>/2022/03/08/Algorithm-I-Day-2-6/</url>
+    <content><![CDATA[<p>Topic: Two Pointers with Sliding Window </p>
+<span id="more"></span>
+
+<blockquote>
+<p>Q977 Squares of a Sorted Array</p>
+<p>Q189 Rotate Array</p>
+<p>Q283 Move Zeroes</p>
+<p>Q167 Two Sum</p>
+<p>Q344 Reverse String</p>
+<p>Q557 Reverse Words in a String III</p>
+<p>Q876 Middle of the Linked List</p>
+<p>Q19 Remove Nth Node From End of List</p>
+<p>Q3 Longest Substring Without Repeating Characters</p>
+<p>Q567 Permutation in String</p>
+</blockquote>
+<p>A searching algorithm which finds a pair of element’s position in a <strong>sequential(sorted)</strong> array.</p>
+<p>e.g. Given a enumerable array <code>Grid</code> (maybe sorted in some order), having finite integers, Two-Pointers method can find if there exists any <strong>pair of elements</strong> (<code>Grid[i]</code>, <code>Grid[j]</code>) such that suits some given target.</p>
+<blockquote>
+<p><strong>Note:</strong><br>This pair of elements can also represents a sequence of items of an array, which starts at item No. i and stops at item No. j.</p>
+</blockquote>
+<hr>
+<h5 id="Pre-amp-Post-x2F-Sliding-Window-Method"><a href="#Pre-amp-Post-x2F-Sliding-Window-Method" class="headerlink" title="Pre&amp;Post &#x2F; Sliding Window Method"></a>Pre&amp;Post &#x2F; Sliding Window Method</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Ensure that pointer H(High) is kinda ahead of the pointer L(Low).</span></span><br><span class="line"><span class="comment">## Hence, the pointers L &amp; H spans a window.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> H &lt; Border: </span><br><span class="line">    Window.push(H)		<span class="comment">## Expand the Window</span></span><br><span class="line">    H++;</span><br><span class="line">    <span class="keyword">while</span> valid Window:</span><br><span class="line">		update Window <span class="keyword">if</span> necessary</span><br><span class="line">        Window.pop(L)	 <span class="comment">## Shrink the Window</span></span><br><span class="line">        L++</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> Window</span><br></pre></td></tr></table></figure>
+
+<h5 id="Left-amp-Right-Method"><a href="#Left-amp-Right-Method" class="headerlink" title="Left&amp;Right Method"></a>Left&amp;Right Method</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Do until the pointers L(Left) and R(Right) meet each other,</span></span><br><span class="line"><span class="comment">## Or do until the target pair is found.</span></span><br><span class="line">    <span class="keyword">if</span> Target == Grid[L] + Grid[R]</span><br><span class="line">        <span class="keyword">return</span> L, R</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> Target &gt; Grid[L] + Grid[R]</span><br><span class="line">        R -= <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span> <span class="comment">## Target &lt; Grid[L] + Grid[R]</span></span><br><span class="line">    	L += <span class="number">1</span></span><br><span class="line">	</span><br><span class="line">    <span class="keyword">continue</span></span><br><span class="line"><span class="comment">## Note: </span></span><br><span class="line"><span class="comment">## The explanation above implicitly assume that</span></span><br><span class="line"><span class="comment">## the array Grid is sorted ascendingly.</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="Time-Complexities"><a href="#Time-Complexities" class="headerlink" title="Time Complexities"></a>Time Complexities</h5><ul>
+<li>Best Case Complexity: O(1)</li>
+<li>Worst Case Complexity: O(n)</li>
+<li><strong>Average Case Complexity: O(n)</strong></li>
+</ul>
+<h5 id="Space-Complexities"><a href="#Space-Complexities" class="headerlink" title="Space Complexities"></a>Space Complexities</h5><ul>
+<li>O(1)</li>
+</ul>
+<hr>
+<h5 id="Footnote"><a href="#Footnote" class="headerlink" title="Footnote"></a>Footnote</h5><p>In <strong>Q977 Squares of a Sorted Array</strong>:</p>
+<p>Left&amp;Right Method is applied. Take The absolute value for comparison.</p>
+<p>In <strong>Q189 Rotate Array</strong>:</p>
+<p>See also in: &lt; Article Not Published Yet &gt;</p>
+<p>In <strong>Q283 Move Zeroes</strong>:</p>
+<p>Left&amp;Right Method is applied. One Pointer stands for the current working position, and another stands for the staing point of pushing in &#x2F; filling with zeros.</p>
+<p>In <strong>Q167 Two Sum</strong>:</p>
+<p>Left&amp;Right Method is applied.</p>
+<p>Note: The given input array is sorted.</p>
+<p>In <strong>Q344 Reverse String</strong>:</p>
+<p>Left&amp;Right Method is applied. </p>
+<p>In <strong>Q557 Reverse Words in a String III</strong>:</p>
+<p>Left&amp;Right Method is applied. Just make wise usage of slicers.</p>
+<p>In <strong>Q876 Middle of the Linked List</strong>:</p>
+<p>Pre&amp;Post &#x2F; Sliding Window Method is recommended.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">Pre += <span class="number">1</span></span><br><span class="line">Post += <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p>In <strong>Q19 Remove Nth Node From End of List</strong>:</p>
+<p>Left&amp;Right Method is applied. </p>
+<p>Repeat the “process” for N times, then remove the node.</p>
+<p>In <strong>Q3 Longest Substring Without Repeating Characters</strong>:</p>
+<p>Pre&amp;Post &#x2F; Sliding Window Method is applied.</p>
+<p>In <strong>Q567 Permutation in String</strong>:</p>
+<p>Note: It’s much faster to create 2 <strong>dictionarys</strong> and compare them instead.</p>
+]]></content>
+      <categories>
+        <category>LeetCode Plan</category>
+        <category>Algorithm-I</category>
+      </categories>
+      <tags>
+        <tag>Two Pointers</tag>
+        <tag>Sliding Window</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Algorithm-I, Day 1</title>
+    <url>/2022/03/06/Algorithm-I-Day-1/</url>
+    <content><![CDATA[<p>Topic: Binary Search</p>
+<span id="more"></span>
+
+<blockquote>
+<p>Q704 Binary Search</p>
+<p>Q278 First Bad Version</p>
+<p>Q35 Search Insert Position</p>
+</blockquote>
+<p>A searching algorithm which finds an element’s position in a <strong>sequential(sorted)</strong> and <strong>comparable</strong> array.</p>
+<p>In this method, the element is always searched in the <strong>middle</strong> of a portion of an array sliced in halves.</p>
+<p>This method do follow the <strong>divide-and-conquer</strong> approach.</p>
+<hr>
+<h5 id="Iteration-Method"><a href="#Iteration-Method" class="headerlink" title="Iteration Method"></a>Iteration Method</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Do until the pointers L(Low/Left) and R(High/Right) meet each other,</span></span><br><span class="line"><span class="comment">## or do until the target element is found.</span></span><br><span class="line">	Mid = (L + R) / <span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> Target == Grid[Mid]</span><br><span class="line">        <span class="keyword">return</span> Mid</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> Target &gt; Grid[Mid]</span><br><span class="line">        L = Mid + <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span> <span class="comment">## Target &lt; Grid[Mid]</span></span><br><span class="line">    	R = Mid - <span class="number">1</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">continue</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="Recursion-Method"><a href="#Recursion-Method" class="headerlink" title="Recursion Method"></a>Recursion Method</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Define a function and calle itself within definition.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## Do until the pointers L(Low/Left) and R(High/Right) meet each other,</span></span><br><span class="line"><span class="comment">## or do until the target element is found.</span></span><br><span class="line">RM(Grid, Target, L, R)</span><br><span class="line">	<span class="keyword">if</span> L &gt; R</span><br><span class="line">    	<span class="keyword">return</span> Not Found</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    	Mid = (L + R) / <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> Target == Grid[Mid]</span><br><span class="line">        	<span class="keyword">return</span> Mid</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> Target &gt; Grid[Mid]</span><br><span class="line">        	returnRM(Grid, Target, Mid + <span class="number">1</span>, R)</span><br><span class="line">        <span class="keyword">else</span> <span class="comment">## Target &lt; Grid[Mid]</span></span><br><span class="line">        	returnRM(Grid, Target, L, Mid - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<h5 id="Time-Complexities"><a href="#Time-Complexities" class="headerlink" title="Time Complexities"></a>Time Complexities</h5><ul>
+<li>Best Case Complexity: O(1)</li>
+<li>Worst Case Complexity: O(log n)</li>
+<li><strong>Average Case Complexity: O(log n)</strong></li>
+</ul>
+<h5 id="Space-Complexities"><a href="#Space-Complexities" class="headerlink" title="Space Complexities"></a>Space Complexities</h5><ul>
+<li>O(1)</li>
+</ul>
+<hr>
+<h5 id="Footnotes"><a href="#Footnotes" class="headerlink" title="Footnotes"></a>Footnotes</h5><p>In <strong>Q278 First Bad Version</strong>:</p>
+<p>Pointer <code>L</code>  represents the location of the first bad version.</p>
+<p>In <strong>Q35 Search Insert Position</strong>:</p>
+<p>Pointer <code>L</code>  represents the location of the target insert position.</p>
+]]></content>
+      <categories>
+        <category>LeetCode Plan</category>
+        <category>Algorithm-I</category>
+      </categories>
+      <tags>
+        <tag>Binary Search</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>A Haskell Walkthrough</title>
     <url>/2022/03/12/A-Haskell-Walkthrough/</url>
     <content><![CDATA[<p>Brief solutions of most chapters in <strong>Programming in Haskell</strong>.</p>
@@ -273,115 +385,82 @@
       </tags>
   </entry>
   <entry>
-    <title>Algorithm-I, Day 2-6</title>
-    <url>/2022/03/08/Algorithm-I-Day-2-6/</url>
-    <content><![CDATA[<p>Topic: Two Pointers with Sliding Window </p>
+    <title>FURP-Driven Literature Review II</title>
+    <url>/2022/06/07/FURP-Driven-Literature-Review-II/</url>
+    <content><![CDATA[<blockquote>
+<p>Rodríguez-Pérez, R., Bajorath, J. Interpretation of machine learning models using shapley values: application to compound potency and multi-target activity predictions. J Comput Aided Mol Des 34, 1013–1026 (2020). <a class="link"   href="https://doi.org/10.1007/s10822-020-00314-0" >https://doi.org/10.1007/s10822-020-00314-0<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<p>Driven by FURP(FoSE Undergraduate Research Placement) Programme.</p>
 <span id="more"></span>
 
-<blockquote>
-<p>Q977 Squares of a Sorted Array</p>
-<p>Q189 Rotate Array</p>
-<p>Q283 Move Zeroes</p>
-<p>Q167 Two Sum</p>
-<p>Q344 Reverse String</p>
-<p>Q557 Reverse Words in a String III</p>
-<p>Q876 Middle of the Linked List</p>
-<p>Q19 Remove Nth Node From End of List</p>
-<p>Q3 Longest Substring Without Repeating Characters</p>
-<p>Q567 Permutation in String</p>
-</blockquote>
-<p>A searching algorithm which finds a pair of element’s position in a <strong>sequential(sorted)</strong> array.</p>
-<p>e.g. Given a enumerable array <code>Grid</code> (maybe sorted in some order), having finite integers, Two-Pointers method can find if there exists any <strong>pair of elements</strong> (<code>Grid[i]</code>, <code>Grid[j]</code>) such that suits some given target.</p>
-<blockquote>
-<p><strong>Note:</strong><br>This pair of elements can also represents a sequence of items of an array, which starts at item No. i and stops at item No. j.</p>
-</blockquote>
-<hr>
-<h5 id="Pre-amp-Post-x2F-Sliding-Window-Method"><a href="#Pre-amp-Post-x2F-Sliding-Window-Method" class="headerlink" title="Pre&amp;Post &#x2F; Sliding Window Method"></a>Pre&amp;Post &#x2F; Sliding Window Method</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Ensure that pointer H(High) is kinda ahead of the pointer L(Low).</span></span><br><span class="line"><span class="comment">## Hence, the pointers L &amp; H spans a window.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> H &lt; Border: </span><br><span class="line">    Window.push(H)		<span class="comment">## Expand the Window</span></span><br><span class="line">    H++;</span><br><span class="line">    <span class="keyword">while</span> valid Window:</span><br><span class="line">		update Window <span class="keyword">if</span> necessary</span><br><span class="line">        Window.pop(L)	 <span class="comment">## Shrink the Window</span></span><br><span class="line">        L++</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> Window</span><br></pre></td></tr></table></figure>
-
-<h5 id="Left-amp-Right-Method"><a href="#Left-amp-Right-Method" class="headerlink" title="Left&amp;Right Method"></a>Left&amp;Right Method</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Do until the pointers L(Left) and R(Right) meet each other,</span></span><br><span class="line"><span class="comment">## Or do until the target pair is found.</span></span><br><span class="line">    <span class="keyword">if</span> Target == Grid[L] + Grid[R]</span><br><span class="line">        <span class="keyword">return</span> L, R</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> Target &gt; Grid[L] + Grid[R]</span><br><span class="line">        R -= <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span> <span class="comment">## Target &lt; Grid[L] + Grid[R]</span></span><br><span class="line">    	L += <span class="number">1</span></span><br><span class="line">	</span><br><span class="line">    <span class="keyword">continue</span></span><br><span class="line"><span class="comment">## Note: </span></span><br><span class="line"><span class="comment">## The explanation above implicitly assume that</span></span><br><span class="line"><span class="comment">## the array Grid is sorted ascendingly.</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="Time-Complexities"><a href="#Time-Complexities" class="headerlink" title="Time Complexities"></a>Time Complexities</h5><ul>
-<li>Best Case Complexity: O(1)</li>
-<li>Worst Case Complexity: O(n)</li>
-<li><strong>Average Case Complexity: O(n)</strong></li>
+<h2 id="Interpretation-of-machine-learning-models-using-shapley-values-application-to-compound-potency-and-multi-target-activity-predictions"><a href="#Interpretation-of-machine-learning-models-using-shapley-values-application-to-compound-potency-and-multi-target-activity-predictions" class="headerlink" title="Interpretation of machine learning models using shapley values: application to compound potency and multi-target activity predictions"></a>Interpretation of machine learning models using shapley values: application to compound potency and multi-target activity predictions</h2><p><strong>Publisher:</strong> </p>
+<p>Springer Nature, Journal of Computer-Aided Molecular Design</p>
+<p><strong>Authors:</strong> </p>
+<p>Raquel Rodríguez-Pérez, Jürgen Bajorath</p>
+<p><strong>Index Terms</strong></p>
+<ul>
+<li>Machine learning</li>
+<li>Black box character</li>
+<li>Structure–activity relationships</li>
+<li>Compound activity</li>
+<li>Compound potency prediction</li>
+<li>Multi-target modeling</li>
+<li>Model interpretation</li>
+<li>Feature importance</li>
+<li>Shapley values</li>
 </ul>
-<h5 id="Space-Complexities"><a href="#Space-Complexities" class="headerlink" title="Space Complexities"></a>Space Complexities</h5><ul>
-<li>O(1)</li>
-</ul>
-<hr>
-<h5 id="Footnote"><a href="#Footnote" class="headerlink" title="Footnote"></a>Footnote</h5><p>In <strong>Q977 Squares of a Sorted Array</strong>:</p>
-<p>Left&amp;Right Method is applied. Take The absolute value for comparison.</p>
-<p>In <strong>Q189 Rotate Array</strong>:</p>
-<p>See also in: &lt; Article Not Published Yet &gt;</p>
-<p>In <strong>Q283 Move Zeroes</strong>:</p>
-<p>Left&amp;Right Method is applied. One Pointer stands for the current working position, and another stands for the staing point of pushing in &#x2F; filling with zeros.</p>
-<p>In <strong>Q167 Two Sum</strong>:</p>
-<p>Left&amp;Right Method is applied.</p>
-<p>Note: The given input array is sorted.</p>
-<p>In <strong>Q344 Reverse String</strong>:</p>
-<p>Left&amp;Right Method is applied. </p>
-<p>In <strong>Q557 Reverse Words in a String III</strong>:</p>
-<p>Left&amp;Right Method is applied. Just make wise usage of slicers.</p>
-<p>In <strong>Q876 Middle of the Linked List</strong>:</p>
-<p>Pre&amp;Post &#x2F; Sliding Window Method is recommended.</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">Pre += <span class="number">1</span></span><br><span class="line">Post += <span class="number">2</span></span><br></pre></td></tr></table></figure>
-
-<p>In <strong>Q19 Remove Nth Node From End of List</strong>:</p>
-<p>Left&amp;Right Method is applied. </p>
-<p>Repeat the “process” for N times, then remove the node.</p>
-<p>In <strong>Q3 Longest Substring Without Repeating Characters</strong>:</p>
-<p>Pre&amp;Post &#x2F; Sliding Window Method is applied.</p>
-<p>In <strong>Q567 Permutation in String</strong>:</p>
-<p>Note: It’s much faster to create 2 <strong>dictionarys</strong> and compare them instead.</p>
+<p><strong>DOI:</strong> <a class="link"   href="https://doi.org/10.1007/s10822-020-00314-0" >10.1007&#x2F;s10822-020-00314-0<i class="fas fa-external-link-alt"></i></a></p>
+<p><strong>Background(Key Point):</strong></p>
+<p>Difficulties in interpreting machine learning(ML) models and their predictions limit the practical applicability of and confidence in ML in pharmaceutical research.</p>
+<p>A short coming of many ML approaches is the difficulty to rationalize predictions.</p>
+<p>Lack of interpretability might result from intrinsic black box character of ML methods such as neural network(NN) or support vector machine(SVM) algorithms. Futhermore, it might also result from using principally interpretable models such as decison trees(DTs) as large ensembles classifiers such as random forest(RF).</p>
+<p><strong>Methodology:</strong></p>
+<p><code>Shapley Additive exPlanations method(SHAP)</code>, A new methodology applicable of any complexity for ML model interpretation in chemoinformatics and medicinal chemistry is introduced. It is based upon the Shapley value concept from game theory and can be rationalized as an extension of the local interpretable model-agnostic explanations.</p>
+<p><strong>Key Findings:</strong><br>The <code>SHAP</code> methodologu enables the interpretation of ML models and their predictions, yielding feature importance for any ML model and therefore sheds light on the black box nature of many ML approaches.</p>
+<p><code>SHAP</code> analysis yielded meaningful explanations of compounded potency and multi-target predictions, revealing different model characteristics responsible for individual model.</p>
 ]]></content>
       <categories>
-        <category>LeetCode Plan</category>
-        <category>Algorithm-I</category>
+        <category>FURP</category>
+        <category>Literature Review</category>
       </categories>
       <tags>
-        <tag>Two Pointers</tag>
-        <tag>Sliding Window</tag>
+        <tag>Multi-Target Tracking</tag>
       </tags>
   </entry>
   <entry>
-    <title>Algorithm-I, Day 1</title>
-    <url>/2022/03/06/Algorithm-I-Day-1/</url>
-    <content><![CDATA[<p>Topic: Binary Search</p>
+    <title>FURP-Driven Literature Review IV</title>
+    <url>/2022/06/08/FURP-Driven-Literature-Review-IV/</url>
+    <content><![CDATA[<blockquote>
+<p>Petković, M., Kocev, D. &amp; Džeroski, S. Feature ranking for multi-target regression. Mach Learn 109, 1179–1204 (2020). <a class="link"   href="https://doi.org/10.1007/s10994-019-05829-8cement" >https://doi.org/10.1007/s10994-019-05829-8cement<i class="fas fa-external-link-alt"></i></a>) Programme.</p>
+</blockquote>
 <span id="more"></span>
 
-<blockquote>
-<p>Q704 Binary Search</p>
-<p>Q278 First Bad Version</p>
-<p>Q35 Search Insert Position</p>
-</blockquote>
-<p>A searching algorithm which finds an element’s position in a <strong>sequential(sorted)</strong> and <strong>comparable</strong> array.</p>
-<p>In this method, the element is always searched in the <strong>middle</strong> of a portion of an array sliced in halves.</p>
-<p>This method do follow the <strong>divide-and-conquer</strong> approach.</p>
-<hr>
-<h5 id="Iteration-Method"><a href="#Iteration-Method" class="headerlink" title="Iteration Method"></a>Iteration Method</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Do until the pointers L(Low/Left) and R(High/Right) meet each other,</span></span><br><span class="line"><span class="comment">## or do until the target element is found.</span></span><br><span class="line">	Mid = (L + R) / <span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> Target == Grid[Mid]</span><br><span class="line">        <span class="keyword">return</span> Mid</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> Target &gt; Grid[Mid]</span><br><span class="line">        L = Mid + <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span> <span class="comment">## Target &lt; Grid[Mid]</span></span><br><span class="line">    	R = Mid - <span class="number">1</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">continue</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="Recursion-Method"><a href="#Recursion-Method" class="headerlink" title="Recursion Method"></a>Recursion Method</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Define a function and calle itself within definition.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## Do until the pointers L(Low/Left) and R(High/Right) meet each other,</span></span><br><span class="line"><span class="comment">## or do until the target element is found.</span></span><br><span class="line">RM(Grid, Target, L, R)</span><br><span class="line">	<span class="keyword">if</span> L &gt; R</span><br><span class="line">    	<span class="keyword">return</span> Not Found</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    	Mid = (L + R) / <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> Target == Grid[Mid]</span><br><span class="line">        	<span class="keyword">return</span> Mid</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> Target &gt; Grid[Mid]</span><br><span class="line">        	returnRM(Grid, Target, Mid + <span class="number">1</span>, R)</span><br><span class="line">        <span class="keyword">else</span> <span class="comment">## Target &lt; Grid[Mid]</span></span><br><span class="line">        	returnRM(Grid, Target, L, Mid - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
-<h5 id="Time-Complexities"><a href="#Time-Complexities" class="headerlink" title="Time Complexities"></a>Time Complexities</h5><ul>
-<li>Best Case Complexity: O(1)</li>
-<li>Worst Case Complexity: O(log n)</li>
-<li><strong>Average Case Complexity: O(log n)</strong></li>
+<h3 id="Feature-ranking-for-multi-target-regression"><a href="#Feature-ranking-for-multi-target-regression" class="headerlink" title="Feature ranking for multi-target regression"></a>Feature ranking for multi-target regression</h3><p><strong>Publisher:</strong> </p>
+<p>Springer Link, Special Issue of the Discovery Science 2017</p>
+<p><strong>Authors:</strong> </p>
+<p>Matej Petokovic, Dragi Kocev, Saso Dzeroski</p>
+<p><strong>Index Terms</strong></p>
+<ul>
+<li>Feature ranking</li>
+<li>Multi target regression</li>
+<li>Tree based methods</li>
+<li>Relief</li>
 </ul>
-<h5 id="Space-Complexities"><a href="#Space-Complexities" class="headerlink" title="Space Complexities"></a>Space Complexities</h5><ul>
-<li>O(1)</li>
-</ul>
-<hr>
-<h5 id="Footnotes"><a href="#Footnotes" class="headerlink" title="Footnotes"></a>Footnotes</h5><p>In <strong>Q278 First Bad Version</strong>:</p>
-<p>Pointer <code>L</code>  represents the location of the first bad version.</p>
-<p>In <strong>Q35 Search Insert Position</strong>:</p>
-<p>Pointer <code>L</code>  represents the location of the target insert position.</p>
+<p><strong>DOI:</strong> <a class="link"   href="https://doi.org/10.1007/s10994-019-05829-8" >10.1007&#x2F;s10994-019-05829-8<i class="fas fa-external-link-alt"></i></a></p>
+<p><strong>Background(Key Point):</strong></p>
+<p>Multi-target regression(MTR), which concerns problems with multiple continuous dependent&#x2F;target variables, is lack of studies in performing feature ranking in the context of MTR so far.</p>
+<p><strong>Methodology:</strong></p>
+<p>Two groups of feature ranking scores for MTR: scores(Symbolic, Genie3, Random Forest score) based on ensembles(bagging, random forests, extra tress) and a score derived as an extension of the RReliefF method was studied.</p>
+<p>A generic data-transformation approach to MTR feature ranking and thus have two version of each score.</p>
+<p><strong>Key Findings:</strong></p>
+<p>The results identify the parameters that influence the quality of the rankings, reveal that both groups of methods produce relevant feature rankings, and show that the Symbolic and Genie3 score, coupled with random forest ensembles, yield the best rankings.s</p>
 ]]></content>
       <categories>
-        <category>LeetCode Plan</category>
-        <category>Algorithm-I</category>
+        <category>Literature Review</category>
+        <category>FURP</category>
       </categories>
       <tags>
-        <tag>Binary Search</tag>
+        <tag>Multi-Target Tracking</tag>
       </tags>
   </entry>
   <entry>
@@ -466,85 +545,6 @@
       </tags>
   </entry>
   <entry>
-    <title>FURP-Driven Literature Review II</title>
-    <url>/2022/06/07/FURP-Driven-Literature-Review-II/</url>
-    <content><![CDATA[<blockquote>
-<p>Rodríguez-Pérez, R., Bajorath, J. Interpretation of machine learning models using shapley values: application to compound potency and multi-target activity predictions. J Comput Aided Mol Des 34, 1013–1026 (2020). <a class="link"   href="https://doi.org/10.1007/s10822-020-00314-0" >https://doi.org/10.1007/s10822-020-00314-0<i class="fas fa-external-link-alt"></i></a></p>
-</blockquote>
-<p>Driven by FURP(FoSE Undergraduate Research Placement) Programme.</p>
-<span id="more"></span>
-
-<h2 id="Interpretation-of-machine-learning-models-using-shapley-values-application-to-compound-potency-and-multi-target-activity-predictions"><a href="#Interpretation-of-machine-learning-models-using-shapley-values-application-to-compound-potency-and-multi-target-activity-predictions" class="headerlink" title="Interpretation of machine learning models using shapley values: application to compound potency and multi-target activity predictions"></a>Interpretation of machine learning models using shapley values: application to compound potency and multi-target activity predictions</h2><p><strong>Publisher:</strong> </p>
-<p>Springer Nature, Journal of Computer-Aided Molecular Design</p>
-<p><strong>Authors:</strong> </p>
-<p>Raquel Rodríguez-Pérez, Jürgen Bajorath</p>
-<p><strong>Index Terms</strong></p>
-<ul>
-<li>Machine learning</li>
-<li>Black box character</li>
-<li>Structure–activity relationships</li>
-<li>Compound activity</li>
-<li>Compound potency prediction</li>
-<li>Multi-target modeling</li>
-<li>Model interpretation</li>
-<li>Feature importance</li>
-<li>Shapley values</li>
-</ul>
-<p><strong>DOI:</strong> <a class="link"   href="https://doi.org/10.1007/s10822-020-00314-0" >10.1007&#x2F;s10822-020-00314-0<i class="fas fa-external-link-alt"></i></a></p>
-<p><strong>Background(Key Point):</strong></p>
-<p>Difficulties in interpreting machine learning(ML) models and their predictions limit the practical applicability of and confidence in ML in pharmaceutical research.</p>
-<p>A short coming of many ML approaches is the difficulty to rationalize predictions.</p>
-<p>Lack of interpretability might result from intrinsic black box character of ML methods such as neural network(NN) or support vector machine(SVM) algorithms. Futhermore, it might also result from using principally interpretable models such as decison trees(DTs) as large ensembles classifiers such as random forest(RF).</p>
-<p><strong>Methodology:</strong></p>
-<p><code>Shapley Additive exPlanations method(SHAP)</code>, A new methodology applicable of any complexity for ML model interpretation in chemoinformatics and medicinal chemistry is introduced. It is based upon the Shapley value concept from game theory and can be rationalized as an extension of the local interpretable model-agnostic explanations.</p>
-<p><strong>Key Findings:</strong><br>The <code>SHAP</code> methodologu enables the interpretation of ML models and their predictions, yielding feature importance for any ML model and therefore sheds light on the black box nature of many ML approaches.</p>
-<p><code>SHAP</code> analysis yielded meaningful explanations of compounded potency and multi-target predictions, revealing different model characteristics responsible for individual model.</p>
-]]></content>
-      <categories>
-        <category>FURP</category>
-        <category>Literature Review</category>
-      </categories>
-      <tags>
-        <tag>Multi-Target Tracking</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>FURP-Driven Literature Review IV</title>
-    <url>/2022/06/08/FURP-Driven-Literature-Review-IV/</url>
-    <content><![CDATA[<blockquote>
-<p>Petković, M., Kocev, D. &amp; Džeroski, S. Feature ranking for multi-target regression. Mach Learn 109, 1179–1204 (2020). <a class="link"   href="https://doi.org/10.1007/s10994-019-05829-8cement" >https://doi.org/10.1007/s10994-019-05829-8cement<i class="fas fa-external-link-alt"></i></a>) Programme.</p>
-</blockquote>
-<span id="more"></span>
-
-<h3 id="Feature-ranking-for-multi-target-regression"><a href="#Feature-ranking-for-multi-target-regression" class="headerlink" title="Feature ranking for multi-target regression"></a>Feature ranking for multi-target regression</h3><p><strong>Publisher:</strong> </p>
-<p>Springer Link, Special Issue of the Discovery Science 2017</p>
-<p><strong>Authors:</strong> </p>
-<p>Matej Petokovic, Dragi Kocev, Saso Dzeroski</p>
-<p><strong>Index Terms</strong></p>
-<ul>
-<li>Feature ranking</li>
-<li>Multi target regression</li>
-<li>Tree based methods</li>
-<li>Relief</li>
-</ul>
-<p><strong>DOI:</strong> <a class="link"   href="https://doi.org/10.1007/s10994-019-05829-8" >10.1007&#x2F;s10994-019-05829-8<i class="fas fa-external-link-alt"></i></a></p>
-<p><strong>Background(Key Point):</strong></p>
-<p>Multi-target regression(MTR), which concerns problems with multiple continuous dependent&#x2F;target variables, is lack of studies in performing feature ranking in the context of MTR so far.</p>
-<p><strong>Methodology:</strong></p>
-<p>Two groups of feature ranking scores for MTR: scores(Symbolic, Genie3, Random Forest score) based on ensembles(bagging, random forests, extra tress) and a score derived as an extension of the RReliefF method was studied.</p>
-<p>A generic data-transformation approach to MTR feature ranking and thus have two version of each score.</p>
-<p><strong>Key Findings:</strong></p>
-<p>The results identify the parameters that influence the quality of the rankings, reveal that both groups of methods produce relevant feature rankings, and show that the Symbolic and Genie3 score, coupled with random forest ensembles, yield the best rankings.s</p>
-]]></content>
-      <categories>
-        <category>Literature Review</category>
-        <category>FURP</category>
-      </categories>
-      <tags>
-        <tag>Multi-Target Tracking</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>FURP-Driven Literature Review V</title>
     <url>/2022/06/08/FURP-Driven-Literature-Review-V/</url>
     <content><![CDATA[<blockquote>
@@ -596,26 +596,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Reading List</title>
-    <url>/2022/03/03/Reading-List/</url>
-    <content><![CDATA[<p>Most of the materials on this Reading List belongs to the Campus Library Collection.</p>
-<span id="more"></span> 
-
-<h5 id="Offline-Reading-List"><a href="#Offline-Reading-List" class="headerlink" title="Offline Reading List:"></a>Offline Reading List:</h5><ul>
-<li><input disabled="" type="checkbox"> <strong>Topic:</strong> Heuristic Methods<br>  <strong>Reference:</strong><br>  <strong>Tags:</strong><br>  <strong>Notes:</strong> </li>
-<li><input disabled="" type="checkbox"> <strong>Topic:</strong> Fuzzy Logic<br>  <strong>Reference:</strong><br>  <strong>Tags:</strong><br>  <strong>Notes:</strong> </li>
-<li><input disabled="" type="checkbox"> <strong>Topic:</strong> Game Theory<br>  <strong>Reference:</strong><br>  <strong>Tags:</strong><br>  <strong>Notes:</strong> </li>
-<li><input disabled="" type="checkbox"> <strong>Topic:</strong> Evolutionary Computation<br>  <strong>Reference:</strong><br>  <strong>Tags:</strong><br>  <strong>Notes:</strong></li>
-<li><input disabled="" type="checkbox"> <strong>Topic:</strong> Evolutionary Game Theory<br>  <strong>Reference:</strong><br>  <strong>Tags:</strong><br>  <strong>Notes:</strong></li>
-</ul>
-<hr>
-<p>More articles about code tips, learning experiences and reading notes are on the way! &#x3D; &#x3D;+</p>
-]]></content>
-      <categories>
-        <category>Reading List</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Project: Simple Face-Mask Detector</title>
     <url>/2022/06/14/Project-Simple-Face-Mask-Detector/</url>
     <content><![CDATA[<p>A Simple Face-Mask Detector built with <strong>OpenCV</strong>, <strong>Keras(Tensorflow)</strong> in order to detect face masks in both images and video streams.</p>
@@ -643,24 +623,30 @@
 <p>The images used were real images of human faces, however artificial face masks were added to create an artificial (but still real-world applicable) dataset.</p>
 <h3 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h3><p>All the dependencies and required libraries are included in the file <code>requirements.txt</code>.</p>
 <p><em>Note: packages.txt is importing streamlit-needed exnternal dependencies. Ignore it if you are using Ananconda venv.</em></p>
-<h3 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h3><p>The model gave 98% accuracy for Face Mask Detection after training.<br><br>See also in the following accuracy&#x2F;loss training curve plot:<br><img src="./Plots/plot.png"></p>
+<h3 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h3><p>The model gave 98% accuracy for Face Mask Detection after training.<br><br>See also in the following accuracy&#x2F;loss training curve plot:</p>
+<p><img src="/../images/SFMD-plot.png" alt="A Sample Plot of Training Outcome."></p>
 <h3 id="Working"><a href="#Working" class="headerlink" title="Working"></a>Working</h3><ol>
-<li><p>To train the Face-Mask Detector, execute the following sample command:</p>
-<p><code>python train_detector.py -d Dataset</code></p>
-</li>
-<li><p>To detect face masks in an single image, execute the following sample command:</p>
-<p><code>python predict_image.py -i .\Examples\Images\image-01.jpg</code></p>
-</li>
-<li><p>To detect face masks in video streams, execute the following sample command:</p>
-<p><code>python predict_video.py</code></p>
-</li>
-<li><p>To find a Web-App version of the Simple Face-Mask Detector, execute the following sample command:</p>
-<p><code>streamlit run Simple_Face-Mask_Detector_App.py</code></p>
-<p>or</p>
-<p><code>streamlit run https://raw.githubusercontent.com/Ch-i-Yu/Simple-Face-Mask-Detector/main/Simple_Face-Mask_Detector_App.py</code></p>
-<p>or simply visit <a class="link"   href="https://share.streamlit.io/ch-i-yu/simple-face-mask-detector/main/Simple_Face-Mask_Detector_App.py" >Streamlit App Link<i class="fas fa-external-link-alt"></i></a>.</p>
-</li>
+<li>To train the Face-Mask Detector, execute the following sample command:</li>
 </ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python train_detector.py -d Dataset</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>To detect face masks in an single image, execute the following sample command:</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python predict_image.py -i .\Examples\Images\image-01.jpg</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>To detect face masks in video streams, execute the following sample command:</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python predict_video.py</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>To find a Web-App version of the Simple Face-Mask Detector, execute the following sample command:</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">streamlit run Simple_Face-Mask_Detector_App.py</span><br></pre></td></tr></table></figure>
+<p>or</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">streamlit run https://raw.githubusercontent.com/Ch-i-Yu/Simple-Face-Mask-Detector/main/Simple_Face-Mask_Detector_App.py</span><br></pre></td></tr></table></figure>
+<p>or simply visit <a class="link"   href="https://share.streamlit.io/ch-i-yu/simple-face-mask-detector/main/Simple_Face-Mask_Detector_App.py" >Streamlit App Link<i class="fas fa-external-link-alt"></i></a>.</p>
 <h3 id="Inspiration"><a href="#Inspiration" class="headerlink" title="Inspiration"></a>Inspiration</h3><p>This simplified, hello-world like project for a greenhand in Computer vision is inspired by the efforts of <strong>Adrian Rosebrock</strong> and <strong>Prajna Bhandary</strong>.</p>
 <h3 id="Special-Thanks-to…"><a href="#Special-Thanks-to…" class="headerlink" title="Special Thanks to…"></a>Special Thanks to…</h3><p>Thanks for my awesome guys, <strong>Xiyu L.</strong> and <strong>Feng J.</strong> who helped me to test my tiny project and record the lovely gif in the front of this page.</p>
 <h3 id="License"><a href="#License" class="headerlink" title="License"></a>License</h3><p>MIT © <a class="link"   href="https://github.com/Ch-i-Yu" >Ch’i YU<i class="fas fa-external-link-alt"></i></a></p>
@@ -701,5 +687,25 @@
       <tags>
         <tag>Hello World</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Reading List</title>
+    <url>/2022/03/03/Reading-List/</url>
+    <content><![CDATA[<p>Most of the materials on this Reading List belongs to the Campus Library Collection.</p>
+<span id="more"></span> 
+
+<h5 id="Offline-Reading-List"><a href="#Offline-Reading-List" class="headerlink" title="Offline Reading List:"></a>Offline Reading List:</h5><ul>
+<li><input disabled="" type="checkbox"> <strong>Topic:</strong> Heuristic Methods<br>  <strong>Reference:</strong><br>  <strong>Tags:</strong><br>  <strong>Notes:</strong> </li>
+<li><input disabled="" type="checkbox"> <strong>Topic:</strong> Fuzzy Logic<br>  <strong>Reference:</strong><br>  <strong>Tags:</strong><br>  <strong>Notes:</strong> </li>
+<li><input disabled="" type="checkbox"> <strong>Topic:</strong> Game Theory<br>  <strong>Reference:</strong><br>  <strong>Tags:</strong><br>  <strong>Notes:</strong> </li>
+<li><input disabled="" type="checkbox"> <strong>Topic:</strong> Evolutionary Computation<br>  <strong>Reference:</strong><br>  <strong>Tags:</strong><br>  <strong>Notes:</strong></li>
+<li><input disabled="" type="checkbox"> <strong>Topic:</strong> Evolutionary Game Theory<br>  <strong>Reference:</strong><br>  <strong>Tags:</strong><br>  <strong>Notes:</strong></li>
+</ul>
+<hr>
+<p>More articles about code tips, learning experiences and reading notes are on the way! &#x3D; &#x3D;+</p>
+]]></content>
+      <categories>
+        <category>Reading List</category>
+      </categories>
   </entry>
 </search>
