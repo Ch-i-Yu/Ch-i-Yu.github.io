@@ -24,7 +24,11 @@
     KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066cc","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Keep writing, Keep loving."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":false,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":false},"version":"3.4.5"};
     KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
   </script>
-<meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="Study with Ch'i YU" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="Study with Ch'i YU" type="application/atom+xml">
 </head>
 
 
@@ -254,35 +258,59 @@
 
         <div class="article-content markdown-body">
             <blockquote>
-<p>C. Huang, Y. Li and R. Nevatia, “Multiple Target Tracking by Learning-Based Hierarchical Association of Detection Responses,” in IEEE Transactions on Pattern Analysis and Machine Intelligence, vol. 35, no. 4, pp. 898-910, April 2013, doi: 10.1109&#x2F;TPAMI.2012.159.</p>
+<p>C. Huang, Y. Li and R. Nevatia, "Multiple Target Tracking by
+Learning-Based Hierarchical Association of Detection Responses," in IEEE
+Transactions on Pattern Analysis and Machine Intelligence, vol. 35, no.
+4, pp. 898-910, April 2013, doi: 10.1109/TPAMI.2012.159.</p>
 </blockquote>
 <p>Driven by FURP(FoSE Undergraduate Research Placement) Programme.</p>
 <span id="more"></span>
-
-<h3 id="Multiple-Target-Tracking-by-Learning-Based-Hierarchical-Association-of-Detection-Responses"><a href="#Multiple-Target-Tracking-by-Learning-Based-Hierarchical-Association-of-Detection-Responses" class="headerlink" title="Multiple Target Tracking by Learning-Based Hierarchical Association of Detection Responses"></a>Multiple Target Tracking by Learning-Based Hierarchical Association of Detection Responses</h3><p><strong>Publisher:</strong> </p>
+<h3
+id="multiple-target-tracking-by-learning-based-hierarchical-association-of-detection-responses">Multiple
+Target Tracking by Learning-Based Hierarchical Association of Detection
+Responses</h3>
+<p><strong>Publisher:</strong></p>
 <p>IEEE</p>
-<p><strong>Authors:</strong> </p>
+<p><strong>Authors:</strong></p>
 <p>Chang Huang; Yuan Li; Ramakant Nevatia</p>
-<p><strong>Index Terms</strong></p>
-<ul>
-<li>Multiple Target Tracking</li>
-<li>Hierarchical Association</li>
-<li>Bag Ranking</li>
-<li>AdaBoost</li>
-</ul>
-<p><strong>DOI:</strong> <a class="link"   target="_blank" rel="noopener" href="https://doi.org/10.1109/TPAMI.2012.159" >10.1109&#x2F;TPAMI.2012.159<i class="fas fa-external-link-alt"></i></a></p>
+<p><strong>Index Terms</strong> - Multiple Target Tracking -
+Hierarchical Association - Bag Ranking - AdaBoost</p>
+<p><strong>DOI:</strong> <a class="link" 
+ target="_blank" rel="noopener" href="https://doi.org/10.1109/TPAMI.2012.159" >10.1109/TPAMI.2012.159<i class="fas fa-external-link-alt"></i></a></p>
 <p><strong>Background(Key Point):</strong></p>
-<p><strong>The Maximum A Posteriori (MAP) problem of Data Association-based Tracking(DAT)</strong></p>
+<p><strong>The Maximum A Posteriori (MAP) problem of Data
+Association-based Tracking(DAT)</strong></p>
 <p>There are two main components of a <strong>DAT</strong> approach:</p>
-<p>One is a <code>tracklet affinity model</code> that measures the likelihood of two tracklets belonging to the same target, providing fundamental evidences for DAT;</p>
-<p>The other one is the <code>association optimization framework</code> that determines which of the tracklets should be linked considering affinity measurements correspondingly.</p>
-<p>The MAP Problem considers initialization, termination and transitions of tracklets, together with the false alarm possibilities of the tracklets, which can be effectively evaluated by the Hungarian algorithm.</p>
-<p>The tracklet affinity model, which measures the likelihood of two tracklets belonging to the same target, is a linear combination of automatically learned weak nonparametric models upon various features. which is distinct from most of previous work that relies on heuristic selection of parametric models and manual tuning of their parameters.</p>
+<p>One is a <code>tracklet affinity model</code> that measures the
+likelihood of two tracklets belonging to the same target, providing
+fundamental evidences for DAT;</p>
+<p>The other one is the <code>association optimization framework</code>
+that determines which of the tracklets should be linked considering
+affinity measurements correspondingly.</p>
+<p>The MAP Problem considers initialization, termination and transitions
+of tracklets, together with the false alarm possibilities of the
+tracklets, which can be effectively evaluated by the Hungarian
+algorithm.</p>
+<p>The tracklet affinity model, which measures the likelihood of two
+tracklets belonging to the same target, is a linear combination of
+automatically learned weak nonparametric models upon various features.
+which is distinct from most of previous work that relies on heuristic
+selection of parametric models and manual tuning of their
+parameters.</p>
 <p><strong>Methodology:</strong></p>
-<p>Propose a DAT approach based on the hierachical association framework and a novel bag-ranking approach for learning tracklet affinity models which is derived from.</p>
+<p>Propose a DAT approach based on the hierachical association framework
+and a novel bag-ranking approach for learning tracklet affinity models
+which is derived from.</p>
 <p><strong>Key Findings:</strong></p>
-<p>The systematic experiments on the standard CAVIAR dataset and the highly challenging <code>TRECVID08</code> dataset show that this approach achieves significant improvement in tracking accuracy over previous state-of-the-art work.</p>
-<p>The main difficulty in applying this tracking framework to a real-time tracking system is that it has to postpone “unsafe” associations until enough evidence is collected to resolve the ambiguity, resulting in inevitable tracking lag for some difficult targets.</p>
+<p>The systematic experiments on the standard CAVIAR dataset and the
+highly challenging <code>TRECVID08</code> dataset show that this
+approach achieves significant improvement in tracking accuracy over
+previous state-of-the-art work.</p>
+<p>The main difficulty in applying this tracking framework to a
+real-time tracking system is that it has to postpone “unsafe”
+associations until enough evidence is collected to resolve the
+ambiguity, resulting in inevitable tracking lag for some difficult
+targets.</p>
 
         </div>
 
@@ -458,7 +486,9 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Multiple-Target-Tracking-by-Learning-Based-Hierarchical-Association-of-Detection-Responses"><span class="nav-text">Multiple Target Tracking by Learning-Based Hierarchical Association of Detection Responses</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#multiple-target-tracking-by-learning-based-hierarchical-association-of-detection-responses"><span class="nav-text">Multiple
+Target Tracking by Learning-Based Hierarchical Association of Detection
+Responses</span></a></li></ol>
     </div>
 </div>
         </aside>

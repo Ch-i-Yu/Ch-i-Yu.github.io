@@ -24,7 +24,11 @@
     KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066cc","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Keep writing, Keep loving."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":false,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":false},"version":"3.4.5"};
     KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
   </script>
-<meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="Study with Ch'i YU" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="Study with Ch'i YU" type="application/atom+xml">
 </head>
 
 
@@ -257,9 +261,8 @@
         
 
         <div class="article-content markdown-body">
-            <p>Topic: Two Pointers with Sliding Window </p>
+            <p>Topic: Two Pointers with Sliding Window</p>
 <span id="more"></span>
-
 <blockquote>
 <p>Q977 Squares of a Sorted Array</p>
 <p>Q189 Rotate Array</p>
@@ -272,49 +275,64 @@
 <p>Q3 Longest Substring Without Repeating Characters</p>
 <p>Q567 Permutation in String</p>
 </blockquote>
-<p>A searching algorithm which finds a pair of element’s position in a <strong>sequential(sorted)</strong> array.</p>
-<p>e.g. Given a enumerable array <code>Grid</code> (maybe sorted in some order), having finite integers, Two-Pointers method can find if there exists any <strong>pair of elements</strong> (<code>Grid[i]</code>, <code>Grid[j]</code>) such that suits some given target.</p>
+<p>A searching algorithm which finds a pair of element's position in a
+<strong>sequential(sorted)</strong> array.</p>
+<p>e.g. Given a enumerable array <code>Grid</code> (maybe sorted in some
+order), having finite integers, Two-Pointers method can find if there
+exists any <strong>pair of elements</strong> (<code>Grid[i]</code>,
+<code>Grid[j]</code>) such that suits some given target.</p>
 <blockquote>
-<p><strong>Note:</strong><br>This pair of elements can also represents a sequence of items of an array, which starts at item No. i and stops at item No. j.</p>
+<p><strong>Note:</strong> This pair of elements can also represents a
+sequence of items of an array, which starts at item No. i and stops at
+item No. j.</p>
 </blockquote>
-<hr>
-<h5 id="Pre-amp-Post-x2F-Sliding-Window-Method"><a href="#Pre-amp-Post-x2F-Sliding-Window-Method" class="headerlink" title="Pre&amp;Post &#x2F; Sliding Window Method"></a>Pre&amp;Post &#x2F; Sliding Window Method</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## Ensure that pointer H(High) is kinda ahead of the pointer L(Low).</span></span><br><span class="line"><span class="comment">## Hence, the pointers L &amp; H spans a window.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> H &lt; Border: </span><br><span class="line">    Window.push(H)		<span class="comment">## Expand the Window</span></span><br><span class="line">    H++;</span><br><span class="line">    <span class="keyword">while</span> valid Window:</span><br><span class="line">		update Window <span class="keyword">if</span> necessary</span><br><span class="line">        Window.pop(L)	 <span class="comment">## Shrink the Window</span></span><br><span class="line">        L++</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> Window</span><br></pre></td></tr></table></figure>
-
-<h5 id="Left-amp-Right-Method"><a href="#Left-amp-Right-Method" class="headerlink" title="Left&amp;Right Method"></a>Left&amp;Right Method</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## Do until the pointers L(Left) and R(Right) meet each other,</span></span><br><span class="line"><span class="comment">## Or do until the target pair is found.</span></span><br><span class="line">    <span class="keyword">if</span> Target == Grid[L] + Grid[R]</span><br><span class="line">        <span class="keyword">return</span> L, R</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> Target &gt; Grid[L] + Grid[R]</span><br><span class="line">        R -= <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span> <span class="comment">## Target &lt; Grid[L] + Grid[R]</span></span><br><span class="line">    	L += <span class="number">1</span></span><br><span class="line">	</span><br><span class="line">    <span class="keyword">continue</span></span><br><span class="line"><span class="comment">## Note: </span></span><br><span class="line"><span class="comment">## The explanation above implicitly assume that</span></span><br><span class="line"><span class="comment">## the array Grid is sorted ascendingly.</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="Time-Complexities"><a href="#Time-Complexities" class="headerlink" title="Time Complexities"></a>Time Complexities</h5><ul>
+<hr />
+<h5 id="prepost-sliding-window-method">Pre&amp;Post / Sliding Window
+Method</h5>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## Ensure that pointer H(High) is kinda ahead of the pointer L(Low).</span></span><br><span class="line"><span class="comment">## Hence, the pointers L &amp; H spans a window.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> H &lt; Border: </span><br><span class="line">    Window.push(H)		<span class="comment">## Expand the Window</span></span><br><span class="line">    H++;</span><br><span class="line">    <span class="keyword">while</span> valid Window:</span><br><span class="line">		update Window <span class="keyword">if</span> necessary</span><br><span class="line">        Window.pop(L)	 <span class="comment">## Shrink the Window</span></span><br><span class="line">        L++</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> Window</span><br></pre></td></tr></table></figure>
+<h5 id="leftright-method">Left&amp;Right Method</h5>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## Do until the pointers L(Left) and R(Right) meet each other,</span></span><br><span class="line"><span class="comment">## Or do until the target pair is found.</span></span><br><span class="line">    <span class="keyword">if</span> Target == Grid[L] + Grid[R]</span><br><span class="line">        <span class="keyword">return</span> L, R</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> Target &gt; Grid[L] + Grid[R]</span><br><span class="line">        R -= <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span> <span class="comment">## Target &lt; Grid[L] + Grid[R]</span></span><br><span class="line">    	L += <span class="number">1</span></span><br><span class="line">	</span><br><span class="line">    <span class="keyword">continue</span></span><br><span class="line"><span class="comment">## Note: </span></span><br><span class="line"><span class="comment">## The explanation above implicitly assume that</span></span><br><span class="line"><span class="comment">## the array Grid is sorted ascendingly.</span></span><br></pre></td></tr></table></figure>
+<h5 id="time-complexities">Time Complexities</h5>
+<ul>
 <li>Best Case Complexity: O(1)</li>
 <li>Worst Case Complexity: O(n)</li>
 <li><strong>Average Case Complexity: O(n)</strong></li>
 </ul>
-<h5 id="Space-Complexities"><a href="#Space-Complexities" class="headerlink" title="Space Complexities"></a>Space Complexities</h5><ul>
+<h5 id="space-complexities">Space Complexities</h5>
+<ul>
 <li>O(1)</li>
 </ul>
-<hr>
-<h5 id="Footnote"><a href="#Footnote" class="headerlink" title="Footnote"></a>Footnote</h5><p>In <strong>Q977 Squares of a Sorted Array</strong>:</p>
-<p>Left&amp;Right Method is applied. Take The absolute value for comparison.</p>
+<hr />
+<h5 id="footnote">Footnote</h5>
+<p>In <strong>Q977 Squares of a Sorted Array</strong>:</p>
+<p>Left&amp;Right Method is applied. Take The absolute value for
+comparison.</p>
 <p>In <strong>Q189 Rotate Array</strong>:</p>
 <p>See also in: &lt; Article Not Published Yet &gt;</p>
 <p>In <strong>Q283 Move Zeroes</strong>:</p>
-<p>Left&amp;Right Method is applied. One Pointer stands for the current working position, and another stands for the staing point of pushing in &#x2F; filling with zeros.</p>
+<p>Left&amp;Right Method is applied. One Pointer stands for the current
+working position, and another stands for the staing point of pushing in
+/ filling with zeros.</p>
 <p>In <strong>Q167 Two Sum</strong>:</p>
 <p>Left&amp;Right Method is applied.</p>
 <p>Note: The given input array is sorted.</p>
 <p>In <strong>Q344 Reverse String</strong>:</p>
-<p>Left&amp;Right Method is applied. </p>
+<p>Left&amp;Right Method is applied.</p>
 <p>In <strong>Q557 Reverse Words in a String III</strong>:</p>
-<p>Left&amp;Right Method is applied. Just make wise usage of slicers.</p>
+<p>Left&amp;Right Method is applied. Just make wise usage of
+slicers.</p>
 <p>In <strong>Q876 Middle of the Linked List</strong>:</p>
-<p>Pre&amp;Post &#x2F; Sliding Window Method is recommended.</p>
+<p>Pre&amp;Post / Sliding Window Method is recommended.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Pre += <span class="number">1</span></span><br><span class="line">Post += <span class="number">2</span></span><br></pre></td></tr></table></figure>
-
 <p>In <strong>Q19 Remove Nth Node From End of List</strong>:</p>
-<p>Left&amp;Right Method is applied. </p>
-<p>Repeat the “process” for N times, then remove the node.</p>
-<p>In <strong>Q3 Longest Substring Without Repeating Characters</strong>:</p>
-<p>Pre&amp;Post &#x2F; Sliding Window Method is applied.</p>
+<p>Left&amp;Right Method is applied.</p>
+<p>Repeat the "process" for N times, then remove the node.</p>
+<p>In <strong>Q3 Longest Substring Without Repeating
+Characters</strong>:</p>
+<p>Pre&amp;Post / Sliding Window Method is applied.</p>
 <p>In <strong>Q567 Permutation in String</strong>:</p>
-<p>Note: It’s much faster to create 2 <strong>dictionarys</strong> and compare them instead.</p>
+<p>Note: It's much faster to create 2 <strong>dictionarys</strong> and
+compare them instead.</p>
 
         </div>
 
@@ -494,7 +512,8 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#Pre-amp-Post-x2F-Sliding-Window-Method"><span class="nav-text">Pre&amp;Post &#x2F; Sliding Window Method</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Left-amp-Right-Method"><span class="nav-text">Left&amp;Right Method</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Time-Complexities"><span class="nav-text">Time Complexities</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Space-Complexities"><span class="nav-text">Space Complexities</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Footnote"><span class="nav-text">Footnote</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#prepost-sliding-window-method"><span class="nav-text">Pre&amp;Post &#x2F; Sliding Window
+Method</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#leftright-method"><span class="nav-text">Left&amp;Right Method</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#time-complexities"><span class="nav-text">Time Complexities</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#space-complexities"><span class="nav-text">Space Complexities</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#footnote"><span class="nav-text">Footnote</span></a></li></ol>
     </div>
 </div>
         </aside>

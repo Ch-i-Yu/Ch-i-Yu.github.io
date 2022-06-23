@@ -24,7 +24,11 @@
     KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066cc","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Keep writing, Keep loving."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":false,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":false},"version":"3.4.5"};
     KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
   </script>
-<meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="Study with Ch'i YU" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="Study with Ch'i YU" type="application/atom+xml">
 </head>
 
 
@@ -255,33 +259,41 @@
         <div class="article-content markdown-body">
             <p>Topic: Binary Search</p>
 <span id="more"></span>
-
 <blockquote>
 <p>Q704 Binary Search</p>
 <p>Q278 First Bad Version</p>
 <p>Q35 Search Insert Position</p>
 </blockquote>
-<p>A searching algorithm which finds an element’s position in a <strong>sequential(sorted)</strong> and <strong>comparable</strong> array.</p>
-<p>In this method, the element is always searched in the <strong>middle</strong> of a portion of an array sliced in halves.</p>
-<p>This method do follow the <strong>divide-and-conquer</strong> approach.</p>
-<hr>
-<h5 id="Iteration-Method"><a href="#Iteration-Method" class="headerlink" title="Iteration Method"></a>Iteration Method</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## Do until the pointers L(Low/Left) and R(High/Right) meet each other,</span></span><br><span class="line"><span class="comment">## or do until the target element is found.</span></span><br><span class="line">	Mid = (L + R) / <span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> Target == Grid[Mid]</span><br><span class="line">        <span class="keyword">return</span> Mid</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> Target &gt; Grid[Mid]</span><br><span class="line">        L = Mid + <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span> <span class="comment">## Target &lt; Grid[Mid]</span></span><br><span class="line">    	R = Mid - <span class="number">1</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">continue</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="Recursion-Method"><a href="#Recursion-Method" class="headerlink" title="Recursion Method"></a>Recursion Method</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## Define a function and calle itself within definition.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## Do until the pointers L(Low/Left) and R(High/Right) meet each other,</span></span><br><span class="line"><span class="comment">## or do until the target element is found.</span></span><br><span class="line">RM(Grid, Target, L, R)</span><br><span class="line">	<span class="keyword">if</span> L &gt; R</span><br><span class="line">    	<span class="keyword">return</span> Not Found</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    	Mid = (L + R) / <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> Target == Grid[Mid]</span><br><span class="line">        	<span class="keyword">return</span> Mid</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> Target &gt; Grid[Mid]</span><br><span class="line">        	returnRM(Grid, Target, Mid + <span class="number">1</span>, R)</span><br><span class="line">        <span class="keyword">else</span> <span class="comment">## Target &lt; Grid[Mid]</span></span><br><span class="line">        	returnRM(Grid, Target, L, Mid - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
-<h5 id="Time-Complexities"><a href="#Time-Complexities" class="headerlink" title="Time Complexities"></a>Time Complexities</h5><ul>
+<p>A searching algorithm which finds an element's position in a
+<strong>sequential(sorted)</strong> and <strong>comparable</strong>
+array.</p>
+<p>In this method, the element is always searched in the
+<strong>middle</strong> of a portion of an array sliced in halves.</p>
+<p>This method do follow the <strong>divide-and-conquer</strong>
+approach.</p>
+<hr />
+<h5 id="iteration-method">Iteration Method</h5>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## Do until the pointers L(Low/Left) and R(High/Right) meet each other,</span></span><br><span class="line"><span class="comment">## or do until the target element is found.</span></span><br><span class="line">	Mid = (L + R) / <span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> Target == Grid[Mid]</span><br><span class="line">        <span class="keyword">return</span> Mid</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> Target &gt; Grid[Mid]</span><br><span class="line">        L = Mid + <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span> <span class="comment">## Target &lt; Grid[Mid]</span></span><br><span class="line">    	R = Mid - <span class="number">1</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">continue</span></span><br></pre></td></tr></table></figure>
+<h5 id="recursion-method">Recursion Method</h5>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## Define a function and calle itself within definition.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## Do until the pointers L(Low/Left) and R(High/Right) meet each other,</span></span><br><span class="line"><span class="comment">## or do until the target element is found.</span></span><br><span class="line">RM(Grid, Target, L, R)</span><br><span class="line">	<span class="keyword">if</span> L &gt; R</span><br><span class="line">    	<span class="keyword">return</span> Not Found</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    	Mid = (L + R) / <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> Target == Grid[Mid]</span><br><span class="line">        	<span class="keyword">return</span> Mid</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> Target &gt; Grid[Mid]</span><br><span class="line">        	returnRM(Grid, Target, Mid + <span class="number">1</span>, R)</span><br><span class="line">        <span class="keyword">else</span> <span class="comment">## Target &lt; Grid[Mid]</span></span><br><span class="line">        	returnRM(Grid, Target, L, Mid - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<h5 id="time-complexities">Time Complexities</h5>
+<ul>
 <li>Best Case Complexity: O(1)</li>
 <li>Worst Case Complexity: O(log n)</li>
 <li><strong>Average Case Complexity: O(log n)</strong></li>
 </ul>
-<h5 id="Space-Complexities"><a href="#Space-Complexities" class="headerlink" title="Space Complexities"></a>Space Complexities</h5><ul>
+<h5 id="space-complexities">Space Complexities</h5>
+<ul>
 <li>O(1)</li>
 </ul>
-<hr>
-<h5 id="Footnotes"><a href="#Footnotes" class="headerlink" title="Footnotes"></a>Footnotes</h5><p>In <strong>Q278 First Bad Version</strong>:</p>
-<p>Pointer <code>L</code>  represents the location of the first bad version.</p>
+<hr />
+<h5 id="footnotes">Footnotes</h5>
+<p>In <strong>Q278 First Bad Version</strong>:</p>
+<p>Pointer <code>L</code> represents the location of the first bad
+version.</p>
 <p>In <strong>Q35 Search Insert Position</strong>:</p>
-<p>Pointer <code>L</code>  represents the location of the target insert position.</p>
+<p>Pointer <code>L</code> represents the location of the target insert
+position.</p>
 
         </div>
 
@@ -457,7 +469,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#Iteration-Method"><span class="nav-text">Iteration Method</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Recursion-Method"><span class="nav-text">Recursion Method</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Time-Complexities"><span class="nav-text">Time Complexities</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Space-Complexities"><span class="nav-text">Space Complexities</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Footnotes"><span class="nav-text">Footnotes</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#iteration-method"><span class="nav-text">Iteration Method</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#recursion-method"><span class="nav-text">Recursion Method</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#time-complexities"><span class="nav-text">Time Complexities</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#space-complexities"><span class="nav-text">Space Complexities</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#footnotes"><span class="nav-text">Footnotes</span></a></li></ol>
     </div>
 </div>
         </aside>

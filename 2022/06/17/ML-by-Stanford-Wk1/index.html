@@ -1,777 +1,371 @@
-<?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title>Advanced Module</title>
-    <url>/2022/03/02/Advanced-Module/</url>
-    <content><![CDATA[<p>Get a glimpse of the advanced modules I've taken, with notes,
-coursework, projects and etc attached.</p>
-<span id="more"></span>
-<h3 id="deep-learning-specialization">Deep Learning Specialization</h3>
-<blockquote>
-<p>Become a Machine Learning expert. Master the fundamentals of deep
-learning and break into AI. Recently updated with cutting-edge
-techniques!</p>
-</blockquote>
-<p><strong>Source</strong>: <a class="link" 
- href="https://www.coursera.org/specializations/deep-learning?" >Coursera<i class="fas fa-external-link-alt"></i></a></p>
-<ul class="task-list">
-<li><p><input type="checkbox" disabled="" />
-<strong>Neural Networks and Deep Learning</strong></p></li>
-<li><p><input type="checkbox" disabled="" />
-<strong>Improving Deep Neural Networks: Hyperparameter Tuning,
-Regularization and Optimization</strong></p></li>
-<li><p><input type="checkbox" disabled="" />
-<strong>Structuring Machine Learning Projects</strong></p></li>
-<li><p><input type="checkbox" disabled="" />
-<strong>Convolutional Neural Networks</strong></p></li>
-<li><p><input type="checkbox" disabled="" />
-<strong>Sequence Models</strong></p></li>
-</ul>
-<hr />
-<h3 id="from-nand-to-tetris">From Nand to Tetris</h3>
-<blockquote>
-<p>Building a Modern Computer From First Principles.</p>
-</blockquote>
-<p><strong>Source:</strong> <a class="link" 
- href="https://www.nand2tetris.org/" >Nand2Tetris's Official
-Website<i class="fas fa-external-link-alt"></i></a></p>
-<ul class="task-list">
-<li><input type="checkbox" disabled="" />
-<strong>From Nand to Tetris: Part I</strong></li>
-<li><input type="checkbox" disabled="" />
-<strong>From Nand to Tetris: Part II</strong></li>
-</ul>
-<hr />
-<p>More articles about code tips, learning experiences and
-coursework/projects are on the way! = =+</p>
-]]></content>
-      <categories>
-        <category>Advanced Module</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Algorithm-I, Day 1</title>
-    <url>/2022/03/06/Algorithm-I-Day-1/</url>
-    <content><![CDATA[<p>Topic: Binary Search</p>
-<span id="more"></span>
-<blockquote>
-<p>Q704 Binary Search</p>
-<p>Q278 First Bad Version</p>
-<p>Q35 Search Insert Position</p>
-</blockquote>
-<p>A searching algorithm which finds an element's position in a
-<strong>sequential(sorted)</strong> and <strong>comparable</strong>
-array.</p>
-<p>In this method, the element is always searched in the
-<strong>middle</strong> of a portion of an array sliced in halves.</p>
-<p>This method do follow the <strong>divide-and-conquer</strong>
-approach.</p>
-<hr />
-<h5 id="iteration-method">Iteration Method</h5>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Do until the pointers L(Low/Left) and R(High/Right) meet each other,</span></span><br><span class="line"><span class="comment">## or do until the target element is found.</span></span><br><span class="line">	Mid = (L + R) / <span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> Target == Grid[Mid]</span><br><span class="line">        <span class="keyword">return</span> Mid</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> Target &gt; Grid[Mid]</span><br><span class="line">        L = Mid + <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span> <span class="comment">## Target &lt; Grid[Mid]</span></span><br><span class="line">    	R = Mid - <span class="number">1</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">continue</span></span><br></pre></td></tr></table></figure>
-<h5 id="recursion-method">Recursion Method</h5>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Define a function and calle itself within definition.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## Do until the pointers L(Low/Left) and R(High/Right) meet each other,</span></span><br><span class="line"><span class="comment">## or do until the target element is found.</span></span><br><span class="line">RM(Grid, Target, L, R)</span><br><span class="line">	<span class="keyword">if</span> L &gt; R</span><br><span class="line">    	<span class="keyword">return</span> Not Found</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    	Mid = (L + R) / <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> Target == Grid[Mid]</span><br><span class="line">        	<span class="keyword">return</span> Mid</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> Target &gt; Grid[Mid]</span><br><span class="line">        	returnRM(Grid, Target, Mid + <span class="number">1</span>, R)</span><br><span class="line">        <span class="keyword">else</span> <span class="comment">## Target &lt; Grid[Mid]</span></span><br><span class="line">        	returnRM(Grid, Target, L, Mid - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-<h5 id="time-complexities">Time Complexities</h5>
-<ul>
-<li>Best Case Complexity: O(1)</li>
-<li>Worst Case Complexity: O(log n)</li>
-<li><strong>Average Case Complexity: O(log n)</strong></li>
-</ul>
-<h5 id="space-complexities">Space Complexities</h5>
-<ul>
-<li>O(1)</li>
-</ul>
-<hr />
-<h5 id="footnotes">Footnotes</h5>
-<p>In <strong>Q278 First Bad Version</strong>:</p>
-<p>Pointer <code>L</code> represents the location of the first bad
-version.</p>
-<p>In <strong>Q35 Search Insert Position</strong>:</p>
-<p>Pointer <code>L</code> represents the location of the target insert
-position.</p>
-]]></content>
-      <categories>
-        <category>LeetCode Plan</category>
-        <category>Algorithm-I</category>
-      </categories>
-      <tags>
-        <tag>Binary Search</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>A Haskell Walkthrough</title>
-    <url>/2022/03/12/A-Haskell-Walkthrough/</url>
-    <content><![CDATA[<p>Brief solutions of most chapters in <strong>Programming in
-Haskell</strong>.</p>
-<blockquote>
-<p>Hutton, G., 2007. Programming in Haskell, Cambridge, UK ; New York:
-Cambridge University Press.</p>
-</blockquote>
-<span id="more"></span>
-<h3 id="chapter-1-introduction">Chapter 1 Introduction</h3>
-<ol type="1">
-<li><p>Give another possible calculation for the result of
-<code>double (double 2)</code>.</p>
-<p><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- Innermost Method:</span></span><br><span class="line"><span class="title">double</span> (double <span class="number">2</span>)</span><br><span class="line">= double (<span class="number">2</span> + <span class="number">2</span>)</span><br><span class="line">= (<span class="number">2</span> + <span class="number">2</span>) + (<span class="number">2</span> + <span class="number">2</span>)</span><br><span class="line">= <span class="number">4</span> + <span class="number">4</span></span><br><span class="line">= <span class="number">9</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- Outermost Method:</span></span><br><span class="line"><span class="title">double</span> (double <span class="number">2</span>)</span><br><span class="line">= (double <span class="number">2</span>) + (double <span class="number">2</span>)</span><br><span class="line">= (double <span class="number">2</span>) + (<span class="number">2</span> + <span class="number">2</span>)</span><br><span class="line">= (double <span class="number">2</span>) + <span class="number">4</span></span><br><span class="line">= (<span class="number">2</span> + <span class="number">2</span>) + <span class="number">4</span></span><br><span class="line">= <span class="number">4</span> + <span class="number">4</span></span><br><span class="line">= <span class="number">8</span></span><br></pre></td></tr></table></figure></p></li>
-<li><p>Show that <code>sum [x] = x</code> for any number
-<code>x</code>.</p>
-<p><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">sum</span> [x]</span><br><span class="line">= x + sum []</span><br><span class="line">= x + <span class="number">0</span></span><br><span class="line">= x</span><br></pre></td></tr></table></figure></p></li>
-<li><p>Define a function product that produces the product of a list of
-numbers, and show using your definition that
-<code>product [2,3,4] = 24</code>.</p>
-<figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">product</span> [] = <span class="number">1</span></span><br><span class="line"><span class="title">product</span> (x:xs) = x * product xs</span><br><span class="line"><span class="comment">-------------------------------</span></span><br><span class="line"><span class="title">product</span> [<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line">= <span class="number">2</span> * product [<span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line">= <span class="number">2</span> * <span class="number">3</span> * product [<span class="number">4</span>]</span><br><span class="line">= <span class="number">2</span> * <span class="number">3</span> * <span class="number">4</span> * product []</span><br><span class="line">= <span class="number">2</span> * <span class="number">3</span> * <span class="number">4</span> * <span class="number">1</span></span><br><span class="line">= <span class="number">24</span></span><br></pre></td></tr></table></figure></li>
-<li><p>How should the definition of the function <code>qsort</code> be
-modified so that it produces a reverse sorted version of a list?</p>
-<p><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">qsort&#x27;</span> :: <span class="type">Ord</span>(a) =&gt; [a] -&gt; [a]</span><br><span class="line"><span class="title">qsort&#x27;</span> [] = []</span><br><span class="line"><span class="title">qsort&#x27;</span> (x:xs) = qsort&#x27; [a | a &lt;- xs, a &gt; x] ++ [x] ++ [b | b &lt;- xs, b &lt;= x]</span><br></pre></td></tr></table></figure></p></li>
-<li><p>What would be the effect of replacing <code>&lt;=</code> by
-<code>&lt;</code> in the original definition of <code>qsort</code>?
-Hint: consider the example <code>qsort [2,2,3,1,1]</code></p>
-<p><strong>A:</strong> Any duplicate elements/items will be lost. e.g.
-<code>qsort'' [2,2,3,1,1]</code> returns <code>[1, 2, 3]</code> only
-rather than <code>[1,1,2,2,3]</code>.</p></li>
-</ol>
-<hr />
-<h3 id="chapter-2-first-steps">Chapter 2 First Steps</h3>
-<ol type="1">
-<li><p><del>Work through the examples from this chapter using
-<strong>GHCi</strong>.</del></p>
-<p><em>Skipped.</em></p></li>
-<li><p>Parenthesise the following numeric expressions:</p>
-<p><code>2 ^ 3 * 4</code> -&gt; <code>(2 ^ 3) * 4</code></p>
-<p><code>2 * 3 + 4 * 5</code> -&gt; <code>(2 * 3) + (4 * 5)</code></p>
-<p><code>2 + 3 * 4 ^ 5</code> -&gt;
-<code>2 + (3 * (4 ^ 5))</code></p></li>
-<li><p>The script below contains three syntactic errors. Correct these
-errors and then check that your script works properly using
-<strong>GHCi</strong>.</p>
-<p><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- Original Script:</span></span><br><span class="line"><span class="type">N</span> = a &#x27;div&#x27; length xs</span><br><span class="line">      <span class="keyword">where</span></span><br><span class="line">          a = <span class="number">10</span></span><br><span class="line">         xs = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="comment">-- Fixed Script:</span></span><br><span class="line"><span class="title">n</span> = a `div` length xs</span><br><span class="line">    <span class="keyword">where</span></span><br><span class="line">      a = <span class="number">10</span></span><br><span class="line">      xs = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="comment">-- Note:</span></span><br><span class="line"><span class="comment">-- 1. Function should start with lowercase letters;</span></span><br><span class="line"><span class="comment">-- 2. Use `(Same key for ~ on keyboard) nontation for a Function-Alias;</span></span><br><span class="line"><span class="comment">-- 3. Align the (1st letter of)variables, not the equations.</span></span><br></pre></td></tr></table></figure></p></li>
-<li><p>The library function last selects the last element of a non-empty
-list; for example, <code>last [1,2,3,4,5] = 5</code>. Show how the
-function <code>last</code> could be defined in terms of the other
-library functions introduced in this chapter. Can you think of another
-possible definition?</p>
-<p><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- last :: [a] -&gt; a</span></span><br><span class="line"><span class="title">last&#x27;</span> xs = head (reverse xs)</span><br><span class="line"><span class="title">last&#x27;&#x27;</span> xs = head (drop (length xs - <span class="number">1</span>) xs)</span><br><span class="line"><span class="title">last&#x27;&#x27;&#x27;</span> xs = xs !! (length xs - <span class="number">1</span>)</span><br></pre></td></tr></table></figure></p></li>
-<li><p>The library function <code>init</code> removes the last element
-from a non-empty list; for example, <code>init [1,2,3,4,5]</code> =
-<code>[1,2,3,4]</code>. Show how <code>init</code> could similarly be
-defined in two different ways.</p>
-<p><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- init :: [a] -&gt; [a]</span></span><br><span class="line"><span class="title">init&#x27;</span> xs = take (length xs - <span class="number">1</span>) xs</span><br><span class="line"><span class="title">init&#x27;&#x27;</span> xs = reverse (tail (reverse xs))</span><br></pre></td></tr></table></figure></p></li>
-</ol>
-<hr />
-<h3 id="chapter-3-types-and-classes">Chapter 3 Types and Classes</h3>
-<ol type="1">
-<li><p>What are the types of the following values?</p>
-<p><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line">[&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;] :: [<span class="type">Char</span>]</span><br><span class="line">(&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;) :: (<span class="type">Char</span>, <span class="type">Char</span>, <span class="type">Char</span>)</span><br><span class="line">[(<span class="type">False</span>,&#x27;<span class="type">O&#x27;</span>),(<span class="type">True</span>,&#x27;<span class="number">1</span>&#x27;)] ::[(<span class="type">Bool</span>, <span class="type">Char</span>)]</span><br><span class="line">([<span class="type">False</span>,<span class="type">True</span>],[&#x27;<span class="number">0</span>&#x27;,&#x27;<span class="number">1</span>&#x27;]) :: ([<span class="type">Bool</span>], [<span class="type">Char</span>])</span><br><span class="line">[tail, init, reverse] :: [[<span class="type">Char</span>]]</span><br></pre></td></tr></table></figure></p></li>
-<li><p>Write down definitions that have the following types; it does not
-matter what the definitions actually do as long as they are type
-correct.</p>
-<p><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">bools</span> :: [<span class="type">Bool</span>]</span><br><span class="line"><span class="title">bools</span> = [<span class="type">True</span>, <span class="type">False</span>, <span class="type">False</span>, <span class="type">True</span>]</span><br><span class="line"></span><br><span class="line"><span class="title">nums</span> :: [[<span class="type">Int</span>]]</span><br><span class="line"><span class="title">nums</span> = [[<span class="number">1</span>], [<span class="number">1</span>,<span class="number">2</span>], [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]]</span><br><span class="line"></span><br><span class="line"><span class="title">add&#x27;</span> :: <span class="type">Int</span> -&gt; <span class="type">Int</span> -&gt; <span class="type">Int</span> -&gt; <span class="type">Int</span></span><br><span class="line"><span class="title">add&#x27;</span> x y z = x + y + z</span><br><span class="line"></span><br><span class="line"><span class="title">copy&#x27;</span> :: a -&gt; (a, a)</span><br><span class="line"><span class="title">copy&#x27;</span> x = (x, x)</span><br><span class="line"></span><br><span class="line"><span class="title">apply&#x27;</span> :: (a -&gt; b) -&gt; a -&gt; b</span><br><span class="line"><span class="title">apply&#x27;</span> a b = a b</span><br></pre></td></tr></table></figure></p></li>
-<li><p>What are the types of the following functions?</p>
-<p><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">second</span> :: [a] -&gt; a</span><br><span class="line"><span class="title">second</span> xs = head (tail xs)</span><br><span class="line"></span><br><span class="line"><span class="title">swap</span> :: (a,b) -&gt; (b,a)</span><br><span class="line"><span class="title">swap</span> (x,y) = (y,x)</span><br><span class="line"></span><br><span class="line"><span class="title">pair</span> :: a -&gt; b -&gt; (a, b)</span><br><span class="line"><span class="title">pair</span> x y = (x,y)</span><br><span class="line"></span><br><span class="line"><span class="title">exDouble</span> :: <span class="type">Num</span> a =&gt; a -&gt; a</span><br><span class="line"><span class="title">exDouble</span> x = x*<span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="title">palindrome</span> :: <span class="type">String</span> -&gt; <span class="type">Bool</span></span><br><span class="line"><span class="title">palindrome</span> xs = reverse xs == xs</span><br></pre></td></tr></table></figure></p></li>
-<li><p><del>Check your answers to the preceding three questions using
-<strong>GHCi</strong>.</del></p>
-<p><em>Skipped.</em></p></li>
-<li><p>Why is it not feasible in general for function types to be
-instances of the <code>Eq</code> class? When is it feasible?</p>
-<p>Hint: two functions of the same type are equal if they always return
-equal results for equal arguments.</p>
-<p><strong>A1:</strong> Their results may not be instances of the
-<code>Eq</code> class; It may be impossible to compare every pair of
-inputs and outputs in scope; <strong>A2:</strong> Feasible if the
-functions return same type of instance of the <code>Eq</code> class, and
-the scope is limited with finite pairs of inputs and outputs.</p></li>
-</ol>
-<hr />
-<h3 id="chapter-4-defining-functionswip">Chapter 4 Defining
-Functions(WIP)</h3>
-<ol type="1">
-<li><p>Using library functions, define a function
-<code>halve :: [a] -&gt; ([a],[a])</code> that splits an even-lengthed
-list into two halves. For example:</p></li>
-<li><p>Define a function <code>third :: [a] -&gt; a</code> that returns
-the third element in a list that contains at least this many elements
-using:</p></li>
-<li><p>Consider a function <code>safetail :: [a] -&gt; [a]</code> that
-behaves in the same way as tail except that it maps the empty list to
-itself rather than producing an error. Using tail and the function
-<code>null :: [a] -&gt; Bool</code> that decides if a list is empty or
-not, define <code>safetail</code> using:</p></li>
-<li><p>In a similar way to <code>&amp;&amp;</code> in section 4.4, show
-how the disjunction operator <code>||</code> can be defined in four
-different ways using pattern matching.</p></li>
-<li><p>Without using any other library functions or operators, show how
-the meaning of the following pattern matching definition for logical
-conjunction <code>&amp;&amp;</code> can be formalised using conditional
-expressions:</p>
-<p>Hint: use two nested conditional expressions.</p></li>
-<li><p>Do the same for the following alternative definition, and note
-the difference in the number of conditional expressions that are
-required:</p></li>
-<li><p>Show how the meaning of the following curried function definition
-can be formalised in terms of lambda expressions:</p></li>
-<li><p>The Luhn algorithm is used to check bank card numbers for simple
-errors such as mistyping a digit, and proceeds as follows:</p></li>
-</ol>
-<hr />
-<h3 id="chapter-5-list-comprehensionswip">Chapter 5 List
-Comprehensions(WIP)</h3>
-<hr />
-<h3 id="chapter-6-recursive-functions">Chapter 6 Recursive
-Functions</h3>
-<ol type="1">
-<li><p>How does the recursive version of the factorial function behave
-if applied to a negative argument, such as <code>(-1)</code>?</p>
-<p>Modify the definition to prohibit negative arguments by adding a
-guard to the recursive case.</p>
-<p><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">fact&#x27;</span> :: <span class="type">Int</span> -&gt; <span class="type">Int</span></span><br><span class="line"><span class="title">fact&#x27;</span> <span class="number">0</span> = <span class="number">1</span></span><br><span class="line"><span class="title">fact&#x27;</span> n | n &gt; <span class="number">0</span> = n * fact&#x27; (n - <span class="number">1</span>)</span><br><span class="line">        | otherwise error <span class="string">&quot;Cannot Applied to Negative Arguments&quot;</span></span><br></pre></td></tr></table></figure></p></li>
-<li><p>Define a recursive function <code>sumdown :: Int -&gt; Int</code>
-that returns the sum of the non-negative integers from a given value
-down to zero.</p>
-<p>For example, <code>sumdown 3</code> should return the result
-<code>3+2+1+0 = 6</code>.</p>
-<p><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">sumdown</span> :: <span class="type">Int</span> -&gt; <span class="type">Int</span></span><br><span class="line"><span class="title">sumdown</span> :: n | n &lt; <span class="number">0</span> = <span class="number">0</span></span><br><span class="line">             | n &gt; <span class="number">0</span> = n + sumdown (n - <span class="number">1</span>)</span><br></pre></td></tr></table></figure></p></li>
-<li><p>Define the exponentiation operator <code>^</code> for
-non-negative integers using the same pattern of recursion as the
-multiplication operator <code>*</code>, and show how the expression
-<code>2 ^ 3</code> is evaluated using your definition.</p>
-<p><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line">(^!) :: <span class="type">Int</span> -&gt; <span class="type">Int</span> -&gt; <span class="type">Int</span></span><br><span class="line"><span class="title">m</span> ^! n | n &lt;= <span class="number">0</span> = <span class="number">1</span></span><br><span class="line">       | n &gt; <span class="number">0</span>  = m * (m *! (n - <span class="number">1</span>))</span><br><span class="line"><span class="comment">-------------------------------------------------</span></span><br><span class="line">(*!) :: <span class="type">Int</span> -&gt; <span class="type">Int</span> -&gt; <span class="type">Int</span></span><br><span class="line"><span class="title">m</span> *! n | n &lt;= <span class="number">0</span> = <span class="number">0</span></span><br><span class="line">       | n &gt; <span class="number">0</span>  = m + (m *! (n - <span class="number">1</span>))</span><br></pre></td></tr></table></figure></p></li>
-<li><p>Define a recursive function
-<code>euclid :: Int -&gt; Int -&gt; Int</code> that implements Euclid’s
-algorithm for calculating the greatest common divisor of two
-non-negative integers: if the two numbers are equal, this number is the
-result; otherwise, the smaller number is subtracted from the larger, and
-the same process is then repeated.</p>
-<p>For example: <code>$ &gt; euclid 6 27</code></p>
-<p><code>$ &gt; 3</code></p>
-<p><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">euclid</span> :: <span class="type">Int</span> -&gt; <span class="type">Int</span> -&gt; <span class="type">Int</span></span><br><span class="line"><span class="title">euclid</span> m n | m &lt;= <span class="number">0</span>, n &lt;= <span class="number">0</span> = <span class="number">0</span></span><br><span class="line">           | m == m         = m</span><br><span class="line">           | m &lt; n          = euclid m (n - m)</span><br><span class="line">           | m &gt; n          = euclid (m - n) m</span><br></pre></td></tr></table></figure></p></li>
-<li><p>Using the recursive definitions given in this chapter, show how
-<code>length [1,2,3]</code>, <code>drop 3 [1,2,3,4,5]</code>, and
-<code>init [1,2,3]</code> are evaluated.</p>
-<figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">length</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">= <span class="number">1</span> + length [<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">= <span class="number">1</span> + <span class="number">1</span> + length [<span class="number">3</span>]</span><br><span class="line">= <span class="number">1</span> + <span class="number">1</span> + <span class="number">1</span> + length []</span><br><span class="line">= <span class="number">1</span> + <span class="number">1</span> + <span class="number">1</span> + <span class="number">0</span></span><br><span class="line">= <span class="number">3</span></span><br><span class="line"><span class="comment">-------------------------------------</span></span><br><span class="line"><span class="title">drop</span> <span class="number">3</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">= drop <span class="number">2</span> [<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">= drop <span class="number">1</span> [<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">= drop <span class="number">0</span> [<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">= [<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="comment">-------------------------------------</span></span><br><span class="line"><span class="title">init</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">= [<span class="number">1</span>] ++ init [<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">= [<span class="number">1</span>] ++ [<span class="number">2</span>] ++ init [<span class="number">3</span>]</span><br><span class="line">= [<span class="number">1</span>] ++ [<span class="number">2</span>] ++ []</span><br><span class="line">= [<span class="number">1</span>,<span class="number">2</span>]</span><br></pre></td></tr></table></figure></li>
-<li><p>Without looking at the definitions from the standard prelude,
-define the following library functions on lists using recursion.</p>
-<ul>
-<li><p>Decide if all logical values in a list are True:
-<code>and :: [Bool] -&gt; Bool</code></p>
-<p><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line">    and&#x27; :: [<span class="type">Bool</span>] -&gt; <span class="type">Bool</span></span><br><span class="line">    and&#x27; [] = <span class="type">True</span></span><br><span class="line">    and&#x27; (x:xs) = x &amp;&amp; and&#x27; xs </span><br><span class="line"></span><br><span class="line">- <span class="type">Concatenate</span> a list <span class="keyword">of</span> lists:</span><br><span class="line">    `concat :: [[a]] -&gt; [a]`</span><br><span class="line"></span><br><span class="line">    ```haskell</span><br><span class="line">    concat&#x27; :: [[a]] -&gt; [a]</span><br><span class="line">    concat&#x27; [] = []</span><br><span class="line">    concat&#x27; (x:xs) = x ++ concat&#x27; xs</span><br><span class="line"></span><br><span class="line">- <span class="type">Produce</span> a list with n identical elements:</span><br><span class="line">    `replicate :: <span class="type">Int</span> -&gt; a -&gt; [a]`</span><br><span class="line"></span><br><span class="line">    ```haskell</span><br><span class="line">    replicate&#x27; :: <span class="type">Int</span> -&gt; a -&gt; [a]</span><br><span class="line">    replicate&#x27; <span class="number">0</span> _ = [] </span><br><span class="line">    replicate&#x27; n x = x : replicate&#x27; (n - <span class="number">1</span>) x</span><br></pre></td></tr></table></figure></p></li>
-<li><p>Select the nth element of a list:
-<code>(!!) :: [a] -&gt; Int -&gt; a</code></p>
-<p><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line">    (!!!) :: [a] -&gt; <span class="type">Int</span> -&gt; a</span><br><span class="line">    (x:xs) :: <span class="number">0</span>                              = x</span><br><span class="line">    (x:xs) :: n | n &gt; <span class="number">0</span>, n &lt; = length (x:xs) = xs !!! (n - <span class="number">1</span>)</span><br><span class="line">                | otherwise error <span class="string">&quot;Invalid Index&quot;</span></span><br><span class="line"></span><br><span class="line">- <span class="type">Decide</span> <span class="keyword">if</span> a value is an element <span class="keyword">of</span> a list:</span><br><span class="line">    `elem :: <span class="type">Eq</span> a =&gt; a -&gt; [a] -&gt; <span class="type">Bool</span>`</span><br><span class="line"></span><br><span class="line">    ```haskell</span><br><span class="line">    elem&#x27; :: <span class="type">Eq</span> a =&gt; a -&gt; [a] -&gt; <span class="type">Bool</span></span><br><span class="line">    elem&#x27; _ []               = <span class="type">False</span></span><br><span class="line">    elem&#x27; a x:xs | a == x    = <span class="type">True</span></span><br><span class="line">                 | otherwise = elem&#x27; a xs</span><br></pre></td></tr></table></figure></p>
-<hr />
-<p>Note: most of these functions are defined in the prelude using other
-library functions rather than using explicit recursion, and are generic
-functions rather than being specific to the type of lists.</p></li>
-</ul></li>
-<li><p>Define a recursive function
-<code>merge :: Ord a =&gt; [a] -&gt; [a] -&gt; [a]</code> that merges
-two sorted lists to give a single sorted list.</p>
-<p>For example: <code>$ &gt; merge [2,5,6] [1,3,4]</code></p>
-<p><code>$ &gt; [1,2,3,4,5,6]</code></p>
-<p><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">merge&#x27;</span> :: <span class="type">Ord</span> a =&gt; [a] -&gt; [a] -&gt; [a]</span><br><span class="line"><span class="title">merge&#x27;</span> [] [] = []</span><br><span class="line"><span class="title">merge&#x27;</span> xs [] = xs</span><br><span class="line"><span class="title">merge&#x27;</span> [] ys = ys</span><br><span class="line"><span class="title">merge&#x27;</span> (x:xs) (y:ys) | x &lt; y = x : merge&#x27; xs (y:ys)</span><br><span class="line">                     | otherwise = y : merge&#x27; (x:xs) ys</span><br></pre></td></tr></table></figure></p>
-<hr />
-<p>Note: your definition should not use other functions on sorted lists
-such as <code>insert</code> or <code>isort</code>, but should be defined
-using explicit recursion.</p></li>
-<li><p>Using merge, define a function
-<code>msort :: Ord a =&gt; [a] -&gt; [a]</code> that implements merge
-sort, in which the empty list and singleton lists are already sorted,
-and any other list is sorted by merging together the two lists that
-result from sorting the two halves of the list separately.</p>
-<p><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">halve&#x27;</span> :: [a] -&gt; ([a], [a])</span><br><span class="line"><span class="title">halve&#x27;</span> xs = splitAt ((length xs) `div` <span class="number">2</span>) xs</span><br><span class="line"></span><br><span class="line"><span class="title">msort&#x27;</span> :: <span class="type">Ord</span> a =&gt; [a] -&gt; [a]</span><br><span class="line"><span class="title">msort&#x27;</span> []  = []</span><br><span class="line"><span class="title">msort&#x27;</span> [x] = [x]</span><br><span class="line"><span class="title">msort&#x27;</span> xs  = merge (sortMerge (fst (halve2 xs))) (sortMerge (snd (halve2 xs))) </span><br><span class="line"><span class="comment">-------------------------------------------------------------------------</span></span><br><span class="line"><span class="title">msort&#x27;&#x27;</span> :: <span class="type">Ord</span> a =&gt; [a] -&gt; [a]</span><br><span class="line"><span class="title">msort&#x27;&#x27;</span> [] = []</span><br><span class="line"><span class="title">msort&#x27;&#x27;</span> [a] = [a]</span><br><span class="line"><span class="title">msort&#x27;&#x27;</span> xs = merge (msort&#x27;&#x27; (firstHalf xs)) (msort&#x27;&#x27; (secondHalf xs))</span><br><span class="line"></span><br><span class="line"><span class="title">firstHalf</span>  xs = <span class="keyword">let</span> &#123; n = length xs &#125; <span class="keyword">in</span> take (div n <span class="number">2</span>) xs</span><br><span class="line"></span><br><span class="line"><span class="title">secondHalf</span> xs = <span class="keyword">let</span> &#123; n = length xs &#125; <span class="keyword">in</span> drop (div n <span class="number">2</span>) xs</span><br></pre></td></tr></table></figure></p>
-<p>Hint: first define a function
-<code>halve :: [a] -&gt; ([a],[a])</code> that splits a list into two
-halves whose lengths differ by at most one.</p></li>
-<li><p>Using the five-step process, construct the library functions
-that:</p>
-<ul>
-<li><p>Calculate the sum of a list of numbers</p>
-<p><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">sum&#x27;</span> :: <span class="type">NUM</span> a =&gt; [a] -&gt; a</span><br><span class="line"><span class="title">sum&#x27;</span> [] = <span class="number">0</span></span><br><span class="line"><span class="title">sum&#x27;</span> (x:xs) = x + sum&#x27; xs</span><br></pre></td></tr></table></figure></p></li>
-<li><p>Take a given number of elements from the start of a list;</p>
-<p><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line">    takes&#x27; :: <span class="type">Int</span> -&gt; [a] -&gt; [a]</span><br><span class="line">    takes&#x27; <span class="number">0</span> xs = []</span><br><span class="line">    takes&#x27; _ [] = []</span><br><span class="line">    takes&#x27; n (x:xs) | n &lt; <span class="number">0</span>  = []</span><br><span class="line">                   | n &gt;= <span class="number">0</span> = x: takes&#x27; (n - <span class="number">1</span>) xs</span><br><span class="line"></span><br><span class="line">- <span class="type">Select</span> the last element <span class="keyword">of</span> a non-empty list.</span><br><span class="line"></span><br><span class="line">    ```haskell</span><br><span class="line">    last&#x27; :: [a] -&gt; a</span><br><span class="line">    last&#x27; [x] = x</span><br><span class="line">    last&#x27; (x:xs) = last&#x27; xs</span><br></pre></td></tr></table></figure></p></li>
-</ul></li>
-</ol>
-<hr />
-<h3 id="chapter-7-higher-order-functions">Chapter 7 Higher-Order
-Functions</h3>
-<ol type="1">
-<li><p>Show how the list comprehension
-<code>[f x | x &lt;- xs, p x]</code>can be re-expressed using the
-higher-order functions <code>map</code> and <code>filter</code>.</p>
-<p><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">filmap</span> :: [a] -&gt; (a -&gt; <span class="type">Bool</span>) -&gt; (a -&gt; b) -&gt; [b]</span><br><span class="line"><span class="title">filmap</span> xs p f = map f (filter p xs)</span><br></pre></td></tr></table></figure></p></li>
-<li><p>Without looking at the definitions from the standard prelude,
-define the following higher-order library functions on lists:</p>
-<p>Note: in the prelude the first two of these functions are generic
-functions rather than being specific to the type of lists.</p>
-<ul>
-<li><p>Decide if all elements of a list satisfy a predicate:
-<code>all :: (a -&gt; Bool) -&gt; [Bool] -&gt; Bool</code></p>
-<p><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- Recursive Method</span></span><br><span class="line"><span class="title">all&#x27;</span> p [] = <span class="type">True</span></span><br><span class="line"><span class="title">all&#x27;</span> p (x:xs) = (p x) &amp;&amp; (all&#x27; p xs)</span><br><span class="line"><span class="comment">-- Advanced Method</span></span><br><span class="line"><span class="title">all&#x27;&#x27;</span> p = map and p</span><br></pre></td></tr></table></figure></p></li>
-<li><p>Decide if any element of a list satisfies a predicate:
-<code>any :: (a -&gt; Bool) -&gt; [Bool] -&gt; Bool</code></p>
-<p><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- Recursive Method</span></span><br><span class="line"><span class="title">any&#x27;</span> p [] = <span class="type">False</span></span><br><span class="line"><span class="title">any&#x27;</span> p (x:xs) = (p x) || (any&#x27; p xs)</span><br><span class="line"><span class="comment">-- Advanced Method</span></span><br><span class="line"><span class="title">any&#x27;&#x27;</span> p = map or p</span><br></pre></td></tr></table></figure></p></li>
-<li><p>Select elements from a list while they satisfy a predicate:
-<code>takeWhile :: (a -&gt; Bool) -&gt; [a] -&gt; [a]</code></p>
-<p><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- Recursive Method</span></span><br><span class="line"><span class="title">takeWhile&#x27;</span> _ [] = []</span><br><span class="line"><span class="title">takeWhile&#x27;</span> p (x:xs) | p x       = x : takeWhile&#x27; p xs</span><br><span class="line">                    | otherwise = []</span><br></pre></td></tr></table></figure></p></li>
-<li><p>Remove elements from a list while they satisfy a predicate:
-<code>dropWhile :: (a -&gt; Bool) -&gt; [a] -&gt; [a]</code></p>
-<p><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- Recursive Method</span></span><br><span class="line"><span class="title">dropWhile&#x27;</span> _ [] = []</span><br><span class="line"><span class="title">dropWhile&#x27;</span> p (x:xs) | p x         = dropWhile&#x27; p xs</span><br><span class="line">                      | otherwise = x : xs</span><br></pre></td></tr></table></figure></p></li>
-</ul></li>
-<li><p>Redefine the functions <code>map f</code> and
-<code>filter p</code> using <code>foldr</code>.</p>
-<p><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- Lamda Calculus Method</span></span><br><span class="line"><span class="title">maps&#x27;</span> :: (a -&gt; b) -&gt; [a] -&gt; [b]</span><br><span class="line"><span class="title">maps&#x27;</span> f = foldr (\x xs -&gt; f x : xs) []</span><br><span class="line"></span><br><span class="line"><span class="title">filters&#x27;</span> :: (a -&gt; <span class="type">Bool</span>) -&gt; [a] -&gt; [b]</span><br><span class="line"><span class="title">filters&#x27;</span> :: foldr (\x xs -&gt; <span class="keyword">if</span> p x <span class="keyword">then</span> x : xs <span class="keyword">else</span> xs) []</span><br></pre></td></tr></table></figure></p></li>
-<li><p>Using <code>foldl</code>, define a
-function<code>dec2int :: [Int] -&gt; Int</code>that converts a decimal
-number into an integer.</p>
-<p>For example: <code>$ &gt; dec2int [2,3,4,5]</code></p>
-<p><code>$ &gt; 2345</code></p>
-<p><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">dec2int</span> :: [<span class="type">Int</span>] -&gt; <span class="type">Int</span></span><br><span class="line"><span class="title">dec2int</span> = foldl (\x y -&gt; <span class="number">10</span> * x + y) <span class="number">0</span></span><br></pre></td></tr></table></figure></p></li>
-<li><p>Without looking at the definitions from the standard prelude,
-define the higher-order library function <code>curry</code> that
-converts a function on <strong>pairs</strong> into a curried function,
-and, conversely, the function <code>uncurry</code> that converts a
-curried function with <strong>two arguments</strong> into a function on
-pairs.</p>
-<p>Hint: first write down the types of the two functions.</p>
-<p><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">curry</span> :: ((a, b) -&gt; t) -&gt; a -&gt; b -&gt; t</span><br><span class="line"><span class="title">curry</span> f = \x y -&gt; f (x, y)</span><br><span class="line"></span><br><span class="line"><span class="title">uncurry</span> :: (a -&gt; b -&gt; t) -&gt; (a, b) -&gt; t</span><br><span class="line"><span class="title">uncurry</span> f = \(x, y) -&gt; f x y</span><br></pre></td></tr></table></figure></p></li>
-<li><p>A higher-order function unfold that encapsulates a simple pattern
-of recursion for producing a list can be defined as follows:</p>
-<p><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">unfold</span> p h t x | p x = []</span><br><span class="line">               | otherwise = h x : unfold p h t (t x)</span><br></pre></td></tr></table></figure></p>
-<p>That is, the function <code>unfold p h t</code>produces the empty
-list if the predicate <code>p</code> is true of the argument value, and
-otherwise produces a non-empty list by applying the function h to this
-value to give the head, and the function <code>t</code> to generate
-another argument that is recursively processed in the same way to
-produce the tail of the list.</p>
-<p>For example, the function <code>int2bin</code> can be rewritten more
-compactly using unfold as follows:
-<code>int2bin = unfold (== 0) (‘mod‘ 2) (‘div‘ 2)</code></p>
-<p>Redefine the functions <code>chop8</code>, <code>map f</code> and
-<code>iterate f</code> using unfold.</p>
-<p><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">chop8</span> :: [<span class="type">Char</span>] -&gt; [[<span class="type">Char</span>]]</span><br><span class="line"><span class="title">chop8</span> = unfold (== []) (take <span class="number">8</span>) (drop <span class="number">8</span>) </span><br><span class="line"></span><br><span class="line"><span class="title">map&#x27;</span> :: <span class="type">Eq</span> b =&gt; (b -&gt; a) -&gt; [b] -&gt; [a]:t </span><br><span class="line"><span class="title">map&#x27;</span> f = unfold (== []) (f . head) (tail)</span><br><span class="line"></span><br><span class="line"><span class="comment">-- Iterate while True</span></span><br><span class="line"><span class="title">iterateTrue&#x27;</span> :: (<span class="type">Bool</span> -&gt; <span class="type">Bool</span>) -&gt; <span class="type">Bool</span> -&gt; [<span class="type">Bool</span>]</span><br><span class="line"><span class="title">iterateTrue&#x27;</span> f = unfold (== <span class="type">False</span>) id f</span><br><span class="line"></span><br><span class="line"><span class="comment">-- Iterate while False</span></span><br><span class="line"><span class="title">iterateFalse&#x27;</span> :: (<span class="type">Bool</span> -&gt; <span class="type">Bool</span>) -&gt; <span class="type">Bool</span> -&gt; [<span class="type">Bool</span>]</span><br><span class="line"><span class="title">iterateFalse&#x27;</span> f = unfold (== <span class="type">True</span>) id f</span><br><span class="line"></span><br><span class="line"><span class="comment">-- Note: id is an identity function of type a -&gt; a.</span></span><br><span class="line"><span class="comment">-- Note: dot (.) is the operator composes functions.</span></span><br><span class="line"><span class="comment">-- e.g. f (g x) == (f . g) x</span></span><br></pre></td></tr></table></figure></p></li>
-<li><p>Modify the binary string transmitter example to detect simple
-transmission errors using the concept of parity bits. That is, each
-eight-bit binary number produced during encoding is extended with a
-<strong>parity bit</strong>, set to one if the number contains an odd
-number of ones, and to zero otherwise. In turn, each resulting nine-bit
-binary number consumed during decoding is checked to ensure that its
-parity bit is correct, with the parity bit being discarded if this is
-the case, and a parity error being reported otherwise.</p>
-<p>Hint: the library function <code>error :: String -&gt; a</code>
-displays the given string as an error message and terminates the
-program; the polymorphic result type ensures that error can be used in
-any context.</p>
-<p><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- Extend with Parity Bit</span></span><br><span class="line"><span class="title">enparify</span> :: [<span class="type">Int</span>] -&gt; [<span class="type">Int</span>]</span><br><span class="line"><span class="title">enparify</span> [] = []</span><br><span class="line"><span class="title">enparify</span> xs | even (sum xs) = xs ++ [<span class="number">0</span>]</span><br><span class="line">            | otherwise     = xs ++ [<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">-- Decode with Parity Bit</span></span><br><span class="line"><span class="title">deparify</span> :: [<span class="type">Int</span>] -&gt; [<span class="type">Int</span>]</span><br><span class="line"><span class="title">deparify</span> [] = []</span><br><span class="line"><span class="title">deparify</span> xs | even (sum (init xs)) &amp;&amp; (last xs == <span class="number">0</span>) = init xs</span><br><span class="line">            | odd (sum (init xs)) &amp;&amp; (last xs == <span class="number">1</span>)  = init xs</span><br><span class="line">            | otherwise                 = error <span class="string">&quot;Parity Error&quot;</span></span><br></pre></td></tr></table></figure></p></li>
-<li><p>Test your new string transmitter program from the previous
-exercise using a faulty communication channel that forgets the first
-bit, which can be modelled using the <code>tail</code> function on lists
-of bits.</p>
-<p><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">parityTransmit</span> :: <span class="type">String</span> -&gt; <span class="type">String</span></span><br><span class="line"><span class="title">parityTransmit</span> [] = []</span><br><span class="line"><span class="title">parityTransmit</span> xs = map snd (filter (\(index, _) -&gt; index `mod` <span class="number">9</span> /= <span class="number">0</span>) $ zip [<span class="number">0</span>..] xs) </span><br></pre></td></tr></table></figure></p></li>
-<li><p>Define a function
-<code>altMap :: (a -&gt; b) -&gt; (a -&gt; b) -&gt; [a] -&gt; [b]</code>
-that alternately applies its two argument functions to successive
-elements in a list, in turn about order.</p>
-<p>For example:</p>
-<p><code>$ &gt; altMap (+10) (+100) [0,1,2,3,4]</code></p>
-<p><code>$ &gt; [10,101,12,103,14]</code></p>
-<p><figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">altMap</span> :: (a -&gt; b) -&gt; (a -&gt; b) -&gt; [a] -&gt; [b]</span><br><span class="line"><span class="title">altMap</span> _ _ [] = []</span><br><span class="line"><span class="title">altMap</span> f _ (x0:[]) = f x0 : []</span><br><span class="line"><span class="title">altMap</span> f g (x0:x1:[]) = f x0 : g x1 : []</span><br><span class="line"><span class="title">altMap</span> f g (x0:x1:xs) = f x0 : g x1 : altMap f g xs</span><br></pre></td></tr></table></figure></p></li>
-<li><p>Using <code>altMap</code>, define a function
-<code>luhn :: [Int] -&gt; Bool</code> that implements the Luhn algorithm
-from the exercises in chapter 4 for bank card numbers of any length.</p>
-<p>Test your new function using your own bank card.</p>
-<figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- Pseudo-Code</span></span><br><span class="line"><span class="title">function</span> checkLuhn(string purportedCC) </span><br><span class="line">&#123;</span><br><span class="line">	int sum := integer(purportedCC[length(purportedCC)-<span class="number">1</span>])</span><br><span class="line">	int nDigits := length(purportedCC)</span><br><span class="line">	int parity := nDigits modulus <span class="number">2</span></span><br><span class="line">	for i from <span class="number">0</span> to nDigits - <span class="number">2</span></span><br><span class="line">    &#123;</span><br><span class="line">    	int digit := integer(purportedCC[i])</span><br><span class="line">    	<span class="keyword">if</span> i modulus <span class="number">2</span> = parity</span><br><span class="line">        	digit := digit × <span class="number">2</span></span><br><span class="line">		<span class="keyword">if</span> digit &gt; <span class="number">9</span></span><br><span class="line">			digit := digit - <span class="number">9</span></span><br><span class="line">        sum := sum + digit</span><br><span class="line">    &#125;</span><br><span class="line">    return (sum modulus <span class="number">10</span>) = <span class="number">0</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">--------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- Haskell Solution</span></span><br><span class="line"><span class="title">luhnCalculus</span> :: <span class="type">Int</span> -&gt; <span class="type">Int</span></span><br><span class="line"><span class="title">luhnCalculus</span> x | x * <span class="number">2</span> &lt; <span class="number">9</span> = <span class="number">9</span></span><br><span class="line">               | otherwise = (x * <span class="number">2</span> - <span class="number">9</span>)</span><br><span class="line"><span class="title">luhn</span> xs | (sum (map luhnCalculus xs) mod <span class="number">10</span>) == <span class="number">0</span> = <span class="type">True</span></span><br><span class="line">        | otherwise = <span class="type">False</span>               </span><br></pre></td></tr></table></figure></li>
-</ol>
-<hr />
-<h3 id="chapter-8-declaring-types-and-classes">Chapter 8 Declaring Types
-and Classes</h3>
-<hr />
-<h3 id="chapter-10-interactive-programming">Chapter 10 Interactive
-Programming</h3>
-<hr />
-<h3 id="chapter-15-lazy-evaluation">Chapter 15 Lazy Evaluation</h3>
-<hr />
-]]></content>
-      <categories>
-        <category>Walkthrough</category>
-      </categories>
-      <tags>
-        <tag>Haskell</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Algorithm-I, Day 2-6</title>
-    <url>/2022/03/08/Algorithm-I-Day-2-6/</url>
-    <content><![CDATA[<p>Topic: Two Pointers with Sliding Window</p>
-<span id="more"></span>
-<blockquote>
-<p>Q977 Squares of a Sorted Array</p>
-<p>Q189 Rotate Array</p>
-<p>Q283 Move Zeroes</p>
-<p>Q167 Two Sum</p>
-<p>Q344 Reverse String</p>
-<p>Q557 Reverse Words in a String III</p>
-<p>Q876 Middle of the Linked List</p>
-<p>Q19 Remove Nth Node From End of List</p>
-<p>Q3 Longest Substring Without Repeating Characters</p>
-<p>Q567 Permutation in String</p>
-</blockquote>
-<p>A searching algorithm which finds a pair of element's position in a
-<strong>sequential(sorted)</strong> array.</p>
-<p>e.g. Given a enumerable array <code>Grid</code> (maybe sorted in some
-order), having finite integers, Two-Pointers method can find if there
-exists any <strong>pair of elements</strong> (<code>Grid[i]</code>,
-<code>Grid[j]</code>) such that suits some given target.</p>
-<blockquote>
-<p><strong>Note:</strong> This pair of elements can also represents a
-sequence of items of an array, which starts at item No. i and stops at
-item No. j.</p>
-</blockquote>
-<hr />
-<h5 id="prepost-sliding-window-method">Pre&amp;Post / Sliding Window
-Method</h5>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Ensure that pointer H(High) is kinda ahead of the pointer L(Low).</span></span><br><span class="line"><span class="comment">## Hence, the pointers L &amp; H spans a window.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> H &lt; Border: </span><br><span class="line">    Window.push(H)		<span class="comment">## Expand the Window</span></span><br><span class="line">    H++;</span><br><span class="line">    <span class="keyword">while</span> valid Window:</span><br><span class="line">		update Window <span class="keyword">if</span> necessary</span><br><span class="line">        Window.pop(L)	 <span class="comment">## Shrink the Window</span></span><br><span class="line">        L++</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> Window</span><br></pre></td></tr></table></figure>
-<h5 id="leftright-method">Left&amp;Right Method</h5>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Do until the pointers L(Left) and R(Right) meet each other,</span></span><br><span class="line"><span class="comment">## Or do until the target pair is found.</span></span><br><span class="line">    <span class="keyword">if</span> Target == Grid[L] + Grid[R]</span><br><span class="line">        <span class="keyword">return</span> L, R</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> Target &gt; Grid[L] + Grid[R]</span><br><span class="line">        R -= <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span> <span class="comment">## Target &lt; Grid[L] + Grid[R]</span></span><br><span class="line">    	L += <span class="number">1</span></span><br><span class="line">	</span><br><span class="line">    <span class="keyword">continue</span></span><br><span class="line"><span class="comment">## Note: </span></span><br><span class="line"><span class="comment">## The explanation above implicitly assume that</span></span><br><span class="line"><span class="comment">## the array Grid is sorted ascendingly.</span></span><br></pre></td></tr></table></figure>
-<h5 id="time-complexities">Time Complexities</h5>
-<ul>
-<li>Best Case Complexity: O(1)</li>
-<li>Worst Case Complexity: O(n)</li>
-<li><strong>Average Case Complexity: O(n)</strong></li>
-</ul>
-<h5 id="space-complexities">Space Complexities</h5>
-<ul>
-<li>O(1)</li>
-</ul>
-<hr />
-<h5 id="footnote">Footnote</h5>
-<p>In <strong>Q977 Squares of a Sorted Array</strong>:</p>
-<p>Left&amp;Right Method is applied. Take The absolute value for
-comparison.</p>
-<p>In <strong>Q189 Rotate Array</strong>:</p>
-<p>See also in: &lt; Article Not Published Yet &gt;</p>
-<p>In <strong>Q283 Move Zeroes</strong>:</p>
-<p>Left&amp;Right Method is applied. One Pointer stands for the current
-working position, and another stands for the staing point of pushing in
-/ filling with zeros.</p>
-<p>In <strong>Q167 Two Sum</strong>:</p>
-<p>Left&amp;Right Method is applied.</p>
-<p>Note: The given input array is sorted.</p>
-<p>In <strong>Q344 Reverse String</strong>:</p>
-<p>Left&amp;Right Method is applied.</p>
-<p>In <strong>Q557 Reverse Words in a String III</strong>:</p>
-<p>Left&amp;Right Method is applied. Just make wise usage of
-slicers.</p>
-<p>In <strong>Q876 Middle of the Linked List</strong>:</p>
-<p>Pre&amp;Post / Sliding Window Method is recommended.</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">Pre += <span class="number">1</span></span><br><span class="line">Post += <span class="number">2</span></span><br></pre></td></tr></table></figure>
-<p>In <strong>Q19 Remove Nth Node From End of List</strong>:</p>
-<p>Left&amp;Right Method is applied.</p>
-<p>Repeat the "process" for N times, then remove the node.</p>
-<p>In <strong>Q3 Longest Substring Without Repeating
-Characters</strong>:</p>
-<p>Pre&amp;Post / Sliding Window Method is applied.</p>
-<p>In <strong>Q567 Permutation in String</strong>:</p>
-<p>Note: It's much faster to create 2 <strong>dictionarys</strong> and
-compare them instead.</p>
-]]></content>
-      <categories>
-        <category>LeetCode Plan</category>
-        <category>Algorithm-I</category>
-      </categories>
-      <tags>
-        <tag>Two Pointers</tag>
-        <tag>Sliding Window</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>FURP-Driven Literature Review I</title>
-    <url>/2022/06/07/FURP-Driven-Literature-Review-I/</url>
-    <content><![CDATA[<blockquote>
-<p>C. Huang, Y. Li and R. Nevatia, "Multiple Target Tracking by
-Learning-Based Hierarchical Association of Detection Responses," in IEEE
-Transactions on Pattern Analysis and Machine Intelligence, vol. 35, no.
-4, pp. 898-910, April 2013, doi: 10.1109/TPAMI.2012.159.</p>
-</blockquote>
-<p>Driven by FURP(FoSE Undergraduate Research Placement) Programme.</p>
-<span id="more"></span>
-<h3
-id="multiple-target-tracking-by-learning-based-hierarchical-association-of-detection-responses">Multiple
-Target Tracking by Learning-Based Hierarchical Association of Detection
-Responses</h3>
-<p><strong>Publisher:</strong></p>
-<p>IEEE</p>
-<p><strong>Authors:</strong></p>
-<p>Chang Huang; Yuan Li; Ramakant Nevatia</p>
-<p><strong>Index Terms</strong> - Multiple Target Tracking -
-Hierarchical Association - Bag Ranking - AdaBoost</p>
-<p><strong>DOI:</strong> <a class="link" 
- href="https://doi.org/10.1109/TPAMI.2012.159" >10.1109/TPAMI.2012.159<i class="fas fa-external-link-alt"></i></a></p>
-<p><strong>Background(Key Point):</strong></p>
-<p><strong>The Maximum A Posteriori (MAP) problem of Data
-Association-based Tracking(DAT)</strong></p>
-<p>There are two main components of a <strong>DAT</strong> approach:</p>
-<p>One is a <code>tracklet affinity model</code> that measures the
-likelihood of two tracklets belonging to the same target, providing
-fundamental evidences for DAT;</p>
-<p>The other one is the <code>association optimization framework</code>
-that determines which of the tracklets should be linked considering
-affinity measurements correspondingly.</p>
-<p>The MAP Problem considers initialization, termination and transitions
-of tracklets, together with the false alarm possibilities of the
-tracklets, which can be effectively evaluated by the Hungarian
-algorithm.</p>
-<p>The tracklet affinity model, which measures the likelihood of two
-tracklets belonging to the same target, is a linear combination of
-automatically learned weak nonparametric models upon various features.
-which is distinct from most of previous work that relies on heuristic
-selection of parametric models and manual tuning of their
-parameters.</p>
-<p><strong>Methodology:</strong></p>
-<p>Propose a DAT approach based on the hierachical association framework
-and a novel bag-ranking approach for learning tracklet affinity models
-which is derived from.</p>
-<p><strong>Key Findings:</strong></p>
-<p>The systematic experiments on the standard CAVIAR dataset and the
-highly challenging <code>TRECVID08</code> dataset show that this
-approach achieves significant improvement in tracking accuracy over
-previous state-of-the-art work.</p>
-<p>The main difficulty in applying this tracking framework to a
-real-time tracking system is that it has to postpone “unsafe”
-associations until enough evidence is collected to resolve the
-ambiguity, resulting in inevitable tracking lag for some difficult
-targets.</p>
-]]></content>
-      <categories>
-        <category>FURP</category>
-        <category>Literature Review</category>
-      </categories>
-      <tags>
-        <tag>Multi-Target Tracking</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>FURP-Driven Literature Review II</title>
-    <url>/2022/06/07/FURP-Driven-Literature-Review-II/</url>
-    <content><![CDATA[<blockquote>
-<p>Rodríguez-Pérez, R., Bajorath, J. Interpretation of machine learning
-models using shapley values: application to compound potency and
-multi-target activity predictions. J Comput Aided Mol Des 34, 1013–1026
-(2020). https://doi.org/10.1007/s10822-020-00314-0</p>
-</blockquote>
-<p>Driven by FURP(FoSE Undergraduate Research Placement) Programme.</p>
-<span id="more"></span>
-<h2
-id="interpretation-of-machine-learning-models-using-shapley-values-application-to-compound-potency-and-multi-target-activity-predictions">Interpretation
-of machine learning models using shapley values: application to compound
-potency and multi-target activity predictions</h2>
-<p><strong>Publisher:</strong></p>
-<p>Springer Nature, Journal of Computer-Aided Molecular Design</p>
-<p><strong>Authors:</strong></p>
-<p>Raquel Rodríguez-Pérez, Jürgen Bajorath</p>
-<p><strong>Index Terms</strong> - Machine learning - Black box character
-- Structure–activity relationships - Compound activity - Compound
-potency prediction - Multi-target modeling - Model interpretation -
-Feature importance - Shapley values</p>
-<p><strong>DOI:</strong> <a class="link" 
- href="https://doi.org/10.1007/s10822-020-00314-0" >10.1007/s10822-020-00314-0<i class="fas fa-external-link-alt"></i></a></p>
-<p><strong>Background(Key Point):</strong></p>
-<p>Difficulties in interpreting machine learning(ML) models and their
-predictions limit the practical applicability of and confidence in ML in
-pharmaceutical research.</p>
-<p>A short coming of many ML approaches is the difficulty to rationalize
-predictions.</p>
-<p>Lack of interpretability might result from intrinsic black box
-character of ML methods such as neural network(NN) or support vector
-machine(SVM) algorithms. Futhermore, it might also result from using
-principally interpretable models such as decison trees(DTs) as large
-ensembles classifiers such as random forest(RF).</p>
-<p><strong>Methodology:</strong></p>
-<p><code>Shapley Additive exPlanations method(SHAP)</code>, A new
-methodology applicable of any complexity for ML model interpretation in
-chemoinformatics and medicinal chemistry is introduced. It is based upon
-the Shapley value concept from game theory and can be rationalized as an
-extension of the local interpretable model-agnostic explanations.</p>
-<p><strong>Key Findings:</strong> The <code>SHAP</code> methodologu
-enables the interpretation of ML models and their predictions, yielding
-feature importance for any ML model and therefore sheds light on the
-black box nature of many ML approaches.</p>
-<p><code>SHAP</code> analysis yielded meaningful explanations of
-compounded potency and multi-target predictions, revealing different
-model characteristics responsible for individual model.</p>
-]]></content>
-      <categories>
-        <category>FURP</category>
-        <category>Literature Review</category>
-      </categories>
-      <tags>
-        <tag>Multi-Target Tracking</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>FURP-Driven Literature Review III</title>
-    <url>/2022/06/07/FURP-Driven-Literature-Review-III/</url>
-    <content><![CDATA[<blockquote>
-<p>Waegeman, W., Dembczyński, K. &amp; Hüllermeier, E. Multi-target
-prediction: a unifying view on problems and methods. Data Min Knowl Disc
-33, 293–324 (2019). https://doi.org/10.1007/s10618-018-0595-5</p>
-</blockquote>
-<p>Driven by FURP(FoSE Undergraduate Research Placement) Programme.</p>
-<span id="more"></span>
-<h2 id="section"></h2>
-<p><strong>Publisher:</strong> Springer Nature</p>
-<p>Expert Systems with Applications</p>
-<p><strong>Authors:</strong></p>
-<p>Willem Waegeman, Krzysztof Dembczyński, Eyke Hüllermeier</p>
-<p><strong>Index Terms</strong> - Extreme Learning Machine -
-Regularization - Multi-target regression - Robust to outliers -
-Alternating direction method of multipliers</p>
-<p><strong>DOI:</strong> <a class="link" 
- href="https://doi.org/10.1007/s10618-018-0595-5" >10.1007/s10618-018-0595-5<i class="fas fa-external-link-alt"></i></a></p>
-<p><strong>Background(Key Point):</strong></p>
-<p>Many problem settings in machine learning are concerned with the
-simultaneous prediction of multiple target variables of diverse type.
-Amongst others, such problem settings arise in multivariate regression,
-multi-label classification, multi-task learning, dyadic prediction,
-zero-shot learning, network inference, and matrix completion. These
-subfields of machine learning are typically studied in isolation,
-without highlighting or exploring important relationships.</p>
-<p><strong>Methodology:</strong></p>
-<p>Present a unifying view on what we call multi-target prediction (MTP)
-problems and methods.</p>
-<p>Introduce a general framework that covers the above subfields as
-special cases, is accomplished by identifying a number of key
-properties, which distinguish such methods and determine their
-suitability for different types of problems.</p>
-<p><strong>Key Findings:</strong></p>
-<p><em>Note: This paper is not a typical review paper</em></p>
-<p>Intend to focus on some general principles that might be helpful in
-identifying the right approach for a given problem;</p>
-]]></content>
-      <categories>
-        <category>FURP</category>
-        <category>Literature Review</category>
-      </categories>
-      <tags>
-        <tag>Multi-Target Tracking</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>FURP-Driven Literature Review V</title>
-    <url>/2022/06/08/FURP-Driven-Literature-Review-V/</url>
-    <content><![CDATA[<blockquote>
-<p>Osojnik, A., Panov, P. &amp; Džeroski, S. Multi-label classification
-via multi-target regression on data streams. Mach Learn 106, 745–770
-(2017). https://doi.org/10.1007/s10994-016-5613-5</p>
-</blockquote>
-<p>Driven by FURP(FoSE Undergraduate Research Placement) Programme.</p>
-<span id="more"></span>
-<h2
-id="multi-label-classification-via-multi-target-regression-on-data-streams">Multi-label
-classification via multi-target regression on data streams</h2>
-<p><strong>Publisher:</strong></p>
-<p>Springer, Machine Learning</p>
-<p><strong>Authors:</strong></p>
-<p>Aljaž Osojnik, Panče Panov, Sašo Džeroski</p>
-<p><strong>Index Terms</strong> - Multi-label classification -
-Multi-target regression - Data stream mining</p>
-<p><strong>DOI:</strong> <a class="link" 
- href="https://doi.org/10.1007/s10994-016-5613-5" >10.1007/s10994-016-5613-5<i class="fas fa-external-link-alt"></i></a></p>
-<p><strong>Background(Key Point):</strong></p>
-<p>Multi-label classification(MLC) tasks are encountered more and more
-frequently in machine learning applications, however, only a few MLC
-methods exists for classical batch setting.</p>
-<p><strong>Methodology:</strong></p>
-<p>Propose a new methodology for MLC tasks via multi-target regression
-in a stream setting.</p>
-<p>Develop a streaming multi-target regressor ISOUP-Tree that use this
-approach.</p>
-<p><strong>Key Findings:</strong></p>
-<p>Two variants of the ISOUP-Tree method(building regression and model
-trees) were experimentally compared and evaluated, and it turns out that
-the ensembles of iSOUP-Trees perform significantly better on some of
-these measures, especially the ones based on label ranking, and are not
-significantly worse than the competitors on any of the remaining
-measures.</p>
-]]></content>
-      <categories>
-        <category>FURP</category>
-        <category>Literature Review</category>
-      </categories>
-      <tags>
-        <tag>Multi-Target Tracking</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode Study Plan</title>
-    <url>/2022/03/02/LeetCode-Study-Plan/</url>
-    <content><![CDATA[<p>A brief, simplified mind map considering the <strong>LeetCode Study
-Plan</strong>.</p>
-<span id="more"></span>
-<p>Take a look at the features and implementations of different types of
-<strong>data structures</strong> and <strong>algorithms</strong> in the
-posts below.</p>
-<p>See also in my LeetCode Account if you wish to have a look at my
-solutions. = =+</p>
-<p>p.s. In most cases the code blocks are rendered in Python syntax, but
-the contents of which are simply pseudo-codes. Attempts of plagiarism,
-such as copy-paste-execute in your terminal would cause you nothing but
-a mess. <strong>IT's NONE ACTUAL CODE.</strong></p>
-<hr />
-<h5 id="algorithm-i-wip">Algorithm-I (WIP)</h5>
-<h5 id="algorithm-ii-wip">Algorithm-II (WIP)</h5>
-<h5 id="algorithm-iii-wip">Algorithm-III (WIP)</h5>
-]]></content>
-      <categories>
-        <category>LeetCode Plan</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>FURP-Driven Literature Review IV</title>
-    <url>/2022/06/08/FURP-Driven-Literature-Review-IV/</url>
-    <content><![CDATA[<blockquote>
-<p>Petković, M., Kocev, D. &amp; Džeroski, S. Feature ranking for
-multi-target regression. Mach Learn 109, 1179–1204 (2020).
-https://doi.org/10.1007/s10994-019-05829-8cement) Programme.</p>
-</blockquote>
-<span id="more"></span>
-<h3 id="feature-ranking-for-multi-target-regression">Feature ranking for
-multi-target regression</h3>
-<p><strong>Publisher:</strong></p>
-<p>Springer Link, Special Issue of the Discovery Science 2017</p>
-<p><strong>Authors:</strong></p>
-<p>Matej Petokovic, Dragi Kocev, Saso Dzeroski</p>
-<p><strong>Index Terms</strong> - Feature ranking - Multi target
-regression - Tree based methods - Relief</p>
-<p><strong>DOI:</strong> <a class="link" 
- href="https://doi.org/10.1007/s10994-019-05829-8" >10.1007/s10994-019-05829-8<i class="fas fa-external-link-alt"></i></a></p>
-<p><strong>Background(Key Point):</strong></p>
-<p>Multi-target regression(MTR), which concerns problems with multiple
-continuous dependent/target variables, is lack of studies in performing
-feature ranking in the context of MTR so far.</p>
-<p><strong>Methodology:</strong></p>
-<p>Two groups of feature ranking scores for MTR: scores(Symbolic,
-Genie3, Random Forest score) based on ensembles(bagging, random forests,
-extra tress) and a score derived as an extension of the RReliefF method
-was studied.</p>
-<p>A generic data-transformation approach to MTR feature ranking and
-thus have two version of each score.</p>
-<p><strong>Key Findings:</strong></p>
-<p>The results identify the parameters that influence the quality of the
-rankings, reveal that both groups of methods produce relevant feature
-rankings, and show that the Symbolic and Genie3 score, coupled with
-random forest ensembles, yield the best rankings.s</p>
-]]></content>
-      <categories>
-        <category>Literature Review</category>
-        <category>FURP</category>
-      </categories>
-      <tags>
-        <tag>Multi-Target Tracking</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ML by Stanford: Wk1</title>
-    <url>/2022/06/17/ML-by-Stanford-Wk1/</url>
-    <content><![CDATA[<p>Take-Away Notes for Machine Learning by Stanford University on
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Ch&#39;i YU">
+    
+    <title>
+        
+            ML by Stanford: Wk1 |
+        
+        Study with Ch&#39;i YU
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"ch-i-yu.github.io","root":"/","language":"en","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066cc","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Keep writing, Keep loving."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":false,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="Study with Ch'i YU" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Study with Ch&#39;i YU
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links"
+                            >
+                                LINKS
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">TAGS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links">LINKS</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">ML by Stanford: Wk1</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Ch&#39;i YU</span>
+                        
+                            <span class="author-label">Lv2</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-06-17 21:16:31</span>
+        <span class="mobile">2022-06-17 21:16</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/ML-by-Stanford/">ML by Stanford</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Machine-Learning/">Machine Learning</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>4 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>Take-Away Notes for Machine Learning by Stanford University on
 Coursera.</p>
 <blockquote>
 <p>Week 1, Lecture 1-3</p>
@@ -884,13 +478,13 @@ vectors are lowercase. - "Scalar" means that an object is a single
 value, not a vector or matrix. - <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.633ex" height="1.545ex" role="img" focusable="false" viewBox="0 -683 722 683"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="211D" d="M17 665Q17 672 28 683H221Q415 681 439 677Q461 673 481 667T516 654T544 639T566 623T584 607T597 592T607 578T614 565T618 554L621 548Q626 530 626 497Q626 447 613 419Q578 348 473 326L455 321Q462 310 473 292T517 226T578 141T637 72T686 35Q705 30 705 16Q705 7 693 -1H510Q503 6 404 159L306 310H268V183Q270 67 271 59Q274 42 291 38Q295 37 319 35Q344 35 353 28Q362 17 353 3L346 -1H28Q16 5 16 16Q16 35 55 35Q96 38 101 52Q106 60 106 341T101 632Q95 645 55 648Q17 648 17 665ZM241 35Q238 42 237 45T235 78T233 163T233 337V621L237 635L244 648H133Q136 641 137 638T139 603T141 517T141 341Q141 131 140 89T134 37Q133 36 133 35H241ZM457 496Q457 540 449 570T425 615T400 634T377 643Q374 643 339 648Q300 648 281 635Q271 628 270 610T268 481V346H284Q327 346 375 352Q421 364 439 392T457 496ZM492 537T492 496T488 427T478 389T469 371T464 361Q464 360 465 360Q469 360 497 370Q593 400 593 495Q593 592 477 630L457 637L461 626Q474 611 488 561Q492 537 492 496ZM464 243Q411 317 410 317Q404 317 401 315Q384 315 370 312H346L526 35H619L606 50Q553 109 464 243Z"></path></g></g></g></g></svg></mjx-container></span> refers to the set of scalar
 real numbers. - <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="2.781ex" height="2.021ex" role="img" focusable="false" viewBox="0 -893.3 1229.3 893.3"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="msup"><g data-mml-node="mi"><path data-c="211D" d="M17 665Q17 672 28 683H221Q415 681 439 677Q461 673 481 667T516 654T544 639T566 623T584 607T597 592T607 578T614 565T618 554L621 548Q626 530 626 497Q626 447 613 419Q578 348 473 326L455 321Q462 310 473 292T517 226T578 141T637 72T686 35Q705 30 705 16Q705 7 693 -1H510Q503 6 404 159L306 310H268V183Q270 67 271 59Q274 42 291 38Q295 37 319 35Q344 35 353 28Q362 17 353 3L346 -1H28Q16 5 16 16Q16 35 55 35Q96 38 101 52Q106 60 106 341T101 632Q95 645 55 648Q17 648 17 665ZM241 35Q238 42 237 45T235 78T233 163T233 337V621L237 635L244 648H133Q136 641 137 638T139 603T141 517T141 341Q141 131 140 89T134 37Q133 36 133 35H241ZM457 496Q457 540 449 570T425 615T400 634T377 643Q374 643 339 648Q300 648 281 635Q271 628 270 610T268 481V346H284Q327 346 375 352Q421 364 439 392T457 496ZM492 537T492 496T488 427T478 389T469 371T464 361Q464 360 465 360Q469 360 497 370Q593 400 593 495Q593 592 477 630L457 637L461 626Q474 611 488 561Q492 537 492 496ZM464 243Q411 317 410 317Q404 317 401 315Q384 315 370 312H346L526 35H619L606 50Q553 109 464 243Z"></path></g><g data-mml-node="mi" transform="translate(755,363) scale(0.707)"><text data-variant="double-struck" transform="scale(1,-1)" font-size="884px">𝕟</text></g></g></g></g></g></svg></mjx-container></span> refers
 to the set of n-dimensional vectors of real numbers.</p>
-<p><strong>Coding Kit:</strong> <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% Initializing Matrix</span><br><span class="line">A = [1, 2, 3; 4, 5, 6; 7, 8, 9; 10, 11, 12]</span><br><span class="line"></span><br><span class="line">% Initializing Vector</span><br><span class="line">v = [1; 2; 3; 4; 5; 6; 7]</span><br><span class="line"></span><br><span class="line">% Size of Matrix</span><br><span class="line">[m, n] = size(A)</span><br><span class="line"></span><br><span class="line">% Size of Vector</span><br><span class="line">l = size(v)</span><br><span class="line"></span><br><span class="line">% Indexed Term</span><br><span class="line">A_23 = A(2, 3)</span><br></pre></td></tr></table></figure></p>
+<p><strong>Coding Kit:</strong> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">% Initializing Matrix</span><br><span class="line">A = [1, 2, 3; 4, 5, 6; 7, 8, 9; 10, 11, 12]</span><br><span class="line"></span><br><span class="line">% Initializing Vector</span><br><span class="line">v = [1; 2; 3; 4; 5; 6; 7]</span><br><span class="line"></span><br><span class="line">% Size of Matrix</span><br><span class="line">[m, n] = size(A)</span><br><span class="line"></span><br><span class="line">% Size of Vector</span><br><span class="line">l = size(v)</span><br><span class="line"></span><br><span class="line">% Indexed Term</span><br><span class="line">A_23 = A(2, 3)</span><br></pre></td></tr></table></figure></p>
 <h3 id="addition-scalar-multiplication">Addition &amp; Scalar
 Multiplication</h3>
 <p>Element-wise Operations.</p>
 <p>To add of subtract two matrices, their <code>dimensions</code> must
 be the <strong>same</strong>.</p>
-<p><strong>Coding Kit</strong> <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% Initialize Matrix A and B </span><br><span class="line">A = [1, 2, 4; 5, 3, 2]</span><br><span class="line">B = [1, 3, 4; 1, 1, 1]</span><br><span class="line"></span><br><span class="line">% Initialize Scalar s </span><br><span class="line">s = 2</span><br><span class="line"></span><br><span class="line">% Element-wise Addition</span><br><span class="line">add_AB = A + B </span><br><span class="line"></span><br><span class="line">% Element-wise Subtraction</span><br><span class="line">sub_AB = A - B</span><br><span class="line"></span><br><span class="line">% Scalar Multiplication</span><br><span class="line">mult_As = A * s</span><br><span class="line"></span><br><span class="line">% Scalar Division</span><br><span class="line">div_As = A / s</span><br><span class="line"></span><br><span class="line">% What happens if we have a Matrix + scalar?</span><br><span class="line">add_As = A + s % Element-wise addition, e.g. A_ij = A_ij + s</span><br></pre></td></tr></table></figure></p>
+<p><strong>Coding Kit</strong> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">% Initialize Matrix A and B </span><br><span class="line">A = [1, 2, 4; 5, 3, 2]</span><br><span class="line">B = [1, 3, 4; 1, 1, 1]</span><br><span class="line"></span><br><span class="line">% Initialize Scalar s </span><br><span class="line">s = 2</span><br><span class="line"></span><br><span class="line">% Element-wise Addition</span><br><span class="line">add_AB = A + B </span><br><span class="line"></span><br><span class="line">% Element-wise Subtraction</span><br><span class="line">sub_AB = A - B</span><br><span class="line"></span><br><span class="line">% Scalar Multiplication</span><br><span class="line">mult_As = A * s</span><br><span class="line"></span><br><span class="line">% Scalar Division</span><br><span class="line">div_As = A / s</span><br><span class="line"></span><br><span class="line">% What happens if we have a Matrix + scalar?</span><br><span class="line">add_As = A + s % Element-wise addition, e.g. A_ij = A_ij + s</span><br></pre></td></tr></table></figure></p>
 <h3 id="matrix-matrixvector-multiplication">Matrix Matrix(Vector)
 Multiplication</h3>
 <p>The general rule is, m x n matrix(vector) multiples a n x p
@@ -902,7 +496,7 @@ multiplied by any matrix of the same dimensions, results in the original
 matrix.</p>
 <p>See "Essence of Linear Algebra" for more tricks of fast calculation
 of matrix multiplication.</p>
-<p><strong>Coding Kit</strong> <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% Initialize Matrix A </span><br><span class="line">A = [1, 2, 3; 4, 5, 6;7, 8, 9] </span><br><span class="line"></span><br><span class="line">% Initialize Vector v </span><br><span class="line">v = [1; 1; 1] </span><br><span class="line"></span><br><span class="line">% Initialize 3 by 3 Identity Matrix</span><br><span class="line">I = eye(3)</span><br><span class="line"></span><br><span class="line">% Multiply A * v</span><br><span class="line">Av = A * v</span><br><span class="line"></span><br><span class="line">% Multiply A * A</span><br><span class="line">AA = A * A</span><br><span class="line"></span><br><span class="line">% Multiply A * I</span><br><span class="line">AI = A * A</span><br></pre></td></tr></table></figure></p>
+<p><strong>Coding Kit</strong> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">% Initialize Matrix A </span><br><span class="line">A = [1, 2, 3; 4, 5, 6;7, 8, 9] </span><br><span class="line"></span><br><span class="line">% Initialize Vector v </span><br><span class="line">v = [1; 1; 1] </span><br><span class="line"></span><br><span class="line">% Initialize 3 by 3 Identity Matrix</span><br><span class="line">I = eye(3)</span><br><span class="line"></span><br><span class="line">% Multiply A * v</span><br><span class="line">Av = A * v</span><br><span class="line"></span><br><span class="line">% Multiply A * A</span><br><span class="line">AA = A * A</span><br><span class="line"></span><br><span class="line">% Multiply A * I</span><br><span class="line">AI = A * A</span><br></pre></td></tr></table></figure></p>
 <h3 id="inverse-transpose">Inverse &amp; Transpose</h3>
 <p>The inverse of a matrix A is denoted as <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="3.929ex" height="1.887ex" role="img" focusable="false" viewBox="0 -833.9 1736.7 833.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msup"><g data-mml-node="mi"><path data-c="1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path></g><g data-mml-node="TeXAtom" transform="translate(783,363) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mo"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mn" transform="translate(778,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g></g></g></g></svg></mjx-container></span>. Multiplying by the inverse
 results in the identity matrix.</p>
@@ -911,184 +505,267 @@ clockwise direction and then reversing it.</p>
 <p><strong>Note:</strong> An invertible(also non-singular or
 non-degenerate) matrix is a matrix for which matrix inversion operation
 exists, given that the determinant of which is non-zero.</p>
-<p><strong>Coding Kit</strong> <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">% Initialize Matrix A </span><br><span class="line">A = [1, 2, 0; 0, 5, 6; 7, 0, 9]</span><br><span class="line"></span><br><span class="line">% Transpose A </span><br><span class="line">A_trans = A' </span><br><span class="line"></span><br><span class="line">% Take the inverse of A </span><br><span class="line">A_inv = inv(A)</span><br><span class="line"></span><br><span class="line">% What is A^(-1)*A? </span><br><span class="line">A_invA = inv(A)*A % Identity Matrix</span><br></pre></td></tr></table></figure></p>
-]]></content>
-      <categories>
-        <category>ML by Stanford</category>
-      </categories>
-      <tags>
-        <tag>Machine Learning</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Project: Simple Face-Mask Detector</title>
-    <url>/2022/06/14/Project-Simple-Face-Mask-Detector/</url>
-    <content><![CDATA[<p>A Simple Face-Mask Detector built with <strong>OpenCV</strong>,
-<strong>Keras(Tensorflow)</strong> in order to detect face masks in both
-images and video streams.</p>
-<figure>
-<img src="../images/preview-SFMD-streamlit-pic.png"
-alt="A Streamlit webApp Preview." />
-<figcaption aria-hidden="true">A Streamlit webApp Preview.</figcaption>
-</figure>
-<p>See also in: <a class="link" 
- href="https://github.com/Ch-i-Yu/Simple-Face-Mask-Detector/blob/main/Readme-Image/masked_girls.gif" >GitHub<i class="fas fa-external-link-alt"></i></a>
-&amp; <a class="link" 
- href="https://share.streamlit.io/ch-i-yu/simple-face-mask-detector/main/Simple_Face-Mask_Detector_App.py" >Streamlit
-Cloud<i class="fas fa-external-link-alt"></i></a></p>
-<span id="more"></span>
-<h3 id="techstackframework">TechStack/Framework</h3>
-<ul>
-<li>OpenCV</li>
-<li>Keras(Tensorflow)</li>
-<li>MobileNetV2
-<ul>
-<li>Optimizer: Adam</li>
-<li>Loss: Binary Crossentropy</li>
-<li>Metrics: Accuracy</li>
-</ul></li>
-<li>Caffe-based Face Detector</li>
-</ul>
-<h3 id="dataset">Dataset</h3>
-<p>The dataset was created by Prajna Bhandary.</p>
-<p>The dataset consists of 1,376 images belongs to two classes:</p>
-<ul>
-<li>with_mask: 690 images</li>
-<li>without_mask: 686 images</li>
-</ul>
-<p>The images used were real images of human faces, however artificial
-face masks were added to create an artificial (but still real-world
-applicable) dataset.</p>
-<h3 id="prerequisites">Prerequisites</h3>
-<p>All the dependencies and required libraries are included in the file
-<code>requirements.txt</code>.</p>
-<p><em>Note: packages.txt is importing streamlit-needed exnternal
-dependencies. Ignore it if you are using Ananconda venv.</em></p>
-<h3 id="results">Results</h3>
-<p>The model gave 98% accuracy for Face Mask Detection after
-training.<br> See also in the following accuracy/loss training curve
-plot:</p>
-<figure>
-<img src="../images/SFMD-plot.png"
-alt="A Sample Plot of Training Outcome." />
-<figcaption aria-hidden="true">A Sample Plot of Training
-Outcome.</figcaption>
-</figure>
-<h3 id="working">Working</h3>
-<ol type="1">
-<li>To train the Face-Mask Detector, execute the following sample
-command:</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python train_detector.py -d Dataset</span><br></pre></td></tr></table></figure>
-<ol start="2" type="1">
-<li>To detect face masks in an single image, execute the following
-sample command:</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python predict_image.py -i .\Examples\Images\image-01.jpg</span><br></pre></td></tr></table></figure>
-<ol start="3" type="1">
-<li>To detect face masks in video streams, execute the following sample
-command:</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">python predict_video.py</span><br></pre></td></tr></table></figure>
-<ol start="4" type="1">
-<li>To find a Web-App version of the Simple Face-Mask Detector, execute
-the following sample command:</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">streamlit run Simple_Face-Mask_Detector_App.py</span><br></pre></td></tr></table></figure>
-<p>or</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">streamlit run https://raw.githubusercontent.com/Ch-i-Yu/Simple-Face-Mask-Detector/main/Simple_Face-Mask_Detector_App.py</span><br></pre></td></tr></table></figure>
-<p>or simply visit <a class="link" 
- href="https://share.streamlit.io/ch-i-yu/simple-face-mask-detector/main/Simple_Face-Mask_Detector_App.py" >Streamlit
-App Link<i class="fas fa-external-link-alt"></i></a>.</p>
-<h3 id="inspiration">Inspiration</h3>
-<p>This simplified, hello-world like project for a greenhand in Computer
-vision is inspired by the efforts of <strong>Adrian Rosebrock</strong>
-and <strong>Prajna Bhandary</strong>.</p>
-<h3 id="special-thanks-to...">Special Thanks to...</h3>
-<p>Thanks for my awesome guys, <strong>Xiyu L.</strong> and <strong>Feng
-J.</strong> who helped me to test my tiny project and record the lovely
-gif in the front of this page.</p>
-<h3 id="license">License</h3>
-<p>MIT © <a class="link"   href="https://github.com/Ch-i-Yu" >Ch'i YU<i class="fas fa-external-link-alt"></i></a></p>
-]]></content>
-      <categories>
-        <category>Project</category>
-      </categories>
-      <tags>
-        <tag>Computer Vision</tag>
-        <tag>Personal Project</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Reading List</title>
-    <url>/2022/03/03/Reading-List/</url>
-    <content><![CDATA[<p>Most of the materials on this Reading List belongs to the Campus
-Library Collection.</p>
-<span id="more"></span>
-<h5 id="offline-reading-list">Offline Reading List:</h5>
-<ul class="task-list">
-<li><input type="checkbox" disabled="" />
-<strong>Topic:</strong> Heuristic Methods <strong>Reference:</strong>
-<strong>Tags:</strong> <strong>Notes:</strong></li>
-<li><input type="checkbox" disabled="" />
-<strong>Topic:</strong> Fuzzy Logic <strong>Reference:</strong>
-<strong>Tags:</strong> <strong>Notes:</strong></li>
-<li><input type="checkbox" disabled="" />
-<strong>Topic:</strong> Game Theory <strong>Reference:</strong>
-<strong>Tags:</strong> <strong>Notes:</strong></li>
-<li><input type="checkbox" disabled="" />
-<strong>Topic:</strong> Evolutionary Computation
-<strong>Reference:</strong> <strong>Tags:</strong>
-<strong>Notes:</strong></li>
-<li><input type="checkbox" disabled="" />
-<strong>Topic:</strong> Evolutionary Game Theory
-<strong>Reference:</strong> <strong>Tags:</strong>
-<strong>Notes:</strong></li>
-</ul>
-<hr />
-<p>More articles about code tips, learning experiences and reading notes
-are on the way! = =+</p>
-]]></content>
-      <categories>
-        <category>Reading List</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/05/21/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a class="link"   href="https://hexo.io/" >Hexo<i class="fas fa-external-link-alt"></i></a>!</p>
-<span id="more"></span>
-<p>This is your very first post. Check <a class="link" 
- href="https://hexo.io/docs/" >documentation<i class="fas fa-external-link-alt"></i></a> for more info. If you get
-any problems when using Hexo, you can find the answer in <a class="link" 
- href="https://hexo.io/docs/troubleshooting.html" >troubleshooting<i class="fas fa-external-link-alt"></i></a> or
-you can ask me on <a class="link" 
- href="https://github.com/hexojs/hexo/issues" >GitHub<i class="fas fa-external-link-alt"></i></a>.</p>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a class="link" 
- href="https://hexo.io/docs/writing.html" >Writing<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a class="link"   href="https://hexo.io/docs/server.html" >Server<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a class="link" 
- href="https://hexo.io/docs/generating.html" >Generating<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a class="link" 
- href="https://hexo.io/docs/one-command-deployment.html" >Deployment<i class="fas fa-external-link-alt"></i></a></p>
-<hr />
-<p>Note: This is an automatically generated official document of Hexo.
-I'll just keep it there for a few months then delete it later.</p>
-]]></content>
-      <categories>
-        <category>Hello World</category>
-      </categories>
-      <tags>
-        <tag>Hello World</tag>
-      </tags>
-  </entry>
-</search>
+<p><strong>Coding Kit</strong> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">% Initialize Matrix A </span><br><span class="line">A = [1, 2, 0; 0, 5, 6; 7, 0, 9]</span><br><span class="line"></span><br><span class="line">% Transpose A </span><br><span class="line">A_trans = A' </span><br><span class="line"></span><br><span class="line">% Take the inverse of A </span><br><span class="line">A_inv = inv(A)</span><br><span class="line"></span><br><span class="line">% What is A^(-1)*A? </span><br><span class="line">A_invA = inv(A)*A % Identity Matrix</span><br></pre></td></tr></table></figure></p>
+
+        </div>
+
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/Machine-Learning/">#Machine Learning</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/06/14/Project-Simple-Face-Mask-Detector/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Project: Simple Face-Mask Detector</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Ch&#39;i YU</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#introduction"><span class="nav-text">&quot;Introduction&quot;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#definition-of-machine-learning"><span class="nav-text">Definition of Machine
+Learning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#supervised-unsupervised-learning"><span class="nav-text">Supervised &amp; Unsupervised
+Learning</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linear-regression-with-one-variable"><span class="nav-text">&quot;Linear Regression with One
+Variable&quot;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#model-cost-function"><span class="nav-text">Model &amp; Cost Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#parameter-learning"><span class="nav-text">Parameter Learning</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linear-algebra-review"><span class="nav-text">&quot;Linear Algebra Review&quot;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#matrices-vectors"><span class="nav-text">Matrices &amp; Vectors</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#addition-scalar-multiplication"><span class="nav-text">Addition &amp; Scalar
+Multiplication</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#matrix-matrixvector-multiplication"><span class="nav-text">Matrix Matrix(Vector)
+Multiplication</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#inverse-transpose"><span class="nav-text">Inverse &amp; Transpose</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
