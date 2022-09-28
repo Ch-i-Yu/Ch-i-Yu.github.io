@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Ch&#39;i YU">
+    
+    <title>
+        
+            ACE Take-Away: Lect No.2 Efficiency |
+        
+        Study with Ch&#39;i YU
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"ch-i-yu.github.io","root":"/","language":"en","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066cc","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Keep writing, Keep loving."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":false,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="Study with Ch'i YU" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Study with Ch&#39;i YU
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links"
+                            >
+                                LINKS
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">TAGS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links">LINKS</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">ACE Take-Away: Lect No.2 Efficiency</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Ch&#39;i YU</span>
+                        
+                            <span class="author-label">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-09-28 18:26:44</span>
+        <span class="mobile">2022-09-28 18:26</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Take-Away/">Take-Away</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Algorithms/">Algorithms</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Algorithms-Correctness-Efficiency/">Algorithms Correctness &amp; Efficiency</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>7 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <blockquote>
+<p>Take-Away Notes for Module COMP2048.</p>
+</blockquote>
+<p>Pseudocode, Running Time Analysis and Big-Oh(<span
+class="math inline">\(O\)</span>) Series</p>
+<ul class="task-list">
+<li><input type="checkbox" disabled="" />
+Reviewed</li>
+<li><input type="checkbox" disabled="" />
+Add Figures</li>
+<li><input type="checkbox" disabled="" />
+Complete Sample Proofs</li>
+</ul>
+<span id="more"></span>
+<h2 id="pseudocode">Pseudocode</h2>
+<h3 id="method-declaration">Method Declaration</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Algorithm <span class="title function_">method</span><span class="params">(arg [, arg ...] )</span></span><br><span class="line">    Input ...</span><br><span class="line">    Output ...</span><br></pre></td></tr></table></figure>
+<h3 id="control-flow">Control Flow</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ... then ... [<span class="keyword">else</span> ...]</span><br><span class="line"><span class="keyword">while</span> ... <span class="keyword">do</span> ...</span><br><span class="line">repeat ... until ...</span><br><span class="line"><span class="keyword">for</span> ... <span class="keyword">do</span>...</span><br></pre></td></tr></table></figure>
+<p><em>note: Use Indentation to replace Braces</em></p>
+<h3 id="method-call">Method Call</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">method(arg [, arg ...])</span><br></pre></td></tr></table></figure>
+<h3 id="return-value">Return Value</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> expression</span><br></pre></td></tr></table></figure>
+<h3 id="expression-notation">Expression Notation</h3>
+<p>Assignment: <span class="math inline">\(\gets\)</span></p>
+<p>Equality Testing: <span class="math inline">\(=\)</span></p>
+<p><em>note: Superscriptions and other mathematical formatting
+allowed</em></p>
+<hr />
+<h2 id="running-time-analysis">Running Time Analysis</h2>
+<ul>
+<li>Focus on the relationship between running time of algorithm &amp;
+size of its input</li>
+<li>Characterized as a function of the input size for an algorithm</li>
+</ul>
+<h3 id="running-time">Running Time</h3>
+<p>Affected by: - Input Size - Hardware Environment <em>(e.g. Processor
+/ Clock Rate / Memory / Disk)</em> - Software Environment <em>(e.g.
+Operating System / Programming Language)</em></p>
+<h3 id="experimental-analysis">Experimental Analysis</h3>
+<ol type="1">
+<li>Write a program to implement the algorithm</li>
+<li>Run the program to perform independent experiments with inputs of
+varying size</li>
+<li>Plot the results of input size &amp; running time</li>
+<li>(Extra) Apply statistical analysis that seeks to fit the best
+function of input size to the experimental data</li>
+</ol>
+<p><strong>Limitations:</strong> - Same hardware &amp; software must be
+applied to compare algorithms; - Results may not be indicative of the
+running time on other inputs not included in the experiment; -
+Implementation of algorithm is compulsory;</p>
+<h3 id="theoretical-analysis">Theoretical Analysis</h3>
+<p><strong>Advantages</strong> - High Level Description - Characterize
+Running Time as a function of the input size n - Takes all
+possible(legal) inputs into account - Evaluation independent of hardware
+/ software environment</p>
+<p><strong>Primitive Operations</strong></p>
+<p>Definition: - Basic computations performed by an algorithm -
+Independent from programming languages - Exact definition is unnecessary
+- Assumed to take a constant amount of time in <strong>RAM(Random Access
+Machine)</strong> Model</p>
+<p>Components &amp; Examples: - Assign a value to a variable - Following
+an object reference - Performing an arithmetic operation - Comparing two
+numbers - <strong>[!]</strong> Accessing a single element of an array by
+index - <strong>[!]</strong> Calling a method - <strong>[!]</strong>
+Return from a method</p>
+<p><strong>RAM(Random Access Machine)</strong></p>
+<p>Components: - CPU - (Potentially) unbounded &amp; numbered memory
+cells</p>
+<hr />
+<h2 id="estimating-theoretical-running-time">Estimating Theoretical
+Running Time</h2>
+<p>TBC. See also in the slides <em>(Page 17-18)</em> for more
+details.</p>
+<p>Just take care: Treat loops / method calling / method returning
+CAUTIOUSLY!</p>
+<h2 id="big-oh-series">Big-Oh Series</h2>
+<p><strong>Concerns</strong>: <strong>Worst Case</strong></p>
+<p><strong>Samples</strong>: <span class="math inline">\(O(1)\)</span>,
+<span class="math inline">\(O(log_n)\)</span>, <span
+class="math inline">\(O(n)\)</span>, <span
+class="math inline">\(O(nlog_n)\)</span>, <span
+class="math inline">\(O(n^2)\)</span>, <span
+class="math inline">\(O(n^3)\)</span>, <span
+class="math inline">\(O(2^n)\)</span>, <span
+class="math inline">\(O(n!)\)</span></p>
+<p><strong>Usage</strong>: - Rank functions / algorithms according to
+the growth rates of input size &amp; running time; - Gives an upper
+bound on the growth rate of a function;</p>
+<p><strong>Note</strong>: <span class="math inline">\(f(n) is
+O(g(n))\)</span> means that the growth rate of <span
+class="math inline">\(f(n)\)</span> is no more than the growth rate of
+<span class="math inline">\(g(n)\)</span>.</p>
+<p><strong>Example Process</strong>:</p>
+<p>e.g. For Algorithm <code>arrayMax</code>(mentioned in slides
+<em>(Page 17-18)</em>) with <span class="math inline">\(8n-4\)</span>
+primitive operations to execute in the worst case:</p>
+<p>Primitive operations are assumed to take a constant amount time in
+the RAM model as mentioned before, which is denoted as <span
+class="math inline">\(c\)</span>;</p>
+<p>Let <span class="math inline">\(T(n)\)</span> denotes the worst case
+time of <code>arrayMax</code>:</p>
+<p>Thus <span class="math inline">\(T(n) = c(8n-4)\)</span>;</p>
+<p>Thus <span class="math inline">\(T(n)\)</span> is a linear function,
+<code>arrayMax</code> runs in linear time;</p>
+<p>Note: <span class="math inline">\(T(n)\)</span> is affected by
+constant factors,</p>
+<p>e.g. hardware / software environment, lower-ordered terms of <span
+class="math inline">\(T(n)\)</span></p>
+<p>but the growth rate of which is <strong>independent</strong>(an
+<strong>intrinsic</strong> property of the corresponding algorithm)</p>
+<h3 id="big-oh-general-proofs">Big-Oh: General Proofs</h3>
+<p>Let <span class="math inline">\(f(n)\)</span> and <span
+class="math inline">\(g(n)\)</span> be functions mapping positive
+integers to positive real numbers.</p>
+<p>Thus we say <span class="math inline">\(f(n)\)</span> is <span
+class="math inline">\(O(g(n))\)</span> if there is a real constant <span
+class="math inline">\(c \geq 0\)</span> and an integer constant <span
+class="math inline">\(n_0 \geq 1\)</span> such that for every <span
+class="math inline">\(n \geq n_0\)</span>, <span
+class="math inline">\(f(n) \leq cg(n)\)</span>.</p>
+<p><span class="math display">\[\exists c \in R_{\gt 0}, \quad \exists
+n_0 \in N_{\gt 0},\quad \forall n \geq n_0 \quad  (f(n) \leq
+cg(n))\]</span></p>
+<p>aka. the growth of the real running time is never under
+estimated.</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>f(n) is O(g(n))</th>
+<th>g(n) is O(f(n))</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>f(n) grows more/faster</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>g(n) grows more/faster</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Same growth rate</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>[!]Note: Proofs are ommited until later.</strong> --
+2022/09/28</p>
+<h3 id="big-oh-rules">Big-Oh Rules:</h3>
+<ol type="1">
+<li>Drop lower-order terms of <span
+class="math inline">\(f(n)\)</span>;</li>
+<li>Drop constant factors of <span
+class="math inline">\(f(n)\)</span>;</li>
+</ol>
+<p>e.g. "<span class="math inline">\(2n \mathop{is} O(n)\)</span>";
+"<span class="math inline">\(3n + 5 \mathop{is} O(n)\)</span>";</p>
+<h3 id="asymptotic-algorithm-analysis">Asymptotic Algorithm
+Analysis</h3>
+<p><strong>Purpose</strong>: determines the running time in Big-Oh
+Notation(<span class="math inline">\(O(n)\)</span>);</p>
+<p><strong>Perform / Deliver</strong> 1. Find the worst-case number of
+primitive operations executed as a function of the input size; 2.
+Express this function with Big-Oh notation; e.g. <code>arrayMax</code>
+runs in <span class="math inline">\(O(n)\)</span> time;</p>
+<hr />
+<h2 id="big-oh-series-in-a-nutshell">Big-Oh Series in A Nutshell</h2>
+<p><strong>Prerequisites</strong>: Let <span
+class="math inline">\(f(n)\)</span> and <span
+class="math inline">\(g*(n)\)</span> be functions mapping positive
+integers to positive real numbers.</p>
+<h3 id="big-oh">Big-Oh</h3>
+<p><span class="math inline">\(f(n)\)</span> is <span
+class="math inline">\(O(g(n))\)</span> if <span
+class="math inline">\(f(n)\)</span> is <code>asymptotically</code> less
+than or equal to g(n).</p>
+<p>i.e. We say that <span class="math inline">\(f(n)\)</span> is <span
+class="math inline">\(O(g(n))\)</span>,</p>
+<p>if there is a real constant <span class="math inline">\(c \gt
+0\)</span> and an integer constant <span class="math inline">\(n_0 \geq
+1\)</span></p>
+<p>such that for every <span class="math inline">\(n \geq
+n_0\)</span>:</p>
+<p><span class="math display">\[f(n) \leq cg(n)\]</span></p>
+<p>i.e.</p>
+<p><span class="math display">\[\exists c \in R_{\gt 0}, \quad \exists
+n_0 \in N_{\geq 1}, \quad \forall n \geq n_0 \quad (f(n) \leq
+cg(n))\]</span></p>
+<h3 id="big-omega">Big-Omega</h3>
+<p><span class="math inline">\(f(n)\)</span> is <span
+class="math inline">\(\Omega(g(n))\)</span> if <span
+class="math inline">\(f(n)\)</span> is <code>asymptotically</code>
+greater than or equal to g(n).</p>
+<p>i.e. We say that <span class="math inline">\(f(n)\)</span> is <span
+class="math inline">\(\Omega(g(n))\)</span>,</p>
+<p>if there is a real constant <span class="math inline">\(c \gt
+0\)</span> and an integer constant <span class="math inline">\(n_0 \geq
+1\)</span></p>
+<p>such that for every <span class="math inline">\(n \geq
+n_0\)</span>:</p>
+<p><span class="math display">\[f(n) \geq cg(n)\]</span></p>
+<p>i.e.</p>
+<p><span class="math display">\[\exists c \in R_{\gt 0}, \quad \exists
+n_0 \in N_{\geq 1}, \quad \forall n \geq n_0 \quad (f(n) \geq
+cg(n))\]</span></p>
+<h3 id="big-theta">Big-Theta</h3>
+<p><span class="math inline">\(f(n)\)</span> is <span
+class="math inline">\(\Theta(g(n))\)</span> if <span
+class="math inline">\(f(n)\)</span> is <code>asymptotically</code> equal
+to g(n).</p>
+<p>i.e. We say that <span class="math inline">\(f(n)\)</span> is <span
+class="math inline">\(\Theta(g(n))\)</span>,</p>
+<p>if there are real constants <span class="math inline">\(c&#39; \gt
+0\)</span>, <span class="math inline">\(c&#39;&#39; \gt 0\)</span> and
+an integer constant <span class="math inline">\(n_0 \geq 1\)</span></p>
+<p>such that for every <span class="math inline">\(n \geq
+n_0\)</span>:</p>
+<p><span class="math display">\[c&#39;g(n)\leq f(n) \leq
+c&#39;&#39;g(n)\]</span></p>
+<p>i.e.</p>
+<p><span class="math display">\[\exists c&#39; \in R_{\gt 0}, \quad
+\exists c&#39;&#39; \in R_{\gt 0}, \quad \exists n_0 \in N_{\gt 0},
+\quad \forall n \geq n_0 \quad (c&#39;g(n) \leq f(n) \leq
+c&#39;&#39;g(n))\]</span></p>
+<h3 id="little-oh">Little-Oh</h3>
+<p><span class="math inline">\(f(n)\)</span> is <span
+class="math inline">\(o(g(n))\)</span> if <span
+class="math inline">\(f(n)\)</span> is <code>asymptotically</code>,
+<code>strictly</code> less than or equal to g(n).</p>
+<p>i.e. We say that <span class="math inline">\(f(n)\)</span> is <span
+class="math inline">\(o(g(n))\)</span>,</p>
+<p>if for all positive real constant <span
+class="math inline">\(c\)</span>, there exists an integer constant <span
+class="math inline">\(n_0 \geq 1\)</span></p>
+<p>such that for every <span class="math inline">\(n \geq
+n_0\)</span>:</p>
+<p><span class="math display">\[f(n) &lt; cg(n)\]</span></p>
+<p>i.e.</p>
+<p><span class="math display">\[\exists c \in R_{\gt 0}, \quad \exists
+n_0 \in N_{\geq 1}, \quad \forall n \geq n_0 \quad (f(n) \lt
+cg(n))\]</span></p>
+
+        </div>
+
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/Algorithms/">#Algorithms</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/Algorithms-Correctness-Efficiency/">#Algorithms Correctness &amp; Efficiency</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/09/28/ACE-Take-Away-Lect-No-1-Correctness/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">ACE Take-Away: Lect No.1 Correctness</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Ch&#39;i YU</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#pseudocode"><span class="nav-text">Pseudocode</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#method-declaration"><span class="nav-text">Method Declaration</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#control-flow"><span class="nav-text">Control Flow</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#method-call"><span class="nav-text">Method Call</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#return-value"><span class="nav-text">Return Value</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#expression-notation"><span class="nav-text">Expression Notation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#running-time-analysis"><span class="nav-text">Running Time Analysis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#running-time"><span class="nav-text">Running Time</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#experimental-analysis"><span class="nav-text">Experimental Analysis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#theoretical-analysis"><span class="nav-text">Theoretical Analysis</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#estimating-theoretical-running-time"><span class="nav-text">Estimating Theoretical
+Running Time</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#big-oh-series"><span class="nav-text">Big-Oh Series</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#big-oh-general-proofs"><span class="nav-text">Big-Oh: General Proofs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#big-oh-rules"><span class="nav-text">Big-Oh Rules:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#asymptotic-algorithm-analysis"><span class="nav-text">Asymptotic Algorithm
+Analysis</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#big-oh-series-in-a-nutshell"><span class="nav-text">Big-Oh Series in A Nutshell</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#big-oh"><span class="nav-text">Big-Oh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#big-omega"><span class="nav-text">Big-Omega</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#big-theta"><span class="nav-text">Big-Theta</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#little-oh"><span class="nav-text">Little-Oh</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
