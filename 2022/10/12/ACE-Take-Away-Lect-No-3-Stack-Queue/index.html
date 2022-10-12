@@ -9,7 +9,7 @@
     
     <title>
         
-            FURP Driven Insights: `Target Encoding` |
+            ACE Take-Away: Lect No.3 Stack &amp; Queue |
         
         Study with Ch&#39;i YU
     </title>
@@ -298,7 +298,7 @@ mjx-container[display="true"] + br {
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">FURP Driven Insights: `Target Encoding`</span>
+            <span class="title-hover-animation">ACE Take-Away: Lect No.3 Stack &amp; Queue</span>
         </div>
 
         
@@ -317,8 +317,8 @@ mjx-container[display="true"] + br {
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2022-08-05 15:36:16</span>
-        <span class="mobile">2022-08-05 15:36</span>
+        <span class="pc">2022-10-12 15:21:10</span>
+        <span class="mobile">2022-10-12 15:21</span>
     </span>
     
         <span class="article-categories article-meta-item">
@@ -326,7 +326,11 @@ mjx-container[display="true"] + br {
             <ul>
                 
                     <li>
-                        <a href="/categories/FURP/">FURP</a>&nbsp;
+                        <a href="/categories/Take-Away/">Take-Away</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/Take-Away/Lecture-Note/">Lecture Note</a>&nbsp;
                     </li>
                 
             </ul>
@@ -338,7 +342,11 @@ mjx-container[display="true"] + br {
             <ul>
                 
                     <li>
-                        <a href="/tags/Target-Encoding/">Target Encoding</a>&nbsp;
+                        <a href="/tags/Algorithms/">Algorithms</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Algorithms-Correctness-Efficiency/">Algorithms Correctness &amp; Efficiency</a>&nbsp;
                     </li>
                 
             </ul>
@@ -365,133 +373,109 @@ mjx-container[display="true"] + br {
         
 
         <div class="article-content markdown-body">
-            <p><strong>Topic</strong>:
-<code>Adjusted Target Encoding for Multi-Class Classifications</code></p>
-<p>How category-encoders library gives incorrect results for multi-class
-categories.</p>
-<blockquote>
-<p>http://contrib.scikit-learn.org/category_encoders/targetencoder.html</p>
+            <blockquote>
+<p>Take-Away Notes for Module COMP2048.</p>
 </blockquote>
+<p>Review of Arrays and Linked Lists, Queues, Stacks.</p>
+<ul class="task-list">
+<li><input type="checkbox" disabled="">
+Reviewed</li>
+</ul>
 <span id="more"></span>
-<h2 id="backgrounds">Backgrounds</h2>
-<h3 id="about-target-encoder">About Target Encoder</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">category_encoders</span>.target_encoder.TargetEncoder(verbose=<span class="number">0</span>, cols=<span class="literal">None</span>, drop_invariant=<span class="literal">False</span>, return_df=<span class="literal">True</span>, handle_missing=<span class="string">'value'</span>, handle_unknown=<span class="string">'value'</span>, min_samples_leaf=<span class="number">1</span>, smoothing=<span class="number">1.0</span>)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>Target encoding for categorical features.</p>
-<p>Supported targets: binomial and continuous.For polynomial target
-support, see polynomial wrapper.</p>
-<p>For the For the case of categorical target: features are replaced
-with a blend of posterior probability of the target given particular
-categorical value and the prior probability of the target over all the
-training data.</p>
-<p>For the case of categorical target: features are replaced with a
-blend of posterior probability of the target given particular
-categorical value and the prior probability of the target over all the
-training data.</p>
-</blockquote>
-<h3 id="about-real-life-dataset">About Real-Life Dataset</h3>
-<p>To better explain the theories beneath those algorithms without loss
-of generality, a simplified, anonymized version of the dataset we're
-working with is applied:</p>
-<p><em>Before Inappropriate Target Encoding</em></p>
-<table>
-<thead>
-<tr class="header">
-<th>Number of Units(X)</th>
-<th>Credit Rank(Y)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>4</td>
-</tr>
-<tr class="odd">
-<td>1</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>4</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>3</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>2</td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> category_encoders <span class="keyword">import</span> TargetEncoder</span><br><span class="line"><span class="keyword">import</span> pandas</span><br><span class="line"></span><br><span class="line">df = pd.read_csv(<span class="string">"xxx.csv"</span>)</span><br><span class="line"><span class="built_in">print</span>(df)</span><br><span class="line"></span><br><span class="line">te = TargetEncoder()</span><br><span class="line"><span class="built_in">print</span>(te.fit_transform(df[<span class="string">"Number of Units(X)"</span>], <span class="string">"Credit Rank(Y)"</span>))</span><br></pre></td></tr></table></figure>
-<p><em>After Inappropriate Target Encoding</em></p>
-<table>
-<thead>
-<tr class="header">
-<th>Number of Units(X)</th>
-<th>Credit Rank(Y)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>2</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>4</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>4</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>3</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>2</td>
-</tr>
-</tbody>
-</table>
-<p>All those different values will be replaced with 2, which causes
-confusion and loss of necessary information.</p>
-<h2 id="to-aid-this-situation...">To aid this situation...</h2>
-<p>Apply Polynomial Wrappers(Experimental Feature provided by CE
-library, but changes nightly), or following the scheme provided in this
-paper <a class="link" target="_blank" rel="noopener" href="https://dl.acm.org/doi/10.1145/507533.507538">A
-preprocessing scheme for high-cardinality categorical attributes in
-classification and prediction problems<i class="fas fa-external-link-alt"></i></a>.</p>
+<h1 id="array">Array</h1>
+<h3 id="definition">Definition</h3>
+<p>A sequenced collection of variables of the <code>same type</code>,
+where each variable, or cell, in an array has an
+<code>unique index</code> as a reference to the value stored.</p>
+<h3 id="length-capacity">Length &amp; Capacity</h3>
+<p>The maximum number of elements that can be stored in the array.</p>
+<h1 id="linked-list">Linked List</h1>
+<h2 id="singly-linked-list">Singly Linked List</h2>
+<h3 id="definition-1">Definition</h3>
+<p>A <code>concrete</code> data structure consisting of a sequence of
+nodes starting from a head pointer, where each nodes stores its own
+<code>element</code> and the
+<code>link(reference) to the next node</code>.</p>
+<h3 id="insert-at-the-head">Insert at the Head</h3>
 <ol type="1">
-<li>One-Hot Encode Target Label <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.726ex" height="1.545ex" role="img" focusable="false" viewBox="0 -683 763 683"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D44C" d="M66 637Q54 637 49 637T39 638T32 641T30 647T33 664T42 682Q44 683 56 683Q104 680 165 680Q288 680 306 683H316Q322 677 322 674T320 656Q316 643 310 637H298Q242 637 242 624Q242 619 292 477T343 333L346 336Q350 340 358 349T379 373T411 410T454 461Q546 568 561 587T577 618Q577 634 545 637Q528 637 528 647Q528 649 530 661Q533 676 535 679T549 683Q551 683 578 682T657 680Q684 680 713 681T746 682Q763 682 763 673Q763 669 760 657T755 643Q753 637 734 637Q662 632 617 587Q608 578 477 424L348 273L322 169Q295 62 295 57Q295 46 363 46Q379 46 384 45T390 35Q390 33 388 23Q384 6 382 4T366 1Q361 1 324 1T232 2Q170 2 138 2T102 1Q84 1 84 9Q84 14 87 24Q88 27 89 30T90 35T91 39T93 42T96 44T101 45T107 45T116 46T129 46Q168 47 180 50T198 63Q201 68 227 171L252 274L129 623Q128 624 127 625T125 627T122 629T118 631T113 633T105 634T96 635T83 636T66 637Z"></path></g></g></g></svg></mjx-container></span>,
-which gives <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.357ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 600 453"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g></g></g></svg></mjx-container></span> binary columns, one
-corresponding to each class of the target;</li>
-<li>Drop one arbitrary column to avoid linear dependencies;</li>
-<li>Use the usual target encoding algorithms for each categorical
-columns using each binary target one by one.</li>
+<li>Allocate new node</li>
+<li>Insert new element</li>
+<li>Have new node pointed to th old head</li>
+<li>Update head to point to the new node</li>
 </ol>
-<p>In the end, each column of categorical features is expended to <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.186ex;" xmlns="http://www.w3.org/2000/svg" width="5.254ex" height="1.692ex" role="img" focusable="false" viewBox="0 -666 2322.4 748"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(822.2,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mn" transform="translate(1822.4,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g></g></svg></mjx-container></span> columns, where <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.357ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 600 453"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g></g></g></svg></mjx-container></span> represents the number of classes in the
-target.</p>
-<h3 id="code-implementations">Code Implementations</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Apply Mean Target Encoder</span></span><br><span class="line">rank_onehot = pd.get_dummies(df[<span class="string">"Credit Rank"</span>],       <span class="comment"># the target `Y`</span></span><br><span class="line">                               drop_first = <span class="literal">True</span>)     <span class="comment"># to avoid linear dependencies</span></span><br><span class="line"><span class="keyword">for</span> col <span class="keyword">in</span> cat_cols:</span><br><span class="line">    <span class="keyword">for</span> index <span class="keyword">in</span> rank_onehot.columns:</span><br><span class="line">        te_encoder = ce.TargetEncoder(col)</span><br><span class="line">        df[col + <span class="string">"_"</span> + <span class="built_in">str</span>(index)] = te_encoder.fit_transform(df[col],</span><br><span class="line">                                                              rank_onehot[index])</span><br><span class="line">    <span class="keyword">del</span> df[col]</span><br><span class="line"></span><br><span class="line"><span class="keyword">del</span> rank_onehot</span><br><span class="line">gc.collect()</span><br></pre></td></tr></table></figure>
+<h3 id="insert-at-the-tail">Insert at the Tail</h3>
+<ol type="1">
+<li>Allocate new node</li>
+<li>Insert new element</li>
+<li>Have new node point to null</li>
+<li>Have old last node point to new node</li>
+<li>Update tail to point to the new node</li>
+</ol>
+<h3 id="delete-at-the-head">Delete at the Head</h3>
+<ol type="1">
+<li>Update head to point to the next node</li>
+<li>Allow garbage collector to reclaim the former first node</li>
+</ol>
+<h3 id="delete-at-the-tail">Delete at the Tail</h3>
+<p><em>Non-efficient, No constant time-way to update the tail to point
+to the previous node</em></p>
+<h2 id="doubly-linked-lists">Doubly Linked Lists</h2>
+<h3 id="definition-2">Definition</h3>
+<p>A linked list in which each node keeps explicit references to the
+node before and after it.</p>
+<h3 id="insertion">Insertion</h3>
+<ol type="1">
+<li>Allocate new node</li>
+<li>Update references to the node before and after</li>
+<li>Update the references of the node before and after</li>
+</ol>
+<h3 id="deletion">Deletion</h3>
+<ol type="1">
+<li>Update the references of the node before and after</li>
+<li>Allow garbage collector to reclaim the node</li>
+</ol>
+<h1 id="queues">Queues</h1>
+<h3 id="definition-3">Definition</h3>
+<p>A collection of objects that are inserted and removed according to
+the <code>FIFO(First In, First Out)</code> rule, that is, insertions are
+at the rear of the queue and deletion are at the front of the queue.</p>
+<h3 id="modifier">Modifier</h3>
+<ul>
+<li><code>enqueue(obj)</code>: inserts an element at the end of the
+queue</li>
+<li><code>dequeue()</code>: removes and returns the element at the front
+of the queue ### Accessor</li>
+<li><code>first()</code>: returns the element at the front without
+removing it</li>
+<li><code>size()</code>: returns the number of elements in the
+queue</li>
+<li><code>isEmpty()</code>: returns a boolean indicating whether the
+queue is empty</li>
+</ul>
+<h3 id="boundary-cases">Boundary Cases</h3>
+<p><em>Attempting <code>dequeue()</code> or <code>first()</code> on an
+empty dequeue returns null</em></p>
+<h1 id="stacks">Stacks</h1>
+<h3 id="definitions">Definitions</h3>
+<p>A collection of objects that are inserted and removed according to
+the <code>LIFO(Last In, First Out)</code> rule, that is, both
+insertions(push) and deletions(pop) are at the top of the stack.</p>
+<h3 id="modifiers">Modifiers</h3>
+<ul>
+<li><code>push(e)</code>: add elements <code>e</code> to the top of the
+stack</li>
+<li><code>pop()</code>: removes and returns the top element from the
+stack, of null if the stack is empty</li>
+</ul>
+<h3 id="accessors">Accessors</h3>
+<ul>
+<li><code>top()</code>: returns the top element of the stack or null isf
+the stack is empty, and do not remove it</li>
+<li><code>size()</code>: returns the number of elements in the
+stack</li>
+<li><code>isEmpty()</code>: returns a boolean indicating whether the
+stack is empty</li>
+</ul>
 
         </div>
 
@@ -501,7 +485,11 @@ target.</p>
             <ul class="post-tags-box">
                 
                     <li class="tag-item">
-                        <a href="/tags/Target-Encoding/">#Target Encoding</a>&nbsp;
+                        <a href="/tags/Algorithms/">#Algorithms</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/Algorithms-Correctness-Efficiency/">#Algorithms Correctness &amp; Efficiency</a>&nbsp;
                     </li>
                 
             </ul>
@@ -510,29 +498,14 @@ target.</p>
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2022/09/28/ACE-Take-Away-Lect-No-1-Correctness/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">ACE Take-Away: Lect No.1 Correctness</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/08/05/FURP-Driven-Insights-Focal-Loss/"
+                           href="/2022/09/28/ACE-Take-Away-Lect-No-2-Efficiency/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">FURP Driven Insights: `Focal Loss`</span>
+                                <span class="post-nav-title-item">ACE Take-Away: Lect No.2 Efficiency</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -667,7 +640,7 @@ target.</p>
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#backgrounds"><span class="nav-text">Backgrounds</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#about-target-encoder"><span class="nav-text">About Target Encoder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#about-real-life-dataset"><span class="nav-text">About Real-Life Dataset</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#to-aid-this-situation..."><span class="nav-text">To aid this situation...</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#code-implementations"><span class="nav-text">Code Implementations</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#array"><span class="nav-text">Array</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#definition"><span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#length-capacity"><span class="nav-text">Length &amp; Capacity</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#linked-list"><span class="nav-text">Linked List</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#singly-linked-list"><span class="nav-text">Singly Linked List</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#definition-1"><span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#insert-at-the-head"><span class="nav-text">Insert at the Head</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#insert-at-the-tail"><span class="nav-text">Insert at the Tail</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#delete-at-the-head"><span class="nav-text">Delete at the Head</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#delete-at-the-tail"><span class="nav-text">Delete at the Tail</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#doubly-linked-lists"><span class="nav-text">Doubly Linked Lists</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#definition-2"><span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#insertion"><span class="nav-text">Insertion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#deletion"><span class="nav-text">Deletion</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#queues"><span class="nav-text">Queues</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#definition-3"><span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#modifier"><span class="nav-text">Modifier</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#boundary-cases"><span class="nav-text">Boundary Cases</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#stacks"><span class="nav-text">Stacks</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#definitions"><span class="nav-text">Definitions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#modifiers"><span class="nav-text">Modifiers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#accessors"><span class="nav-text">Accessors</span></a></li></ol></li></ol></li></ol>
     </div>
 </div>
         </aside>
