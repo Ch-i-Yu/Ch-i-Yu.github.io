@@ -357,7 +357,7 @@ mjx-container[display="true"] + br {
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>2 Mins</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>3 Mins</span>
         </span>
     
     
@@ -379,6 +379,8 @@ mjx-container[display="true"] + br {
 <p>Review of Arrays and Linked Lists, Queues, Stacks.</p>
 <ul class="task-list">
 <li><input type="checkbox" disabled="">
+Proofread</li>
+<li><input type="checkbox" disabled="">
 Reviewed</li>
 </ul>
 <span id="more"></span>
@@ -389,6 +391,16 @@ where each variable, or cell, in an array has an
 <code>unique index</code> as a reference to the value stored.</p>
 <h3 id="length-capacity">Length &amp; Capacity</h3>
 <p>The maximum number of elements that can be stored in the array.</p>
+<h3 id="modification-add-remove">Modification: Add &amp; Remove</h3>
+<p>To add an element <code>e</code> into array board at index
+<code>i</code>: 1. Make room by shifting forward the <code>n-i</code>
+elements <code>data[i]</code>, <code>data[i+1]</code>, ...,
+<code>data[n]</code> 2. Add at <code>data[i]</code></p>
+<p>To remove an element e from array board at index i: 1. Shift backward
+the <code>n-i-1</code> elements <code>data[i+1]</code>,
+<code>data[i+2]</code>, <code>data[n-1]</code>; 2. Since
+<code>data[i]</code> is replaced/covered, reset <code>data[n]</code> to
+<code>null</code> to release the allocated memory.</p>
 <h1 id="linked-list">Linked List</h1>
 <h2 id="singly-linked-list">Singly Linked List</h2>
 <h3 id="definition-1">Definition</h3>
@@ -435,10 +447,22 @@ node before and after it.</p>
 <li>Allow garbage collector to reclaim the node</li>
 </ol>
 <h1 id="queues">Queues</h1>
+<p>Usually use an array of size/capacity of <code>N</code> in a circular
+fashion.</p>
+<p><strong>Update: Full iff <code>sz == N</code>; typo fixed in
+slides!</strong></p>
 <h3 id="definition-3">Definition</h3>
 <p>A collection of objects that are inserted and removed according to
 the <code>FIFO(First In, First Out)</code> rule, that is, insertions are
 at the rear of the queue and deletion are at the front of the queue.</p>
+<h3 id="keep-track-constants">Keep-Track Constants</h3>
+<ul>
+<li><code>f</code>: short-cut for front; index of the 1st
+element(initialized to 0)</li>
+<li><code>sz</code>: short-cut for size; number of stored elements</li>
+<li><code>r</code>: short-cut for rear; the first empty slot past the
+rear of the queue;</li>
+</ul>
 <h3 id="modifier">Modifier</h3>
 <ul>
 <li><code>enqueue(obj)</code>: inserts an element at the end of the
@@ -456,10 +480,17 @@ queue is empty</li>
 <p><em>Attempting <code>dequeue()</code> or <code>first()</code> on an
 empty dequeue returns null</em></p>
 <h1 id="stacks">Stacks</h1>
+<p><strong>Update: Full iff <code>t == S.length(Capacity)</code>; typo
+fixed in slides!</strong></p>
 <h3 id="definitions">Definitions</h3>
 <p>A collection of objects that are inserted and removed according to
 the <code>LIFO(Last In, First Out)</code> rule, that is, both
 insertions(push) and deletions(pop) are at the top of the stack.</p>
+<h3 id="keep-track-constants-1">Keep-Track Constants</h3>
+<ul>
+<li><code>t</code>: keeps track of the index of the top
+element(<code>size = t+1</code>)</li>
+</ul>
 <h3 id="modifiers">Modifiers</h3>
 <ul>
 <li><code>push(e)</code>: add elements <code>e</code> to the top of the
@@ -655,7 +686,7 @@ stack is empty</li>
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#array"><span class="nav-text">Array</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#definition"><span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#length-capacity"><span class="nav-text">Length &amp; Capacity</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#linked-list"><span class="nav-text">Linked List</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#singly-linked-list"><span class="nav-text">Singly Linked List</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#definition-1"><span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#insert-at-the-head"><span class="nav-text">Insert at the Head</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#insert-at-the-tail"><span class="nav-text">Insert at the Tail</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#delete-at-the-head"><span class="nav-text">Delete at the Head</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#delete-at-the-tail"><span class="nav-text">Delete at the Tail</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#doubly-linked-lists"><span class="nav-text">Doubly Linked Lists</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#definition-2"><span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#insertion"><span class="nav-text">Insertion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#deletion"><span class="nav-text">Deletion</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#queues"><span class="nav-text">Queues</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#definition-3"><span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#modifier"><span class="nav-text">Modifier</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#boundary-cases"><span class="nav-text">Boundary Cases</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#stacks"><span class="nav-text">Stacks</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#definitions"><span class="nav-text">Definitions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#modifiers"><span class="nav-text">Modifiers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#accessors"><span class="nav-text">Accessors</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#array"><span class="nav-text">Array</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#definition"><span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#length-capacity"><span class="nav-text">Length &amp; Capacity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#modification-add-remove"><span class="nav-text">Modification: Add &amp; Remove</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#linked-list"><span class="nav-text">Linked List</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#singly-linked-list"><span class="nav-text">Singly Linked List</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#definition-1"><span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#insert-at-the-head"><span class="nav-text">Insert at the Head</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#insert-at-the-tail"><span class="nav-text">Insert at the Tail</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#delete-at-the-head"><span class="nav-text">Delete at the Head</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#delete-at-the-tail"><span class="nav-text">Delete at the Tail</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#doubly-linked-lists"><span class="nav-text">Doubly Linked Lists</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#definition-2"><span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#insertion"><span class="nav-text">Insertion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#deletion"><span class="nav-text">Deletion</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#queues"><span class="nav-text">Queues</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#definition-3"><span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#keep-track-constants"><span class="nav-text">Keep-Track Constants</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#modifier"><span class="nav-text">Modifier</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#boundary-cases"><span class="nav-text">Boundary Cases</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#stacks"><span class="nav-text">Stacks</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#definitions"><span class="nav-text">Definitions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#keep-track-constants-1"><span class="nav-text">Keep-Track Constants</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#modifiers"><span class="nav-text">Modifiers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#accessors"><span class="nav-text">Accessors</span></a></li></ol></li></ol></li></ol>
     </div>
 </div>
         </aside>
